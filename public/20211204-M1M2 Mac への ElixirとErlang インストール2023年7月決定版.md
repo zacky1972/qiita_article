@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2023年7月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2023年9月決定版
 tags:
   - Erlang
   - homebrew
@@ -19,6 +19,14 @@ ignorePublish: false
 
 M1 Mac の初期状態からElixirとErlangを Homebrew と`asdf`でインストールする完全手順をご紹介します。
 
+```zsh
+% elixir -v
+Erlang/OTP 26 [erts-14.1] [source] [64-bit] [smp:20:20] [ds:20:20:10] [async-threads:1] [jit]
+
+Elixir 1.15.6 (compiled with Erlang/OTP 26)
+```
+
+
 2021.12.16 追記: Erlang/OTP 24.2でOpenSSL 3.0に対応したので，その場合のインストール手順を追記しました。
 2022.12.3 追記: Ventura対応版を書きました
 2023.2.18 追記: Erlang/OTP 26.0 Release Candidate 1にも対応していることを確認しました
@@ -26,15 +34,14 @@ M1 Mac の初期状態からElixirとErlangを Homebrew と`asdf`でインスト
 2023.3.30 追記: Erlang/OTP 25.1 からOpenSSL 3.0を本採用して大丈夫という情報を得たので，追記しました．
 2023.3.30 追記: Erlang/OTP 26.0 Release Candidate 2にも対応していることを確認しました
 2023.6.23 追記: Xcode，Erlang/OTP，Elixirのバージョンを最新にしました．最初にインストールされるOpenSSLのバージョンが3系統になっていたのを確認しました．
-2023.7.1 追記: Erlang/OTP, Elixirの
-
-
+2023.7.1 追記: Erlang/OTP, Elixirのバージョンを最新にしました．
+2023.9.26 追記: Xcodeのバージョンを最新にしました．Elixirのバージョンを明記しました．
 
 # 1. macOSアップグレード
 
 最初にmacOSを最新版にアップグレードしましょう．
 
-# 2. Xcode 14.3.1 インストール (オプション)
+# 2. Xcode インストール (オプション)
 
 Xcode をインストールしなくても Homebrew はインストールできるのですが，Xcodeをインストールするとしたら，この段階でしておきます。
 
