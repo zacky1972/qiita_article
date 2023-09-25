@@ -7,7 +7,7 @@ tags:
   - asdf
   - M1
 private: false
-updated_at: '2023-07-01T04:01:43+09:00'
+updated_at: '2023-09-26T08:58:03+09:00'
 id: c94baef2ee9379c21fa1
 organization_url_name: fukuokaex
 slide: false
