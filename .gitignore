@@ -1,2 +1,3 @@
 .remote
 node_modules
+.config/qiita-cli/credentials.json
