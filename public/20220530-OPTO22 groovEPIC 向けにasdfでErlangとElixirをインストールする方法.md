@@ -22,16 +22,16 @@ ignorePublish: false
 追記 20230330: Erlang/OTP 25.1以降ではOpenSSL3.0系列を用いるように修正しました．
 追記 20230612: OpenSSL, Elixir, Erlangを最新版に追従しました．
 追記 20230701: Elixir, Erlangを最新版に追従しました．
-
+追記 20230930: Elixir, Erlang, OpenSSL, asdfを最新版に追従しました．
 
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
 ```zsh
 $ elixir -v
-Erlang/OTP 26 [erts-14.0.2] [source] [32-bit] [smp:4:4] [ds:4:4:10] [async-threads:1]
+Erlang/OTP 26 [erts-14.1] [source] [32-bit] [smp:4:4] [ds:4:4:10] [async-threads:1]
 
-Elixir 1.15.1 (compiled with Erlang/OTP 26)
+Elixir 1.15.6 (compiled with Erlang/OTP 26)
 $ uname -a
 Linux opto-04-88-28 4.1.15-rt18-nxtio-2.1.0+g28bea2e #2 SMP PREEMPT RT Thu Sep 1 18:49:10 PDT 2022 armv7l GNU/Linux
 ```
@@ -76,15 +76,15 @@ sudo ln -s /usr/lib/jvm/zulu-openjdk-8.0.332/bin/jar /usr/bin/jar
 
 ### OpenSSL 3系列をインストールする場合(Erlang/OTP 25.1系列以降の推奨)
 
-2023年6月時点での OpenSSL 3系列の最新版はOpenSSL 3.1.1です．ソースコードは`https://www.openssl.org/source/openssl-3.1.1.tar.gz`にあります．
+2023年9月時点での OpenSSL 3系列の最新版はOpenSSL 3.1.3です．ソースコードは`https://www.openssl.org/source/openssl-3.1.3.tar.gz`にあります．
 
 ```bash
 sudo mkdir /usr/local/src
 sudo su
 cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-3.1.1.tar.gz
-tar xvzf openssl-3.1.1.tar.gz
-cd openssl-3.1.1
+curl -OL https://www.openssl.org/source/openssl-3.1.3.tar.gz
+tar xvzf openssl-3.1.3.tar.gz
+cd openssl-3.1.3
 ./config -fPIC shared --prefix=/usr/local/openssl
 make
 make install_sw
@@ -93,16 +93,16 @@ exit
 
 ### OpenSSL 1.1系列をインストールする場合(Erlang/OTP 25.0系列以前の推奨)
 
-2023年6月時点での OpenSSL 1.1.1 の最新版のソースコードは，`https://www.openssl.org/source/openssl-1.1.1u.tar.gz` にありました。
+2023年9月時点での OpenSSL 1.1.1 の最新版のソースコードは，`https://www.openssl.org/source/openssl-1.1.1w.tar.gz` にありました。
 これらを適宜変更する必要があります。
 
 ```bash
 sudo mkdir /usr/local/src
 sudo su
 cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-1.1.1u.tar.gz
-tar xvzf openssl-1.1.1u.tar.gz
-cd openssl-1.1.1u
+curl -OL https://www.openssl.org/source/openssl-1.1.1w.tar.gz
+tar xvzf openssl-1.1.1w.tar.gz
+cd openssl-1.1.1w
 ./config -fPIC shared --prefix=/usr/local/openssl
 make
 make install_sw
@@ -119,10 +119,10 @@ export KERL_CONFIGURE_OPTIONS="--with-ssl=/usr/local/openssl"
 
 ## 6. GitHubから`asdf`をインストールします
 
-2023年3月時点での`asdf`の最新版はv0.11.3です。適宜指定します。
+2023年9月時点での`asdf`の最新版はv0.13.1です。適宜指定します。
 
 ```bash
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
 ```
 
 `~/.bashrc` に下記を追記します。
@@ -155,10 +155,10 @@ asdf install erlang latest
 asdf list-all erlang
 ```
 
-例えば26.0.1をインストールするには次のようにします。
+例えば26.1.1をインストールするには次のようにします。
 
 ```bash
-asdf install erlang 26.0.2
+asdf install erlang 26.1.1
 ```
 
 ## 9. `asdf install elixir (インストールしたいバージョン)` とします。最新版の時には `asdf install elixir latest`とします
@@ -175,10 +175,10 @@ asdf install elixir latest
 asdf list-all elixir
 ```
 
-例えば1.14.5-otp-26をインストールするには次のようにします。
+例えば1.15.6-otp-26をインストールするには次のようにします。
 
 ```bash
-asdf install elixir 1.15.1-otp-26
+asdf install elixir 1.15.6-otp-26
 ```
 
 ### 10. `asdf global erlang (インストールしたバージョン)` `asdf global elixir (インストールしたバージョン)`として，ErlangとElixirを選択する
