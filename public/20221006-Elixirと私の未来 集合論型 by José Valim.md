@@ -3,7 +3,7 @@ title: 'Elixirと私の未来: 集合論型 by José Valim'
 tags:
   - Elixir
 private: false
-updated_at: '2023-07-05T18:10:55+09:00'
+updated_at: '2023-10-05T18:18:07+09:00'
 id: 6c9cc82d9ba5f83e76d2
 organization_url_name: fukuokaex
 slide: false
@@ -19,7 +19,7 @@ https://youtu.be/Jf5Hsa1KOc8
 
 https://youtu.be/KmLw58qEtuM
 
-2022年5月に，Elixir の最初の公開リリースである Elixir v0.5が発表されてから10周年を迎えました．
+Elixir の最初の公開リリースである Elixir v0.5が発表されてから10周年を，2022年5月にて，迎えました．
 
 こういう時には，Elixirが10年後にどのようになるかを予測したくなるかもしれません．しかし，それは無駄な努力だと思います．なぜならば，10 年前には，Elixir が[ウェブ開発に優れている(訳註: Phoenix Framework)](https://phoenixframework.org)だけでなく，[組込みソフトウェア(訳註: Nerves Project)](https://www.nerves-project.org)のような分野に進んだり，[Nx (Numerical Elixir)](https://github.com/elixir-nx/nx)，[Explorer](https://github.com/elixir-nx/explorer)，[Axon](https://github.com/elixir-nx/axon)，[Livebook](https://livebook.dev)などのプロジェクトで，機械学習やデータ分析に参入したりするとは想像もしていなかったからです．Elixirは拡張できるように設計されており，それをどのように拡張するか，常にコミュニティが取り組んでいます．
 
