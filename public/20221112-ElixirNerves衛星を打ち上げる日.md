@@ -18,3 +18,7 @@ ignorePublish: false
 https://speakerdeck.com/zacky1972/nerveswei-xing-woda-tishang-geruri
 
 ゆるい感じを醸し出して後続へのプレッシャーを避けるために，仮にこの状態で投稿しておきます．後で追記するかもです．
+
+追記: 2023年10月〜2024年2月の研究期間で北九州産業学術推進機構(FAIS)の衛星データにかかる新技術開発事業の助成を受けて株式会社ダイモンとともにFPGAとNervesの衛星への応用に関する研究開発プロジェクトを行います．
+
+https://zacky1972.github.io/blog/2023/10/02/FPGA-Nerves.html

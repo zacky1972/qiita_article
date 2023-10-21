@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2023年9月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2023年10月決定版
 tags:
   - Erlang
   - homebrew
@@ -21,9 +21,9 @@ M1 Mac の初期状態からElixirとErlangを Homebrew と`asdf`でインスト
 
 ```zsh
 % elixir -v
-Erlang/OTP 26 [erts-14.1] [source] [64-bit] [smp:20:20] [ds:20:20:10] [async-threads:1] [jit]
+Erlang/OTP 26 [erts-14.1.1] [source] [64-bit] [smp:20:20] [ds:20:20:10] [async-threads:1] [jit]
 
-Elixir 1.15.6 (compiled with Erlang/OTP 26)
+Elixir 1.15.7 (compiled with Erlang/OTP 26)
 ```
 
 
@@ -37,6 +37,7 @@ Elixir 1.15.6 (compiled with Erlang/OTP 26)
 2023.7.1 追記: Erlang/OTP, Elixirのバージョンを最新にしました．
 2023.9.26 追記: Xcodeのバージョンを最新にしました．Elixirのバージョンを明記しました．
 2023.9.28 追記: Erlangのバージョンアップをしました．
+2023.10.21 追記: Erlangのバージョンアップをしました．
 
 # 1. macOSアップグレード
 
