@@ -5,7 +5,7 @@ tags:
   - Elixir
   - IoT
 private: false
-updated_at: '2023-09-30T13:22:03+09:00'
+updated_at: '2023-10-22T10:09:42+09:00'
 id: 9fd84f5103e3e5f6a6ca
 organization_url_name: fukuokaex
 slide: false
