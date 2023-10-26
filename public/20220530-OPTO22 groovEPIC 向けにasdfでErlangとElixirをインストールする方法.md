@@ -24,6 +24,7 @@ ignorePublish: false
 追記 20230701: Elixir, Erlangを最新版に追従しました．
 追記 20230930: Elixir, Erlang, OpenSSL, asdfを最新版に追従しました．
 追記 20231022: Elixir, Erlangを最新版に追従しました．
+追記 20231026: OpenSSLを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -76,15 +77,15 @@ sudo ln -s /usr/lib/jvm/zulu-openjdk-8.0.332/bin/jar /usr/bin/jar
 
 ### OpenSSL 3系列をインストールする場合(Erlang/OTP 25.1系列以降の推奨)
 
-2023年9月時点での OpenSSL 3系列の最新版はOpenSSL 3.1.3です．ソースコードは`https://www.openssl.org/source/openssl-3.1.3.tar.gz`にあります．
+2023年10月時点での OpenSSL 3系列の最新版はOpenSSL 3.1.4です．ソースコードは`https://www.openssl.org/source/openssl-3.1.4.tar.gz`にあります．
 
 ```bash
 sudo mkdir /usr/local/src
 sudo su
 cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-3.1.3.tar.gz
-tar xvzf openssl-3.1.3.tar.gz
-cd openssl-3.1.3
+curl -OL https://www.openssl.org/source/openssl-3.1.4.tar.gz
+tar xvzf openssl-3.1.4.tar.gz
+cd openssl-3.1.4
 ./config -fPIC shared --prefix=/usr/local/openssl
 make
 make install_sw
