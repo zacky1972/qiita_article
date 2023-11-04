@@ -1,11 +1,11 @@
 ---
 title: 'Strong arrow 演算子: 段階的型付けの新しいアプローチ by José Valim'
 tags:
-  - 'Elixir'
-  - '型システム'
+  - Elixir
+  - 型システム
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-05T03:07:09+09:00'
+id: e8ffa1be10e0e4fad427
 organization_url_name: null
 slide: false
 ignorePublish: false
