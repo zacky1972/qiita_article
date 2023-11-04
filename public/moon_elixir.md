@@ -1,12 +1,12 @@
 ---
 title: Elixir，月へ行く
 tags:
-  - 'Elixir'
-  - 'Nerves'
-  - '宇宙機'
+  - Elixir
+  - Nerves
+  - 宇宙機
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-05T02:50:22+09:00'
+id: 2f2ff987072a0268652b
 organization_url_name: null
 slide: false
 ignorePublish: false
