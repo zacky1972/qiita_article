@@ -5,7 +5,7 @@ tags:
   - Nerves
   - 宇宙機
 private: true
-updated_at: '2023-11-05T02:53:53+09:00'
+updated_at: '2023-11-05T03:01:55+09:00'
 id: b9bde6aa6724960340ab
 organization_url_name: null
 slide: false

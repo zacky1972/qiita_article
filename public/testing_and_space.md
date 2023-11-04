@@ -1,12 +1,12 @@
 ---
 title: 宇宙機にも現代的なCI/CDを取り入れたい
 tags:
-  - '技術ポエム'
-  - '宇宙機'
-  - 'CICD'
+  - 技術ポエム
+  - CICD
+  - 宇宙機
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-05T03:01:56+09:00'
+id: 80fb9aa1b5bf3641f0a5
 organization_url_name: null
 slide: false
 ignorePublish: false
