@@ -1,12 +1,12 @@
 ---
 title: Nerves，月へ行く
 tags:
-  - 'Nerves'
-  - 'Elixir'
-  - '宇宙機'
+  - Elixir
+  - Nerves
+  - 宇宙機
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-05T02:09:30+09:00'
+id: b9bde6aa6724960340ab
 organization_url_name: null
 slide: false
 ignorePublish: false
