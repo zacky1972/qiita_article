@@ -1,13 +1,13 @@
 ---
 title: SWEST，JaSST，ElixirConfに関わっての所感
 tags:
-  - '技術カンファレンス'
-  - '組込みシステム'
-  - 'ソフトウェアテスト'
-  - 'Elixir'
+  - Elixir
+  - ソフトウェアテスト
+  - 技術カンファレンス
+  - 組込みシステム
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-05T02:53:53+09:00'
+id: 48c8b99919b70a5eeaca
 organization_url_name: null
 slide: false
 ignorePublish: false
