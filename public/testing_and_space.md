@@ -1,0 +1,14 @@
+---
+title: 宇宙機にも現代的なCI/CDを取り入れたい
+tags:
+  - '技術ポエム'
+  - '宇宙機'
+  - 'CICD'
+private: true
+updated_at: ''
+id: null
+organization_url_name: null
+slide: false
+ignorePublish: false
+---
+宇宙機のソフトウェアの高度化に伴い，宇宙機開発においても現代的なソフトウェア開発手法を取り入れることが試みられ始めています．本記事では，現代的なCI/CDを宇宙機のソフトウェア開発に取り入れることについての考察と技術的課題について述べたいと思います．
