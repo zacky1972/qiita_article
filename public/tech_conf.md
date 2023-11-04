@@ -85,7 +85,7 @@ https://jasst.jp/about.html#kyushu
 
 https://jasst.jp/archives/jasst07k.html
 
-JaSST'09 Kyushuでは，地元，北九州市内で開催し，共同実行委員長となりました．
+JaSST'09 Kyushuでは，地元，北九州市内で開催し，共同実行委員長を務めました．
 
 https://jasst.jp/archives/jasst09k.html
 
