@@ -3,7 +3,7 @@ title: 'Strong arrow 演算子: 段階的型付けの新しいアプローチ by
 tags:
   - 'Elixir'
   - '型システム'
-private: false
+private: true
 updated_at: ''
 id: null
 organization_url_name: null
