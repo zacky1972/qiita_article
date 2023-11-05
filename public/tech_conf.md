@@ -28,7 +28,7 @@ https://swest.toppers.jp/SWEST25/about
 
 > 大学の研究者や学生、企業の技術者や管理者、その他、組込みシステムに関わる全ての人達が、徹底的に議論できる場を提供することを主な目的とした合宿型のワークショップです。
 
-ちなみに，WACATE(ワカテ: Workshop for Accelerating CApable Testing Engineers)というソフトウェアテストのワークショップがあるのですが，WACATEはSWESTの「議論中心の場」を参考にして設立されたという話を聞いたことがあります．
+ちなみに，WACATE(ワカテ: Workshop for Accelerating CApable Testing Engineers)というソフトウェアテストのワークショップがあるのですが，WACATEはSWESTの「議論中心の場」を参考にして設立されたという話を聞いたことがあります(ただし，WACATEには私は関わっていません)．
 
 https://wacate.jp
 
