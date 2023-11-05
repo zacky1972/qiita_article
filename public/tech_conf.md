@@ -75,6 +75,8 @@ https://swest.toppers.jp/SWEST7/report.html
 
 https://swest.toppers.jp/SWEST9/report.html
 
+その後，意図的に毎年ポジションとウェイトを変えながら，実行委員として継続しています．
+
 ### JaSST
 
 私が関わっていたのは，基本的に JaSST Kyushu です．
