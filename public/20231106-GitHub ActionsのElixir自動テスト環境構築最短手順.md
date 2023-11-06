@@ -173,7 +173,9 @@ jobs:
 
 ![Log](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/3f69d9ae-91f9-fe26-f379-631107795726.png)
 
-`mix.exs`は次のようでした．
+ローカル環境を最新にするために，ターミナルで `git pull` をしてください．
+
+さて，`mix.exs`は次のようでした．
 
 ```elixir
 defmodule SampleProject.MixProject do
@@ -212,6 +214,11 @@ end
 
 ![Success](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/b5654cb9-1ad5-5015-4fab-70ac42cef87b.png)
 
+ここまでで，一旦，手順は完成です．
+
+
 ## 5. (オプション)Matrixを用いて複数バージョンでテストする環境を構築する
+
+
 
 ## 6. (オプション)Dependabotを設定する
