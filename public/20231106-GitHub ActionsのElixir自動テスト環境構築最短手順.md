@@ -26,6 +26,26 @@ ignorePublish: false
 
 ## 1. `mix new`で新しいプロジェクトを作る
 
+たとえば `sample_project` というプロジェクトを作ってみます．この名称は他の名称に変更しても良いですが，以降の`sample_project`をその名称に変更します．
+
+```zsh
+mix new sample_project
+```
+
+その後，プロジェクトのディレクトリへ移動します．
+
+```zsh
+cd sample_project
+```
+
+自動テストを実行する方法は下記のとおりです．
+
+```zsh
+mix test
+```
+
+緑色で`1 doctest, 1 test, 0 failures`と表示され，テストが成功することを確認します．
+
 ## 2. GitHubでプロジェクトを新規作成し，登録する
 
 ## 3. ActionsでElixirのテスト環境を設定する
