@@ -113,7 +113,7 @@ Repository nameに，手順1で作成したレポジトリ名である`sample_pr
 
 コードは次のとおりです．
 
-```yaml:elixir.yaml
+```yaml:.github/workflows/elixir.yaml
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -219,6 +219,160 @@ end
 
 ## 5. (オプション)Matrixを用いて複数バージョンでテストする環境を構築する
 
+Elixirの複数バージョンでテストする方法をご紹介します．
 
+まずブランチを切ります．名前はなんでも良いのですが，仮に`matrix`とします．
+
+```zsh
+git checkout -b matrix
+```
+
+次にエディタで`.github/workflows/elixir.yml`を開いて，次のように修正します．
+この例では，Elixirのバージョン`1.15.7`と`1.16.0-rc.0`でテストします．
+
+```yaml:.github/workflows/elixir.yml
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Elixir CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        elixir-version: ['1.15.7', '1.16.0-rc.0']
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@61e01a43a562a89bfc54c7f9a378ff67b03e4a21 # v1.16.0
+      with:
+        elixir-version: ${{ matrix.elixir-version }} # [Required] Define the Elixir version
+        otp-version: '26.0'      # [Required] Define the Erlang/OTP version
+    - name: Restore dependencies cache
+      uses: actions/cache@v3
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run tests
+      run: mix test
+```
+
+差分は次のとおりです．
+
+```diff
+diff --git a/.github/workflows/elixir.yml b/.github/workflows/elixir.yml
+index 132226f..3d2ce78 100644
+--- a/.github/workflows/elixir.yml
++++ b/.github/workflows/elixir.yml
+@@ -20,12 +20,16 @@ jobs:
+     name: Build and test
+     runs-on: ubuntu-latest
+ 
++    strategy:
++      matrix:
++        elixir-version: ['1.15.7', '1.16.0-rc.0']
++
+     steps:
+     - uses: actions/checkout@v3
+     - name: Set up Elixir
+       uses: erlef/setup-beam@61e01a43a562a89bfc54c7f9a378ff67b03e4a21 # v1.16.0
+       with:
+-        elixir-version: '1.15.2' # [Required] Define the Elixir version
++        elixir-version: ${{ matrix.elixir-version }} # [Required] Define the Elixir version
+         otp-version: '26.0'      # [Required] Define the Erlang/OTP version
+     - name: Restore dependencies cache
+       uses: actions/cache@v3
+```
+
+たとえば次のように`commit`します．
+
+```zsh
+git commit -am "ci: add matrix strategy"
+```
+
+その後，次のようにブランチごとpushします．`matrix`の部分は，作成したブランチ名が入ります．
+
+```zsh
+git push --set-upstream origin matrix 
+```
+
+すると次のようにメッセージが出ると思いますので，中に表示されているURLを開きます．
+
+```
+% git push --set-upstream origin matrix
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 478 bytes | 478.00 KiB/s, done.
+Total 5 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote: 
+remote: Create a pull request for 'matrix' on GitHub by visiting:
+remote:      https://github.com/zacky1972/sample_project/pull/new/matrix
+remote: 
+To github.com:zacky1972/sample_project.git
+ * [new branch]      matrix -> matrix
+branch 'matrix' set up to track 'origin/matrix'.
+```
+
+あるいは，GitHubプロジェクト画面に下図のような`Compare & pull request`ボタンが表示されますので，それを押下します．
+
+![Compare & pull request](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/15c8cf4c-982e-3454-6b20-c1133abee9dd.png)
+
+あるいは，下図の`Pull requests`を押します．
+
+![tool bar](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/8a03b20b-d783-e58f-e91f-0966c77c6d90.png)
+
+その後，右の`New pull request`ボタンを押し，`compare: main`を押下して，`matrix`を選択します．
+
+![compare: matrix](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/a5954e4b-3a23-18fa-1f7e-db70ee71595f.png)
+
+次のようになるはずです．右の緑の`Create pull request`ボタンを押します．
+
+![Create pull request](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/4c137ce6-6872-6e92-809c-140dfcfc6c63.png)
+
+以上の3つの方法のどれかを用いると，次の画面になります．下の緑の`Create pull request`ボタンを押します．
+
+![Create pull request](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/1bac33a1-aaeb-94ab-4f27-b939af4ab067.png)
+
+次の画面で下図のように2つテストが走れば大成功です．
+
+![CI](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/74f6a76b-cfd3-8edf-7a60-2a034f82dbfa.png)
+
+テストが完了すれば下図のようになりますので，緑の`Merge pull request`ボタンを押します．
+
+![Merge pull request](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/d76dbecc-71f8-fc5d-948e-92a51e4c5fca.png)
+
+次の緑の`Confirm merge`ボタンも押します．すると次の画面になります．もうブランチは用済みですので，`Delete branch`を押します．
+
+![Delete branch](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/7e854e0d-81d9-281b-71cf-4da122924fa6.png)
+
+ターミナルに戻って，次のコマンドを打ちます．`matrix`には作成したブランチ名を入れます．
+
+```zsh
+git checkout main
+git pull
+git branch -D matrix
+```
 
 ## 6. (オプション)Dependabotを設定する
