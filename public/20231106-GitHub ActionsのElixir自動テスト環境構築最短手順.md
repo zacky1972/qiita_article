@@ -5,7 +5,7 @@ tags:
   - dependabot
   - GitHubActions
 private: true
-updated_at: '2023-11-06T22:19:45+09:00'
+updated_at: '2023-11-06T22:02:38+09:00'
 id: 993f50a2add27763edf3
 organization_url_name: null
 slide: false
@@ -411,3 +411,14 @@ git pull
 ```
 
 このようにすることで，GitHub Actions，もしくは，使用するHexパッケージが更新されると，自動的にPRが発行されます．便利ですね．
+
+しばらくすると，GitHubの右上部分に，下図のように通知が来ることがあります．
+
+![notification](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/ae809ddb-c246-81a7-8b6f-346efb36ca41.png)
+
+クリックして開いてみると，次のような感じで更新のPRが来ています．
+
+![notifications](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/0b0c798a-3614-4cf7-b42c-1657b68ba8cf.png)
+
+これを開いて良さそうならばマージしていきましょう．
+
