@@ -4,7 +4,7 @@ tags:
   - dependabot
   - GitHubActions
 private: true
-updated_at: '2023-11-05T17:41:14+09:00'
+updated_at: '2023-11-06T19:59:48+09:00'
 id: d1d159f8bcf24d012fbc
 organization_url_name: null
 slide: false
