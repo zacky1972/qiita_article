@@ -4,10 +4,10 @@ tags:
   - Elixir
   - dependabot
   - GitHubActions
-private: true
+private: false
 updated_at: '2023-11-06T22:24:58+09:00'
 id: 993f50a2add27763edf3
-organization_url_name: null
+organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
