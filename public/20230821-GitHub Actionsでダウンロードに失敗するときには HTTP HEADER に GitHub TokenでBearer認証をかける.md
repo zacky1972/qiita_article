@@ -6,7 +6,7 @@ tags:
   - nx
   - EXLA
 private: false
-updated_at: '2023-08-21T21:50:17+09:00'
+updated_at: '2023-11-06T20:20:16+09:00'
 id: 26cfba3d093420bf80a0
 organization_url_name: fukuokaex
 slide: false
