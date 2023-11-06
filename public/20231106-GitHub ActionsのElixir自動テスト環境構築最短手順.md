@@ -376,3 +376,38 @@ git branch -D matrix
 ```
 
 ## 6. (オプション)Dependabotを設定する
+
+最後にDependabotを設定する方法を紹介します．Dependabotを設定することで，GitHub Actionsやhexライブラリが更新された時に，GitHubがPRを自動で作ってくれます．
+
+まず下図の`Settings`を押します．
+
+![tool bar overview](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/f4c17522-7456-8366-88fa-ae9e09c1716e.png)
+
+次のように`...`が出ている場合には，`...`を押してから`Settings`を押します．
+
+![tool bar dotted](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/1e3ffd5a-bcd6-edf1-511f-ff8d8d361ec3.png)
+
+左側の`Code security and analysis`を押します．
+
+![Code security and analysis](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/2c8555a3-54a9-2076-8d3e-6fd4142d1d7b.png)
+
+下図の`Dependabot`部分の`Enables`ボタンを全て押します．
+
+![Dependabot](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/b4269dce-8a18-9de7-7ef5-263c74ab3c9b.png)
+
+一番下の`Dependabot version updates`の`Enable`を押すと下図の画面になります．
+
+![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/cd54650b-c55b-a999-2bb3-b7ff925fb816.png)
+
+下図のようにして，右上の緑の`Commit changes...`を押します．
+
+![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/efd79979-7742-a846-068e-156d61821ffe.png)
+
+次のポップアップも下の緑の`Commit changes`を押します．下記コマンドで，ターミナルで`main`ブランチに移動した後，`git pull`とします．
+
+```zsh
+git checkout main
+git pull
+```
+
+このようにすることで，GitHub Actions，もしくは，使用するHexパッケージが更新されると，自動的にPRが発行されます．便利ですね．
