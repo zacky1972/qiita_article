@@ -99,7 +99,118 @@ Repository nameに，手順1で作成したレポジトリ名である`sample_pr
 
 ## 3. ActionsでElixirのテスト環境を設定する
 
+作成したGitHubプロジェクトの下図部分の`Actions`をクリックします．
+
+![tool bar](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/8a03b20b-d783-e58f-e91f-0966c77c6d90.png)
+
+すると下図のような画面になると思います．おすすめされるままに`Elixir`の下の`Configure`を押します．
+
+![Get Started with GitHub Actions](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/d121275e-fdf5-b882-cf95-c95b4b8dcb70.png)
+
+すると下図のような画面になります．
+
+![elixir.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/bb38a125-e770-1706-8074-97a98f67e9d4.png)
+
+コードは次のとおりです．
+
+```yaml:elixir.yaml
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Elixir CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    name: Build and test
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Elixir
+      uses: erlef/setup-beam@61e01a43a562a89bfc54c7f9a378ff67b03e4a21 # v1.16.0
+      with:
+        elixir-version: '1.15.2' # [Required] Define the Elixir version
+        otp-version: '26.0'      # [Required] Define the Erlang/OTP version
+    - name: Restore dependencies cache
+      uses: actions/cache@v3
+      with:
+        path: deps
+        key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+        restore-keys: ${{ runner.os }}-mix-
+    - name: Install dependencies
+      run: mix deps.get
+    - name: Run tests
+      run: mix test
+```
+
+右上の緑色の`Commit changes...`を押します．すると次のポップアップが出ますので，右下の`Commit changes`を押します．
+
+![Popup](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/1646cd81-55db-de6a-b487-94a4aeedef87.png)
+
 ## 4. テストが成功することを確認する
+
+その後，プロジェクト画面に戻るので，`Actions`を押します．
+
+![tool bar](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/8a03b20b-d783-e58f-e91f-0966c77c6d90.png)
+
+順調にいけば，下記のワークフローが緑✅で完了するのですが，私の場合，次のようにエラーになりました．
+
+![Create elixir.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/773a1635-3378-3715-78ee-d506e1c7ba79.png)
+
+`Create elixir.yml`をクリックして，`Build and test`をクリックすると，下図のようなログを出して，原因を探ることができます．この場合，`mix.exs`に定義しているElixirバージョンが新しすぎたみたいです．
+
+![Log](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/3f69d9ae-91f9-fe26-f379-631107795726.png)
+
+`mix.exs`は次のようでした．
+
+```elixir
+defmodule SampleProject.MixProject do
+  use Mix.Project
+
+  def project do
+    [
+      app: :sample_project,
+      version: "0.1.0",
+      elixir: "~> 1.16-rc",
+      start_permanent: Mix.env() == :prod,
+      deps: deps()
+    ]
+  end
+
+  # Run "mix help compile.app" to learn about applications.
+  def application do
+    [
+      extra_applications: [:logger]
+    ]
+  end
+
+  # Run "mix help deps" to learn about dependencies.
+  defp deps do
+    [
+      # {:dep_from_hexpm, "~> 0.3.0"},
+      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+    ]
+  end
+end
+```
+
+この `project` 関数の中の `elixir:` の後の，`1.16-rc`を`1.15`に変更して，commitし，pushします．
+
+プロジェクト画面の`Actions`を再確認すると，次のように成功しました．
+
+![Success](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/b5654cb9-1ad5-5015-4fab-70ac42cef87b.png)
 
 ## 5. (オプション)Matrixを用いて複数バージョンでテストする環境を構築する
 
