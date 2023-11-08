@@ -1,11 +1,11 @@
 ---
 title: Dependabotで依存関係の更新を検出後，自動テストに成功したらPRを自動マージする方法
 tags:
+  - Elixir
   - dependabot
   - GitHubActions
-  - Elixir
 private: true
-updated_at: '2023-11-06T22:27:41+09:00'
+updated_at: '2023-11-09T01:57:49+09:00'
 id: d1d159f8bcf24d012fbc
 organization_url_name: null
 slide: false
