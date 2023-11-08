@@ -399,6 +399,10 @@ git branch -D matrix
 
 ![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/cd54650b-c55b-a999-2bb3-b7ff925fb816.png)
 
+下図のようにして，右上の緑の`Commit changes...`を押します．
+
+![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/efd79979-7742-a846-068e-156d61821ffe.png)
+
 次のようなコードです．
 
 ```yaml:.github/dependabot.yml
@@ -418,10 +422,6 @@ updates:
     schedule:
       interval: "daily"
 ```
-
-下図のようにして，右上の緑の`Commit changes...`を押します．
-
-![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/efd79979-7742-a846-068e-156d61821ffe.png)
 
 次のポップアップも下の緑の`Commit changes`を押します．下記コマンドで，ターミナルで`main`ブランチに移動した後，`git pull`とします．
 
