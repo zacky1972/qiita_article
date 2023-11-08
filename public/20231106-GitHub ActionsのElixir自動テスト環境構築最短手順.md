@@ -399,6 +399,26 @@ git branch -D matrix
 
 ![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/cd54650b-c55b-a999-2bb3-b7ff925fb816.png)
 
+次のようなコードです．
+
+```yaml:.github/dependabot.yml
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions" 
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+  - package-ecosystem: "mix" 
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+```
+
 下図のようにして，右上の緑の`Commit changes...`を押します．
 
 ![dependabot.yml](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/efd79979-7742-a846-068e-156d61821ffe.png)
