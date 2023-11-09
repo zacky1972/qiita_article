@@ -121,7 +121,7 @@ jobs:
 
     name: Build and test
     runs-on: ubuntu-latest
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize' && startsWith( github.head_ref, 'dependabot' ) }}
 
     strategy:
       matrix:
@@ -146,8 +146,9 @@ jobs:
       run: mix test
   dependabot:
     runs-on: ubuntu-latest
+    permissions: write-all
     needs: build
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize'  && startsWith( github.head_ref, 'dependabot' ) }}
     steps:
       - name: Dependabot metadata
         id: metadata
@@ -174,10 +175,11 @@ jobs:
 3. `build`ジョブに`if: ${{ github.actor == 'dependabot[bot]' }}`をつけて，Dependabot実行時のみテストするようにします．
 4. `dependabot`ジョブについて
   1. `runs-on: ubuntu-latest`として，最もコストの安いUbuntuの最新版でジョブを実行します．
-  2. `needs: build`とすることで，前のジョブ`build`が正常終了した時，すなわちテストが通った後に実行するように指定します．
-  3. `if: ${{ github.actor == 'dependabot[bot]' }}`とすることで，Dependabotが実行している時のみ実行するようにします．
-  4. 最初のステップ`Dependabot metadata`は，Denpendabotの実行時に得られるメタデータを取得します．
-  5. 次のステップ`Approve and enable auto-merge for Dependabot PRs`が本題です．
+  2. `permissions: write-all` として，書き込み権限を与えます．
+  3. `needs: build`とすることで，前のジョブ`build`が正常終了した時，すなわちテストが通った後に実行するように指定します．
+  4. `if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize'  && startsWith( github.head_ref, 'dependabot' ) }}`とすることで，Dependabotが実行している時のみ，もしくは再pushしてブランチ名が`dependabot`で始まる場合に実行します．
+  5. 最初のステップ`Dependabot metadata`は，Denpendabotの実行時に得られるメタデータを取得します．
+  6. 次のステップ`Approve and enable auto-merge for Dependabot PRs`が本題です．
     * `steps.metadata.outputs.package-ecosystem == 'mix'` はDependabotの`package-ecosystem`が`mix`の時を表します．
     * `steps.metadata.outputs.update-type == 'version-update:semver-patch'`とすることで，パッチバージョン(バージョン番号が`x.y.z`だった時に`z`のこと)に更新があった時を表します．
     * これらのアンド`&&`を取るので，両方の条件が成立した時に実行します．
@@ -185,3 +187,4 @@ jobs:
     * 次の`run`により，`gh`コマンドを使用して，PRをapproveしてから，PRのタイトルの先頭に`(auto merged)`を付加し，auto-mergeします．
     * その際に必要な環境変数を`env`以下で設定します．
 
+さらに書き込み権限を与えるために，Settings > Actions > General の，Workflow permissions の Allow GitHub Actions to create and approve pull requests にチェックを入れて，Saveボタンを押します．
