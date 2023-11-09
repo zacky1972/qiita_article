@@ -24,10 +24,6 @@ https://qiita.com/zacky1972/items/993f50a2add27763edf3
 Dependabotで次のようにしています．
 
 ```yaml:.github/dependabot.yml
-
-次のようなコードです．
-
-```yaml:.github/dependabot.yml
 # To get started with Dependabot version updates, you'll need to specify which
 # package ecosystems to update and where the package manifests are located.
 # Please see the documentation for all configuration options:
