@@ -188,3 +188,7 @@ jobs:
     * その際に必要な環境変数を`env`以下で設定します．
 
 さらに書き込み権限を与えるために，Settings > Actions > General の，Workflow permissions の Allow GitHub Actions to create and approve pull requests にチェックを入れて，Saveボタンを押します．
+
+Dependabotが動作するような状況になるまで待ちます．うまくいけば，Dependabotが発動し，かつHexパッケージがパッチバージョンの更新か，GitHub Actionsの更新があったときには，次のようにPull Requestに`(auto merged)` という名前が先頭に付記されて，`Merged`かつ`Closed`になる結果になるはずです！
+
+![(auto merged)](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/9175ac8d-3f72-2dea-d274-57019e8ce60b.png)
