@@ -168,7 +168,7 @@ jobs:
 
 1. `name: Dependabot auto-merge`として名称変更しています．
 2. `on: pull_request`として，全てのPRで実行するようにします．
-3. `build`ジョブに`if: ${{ github.actor == 'dependabot[bot]' }}`をつけて，Dependabot実行時のみテストするようにします．
+3. `build`ジョブに`if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize'  && startsWith( github.head_ref, 'dependabot' ) }}`をつけて，Dependabot実行時，もしくは再pushしてブランチ名が`dependabot`で始まる場合に，テストするようにします．
 4. `dependabot`ジョブについて
   1. `runs-on: ubuntu-latest`として，最もコストの安いUbuntuの最新版でジョブを実行します．
   2. `permissions: write-all` として，書き込み権限を与えます．
