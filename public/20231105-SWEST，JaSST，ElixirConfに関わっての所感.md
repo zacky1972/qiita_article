@@ -156,9 +156,11 @@ SWEST，JaSST，ElxirConfの3つの技術カンファレンスに共通する文
 
 ### JaSST
 
+* 講演のYouTube公開配信の検討を
 * 日本の誇れるソフトウェアテスト技術・品質保証技術を国内だけでなく海外に発信してほしい
 
 ### ElixirConf
 
+* スポンサーを募って，ElixirConf USへのレポーター制度を導入したい
 * ElixirConf JPをリブートしたい．それもElixirConf USのスタイルに近い形で．
 
