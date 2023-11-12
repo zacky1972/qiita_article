@@ -5,14 +5,21 @@ tags:
   - ソフトウェアテスト
   - 技術カンファレンス
   - 組込みシステム
+<<<<<<< Updated upstream
 private: true
 updated_at: '2023-11-12T10:09:37+09:00'
+=======
+private: false
+updated_at: '2023-11-12T09:41:10+09:00'
+>>>>>>> Stashed changes
 id: 48c8b99919b70a5eeaca
 organization_url_name: null
 slide: false
 ignorePublish: false
 ---
 私はこれまで，SWEST，JaSST，ElxirConfの3つの技術カンファレンス(TechConf)の運営や企画，発表などに関わってきました．その経験を踏まえ，これら3つを比較しながら，それぞれの技術カンファレンスの文化を紹介していきたいと思います．
+
+※まだ骨子だけしか書けていませんが，言いたいことは一通り書けたので，公開して後から追記するスタイルを取りたいと思います．
 
 ## 本記事で紹介する各技術カンファレンスの概要
 
