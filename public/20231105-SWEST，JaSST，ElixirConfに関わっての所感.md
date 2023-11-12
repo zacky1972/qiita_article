@@ -5,7 +5,7 @@ tags:
   - ソフトウェアテスト
   - 技術カンファレンス
   - 組込みシステム
-private: true
+private: false
 updated_at: '2023-11-12T10:24:57+09:00'
 id: 48c8b99919b70a5eeaca
 organization_url_name: null
