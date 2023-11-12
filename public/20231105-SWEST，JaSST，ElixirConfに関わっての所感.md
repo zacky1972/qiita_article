@@ -6,7 +6,7 @@ tags:
   - 技術カンファレンス
   - 組込みシステム
 private: true
-updated_at: '2023-11-12T09:41:10+09:00'
+updated_at: '2023-11-12T10:09:37+09:00'
 id: 48c8b99919b70a5eeaca
 organization_url_name: null
 slide: false
