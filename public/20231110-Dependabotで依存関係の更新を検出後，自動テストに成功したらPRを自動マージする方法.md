@@ -153,7 +153,7 @@ jobs:
           github-token: "${{ secrets.GITHUB_TOKEN }}"
       - name: Approve and enable auto-merge for Dependabot PRs
         if: |
-          ${{ ( steps.metadata.outputs.package-ecosystem == 'mix' && steps.metadata.outputs.update-type == 'version-update:semver-patch' ) || steps.metadata.outputs.package-ecosystem == 'github-actions' }}
+          ${{ ( steps.metadata.outputs.package-ecosystem == 'hex' && steps.metadata.outputs.update-type == 'version-update:semver-patch' ) || steps.metadata.outputs.package-ecosystem == 'github-actions' }}
         run: |
           gh pr review --approve "$PR_URL"
           gh pr edit "$PR_URL" -t "(auto merged) $PR_TITLE"
@@ -176,10 +176,10 @@ jobs:
   4. `if: ${{ github.actor == 'dependabot[bot]' || github.event.action == 'synchronize'  && startsWith( github.head_ref, 'dependabot' ) }}`とすることで，Dependabotが実行している時のみ，もしくは再pushしてブランチ名が`dependabot`で始まる場合に実行します．
   5. 最初のステップ`Dependabot metadata`は，Denpendabotの実行時に得られるメタデータを取得します．
   6. 次のステップ`Approve and enable auto-merge for Dependabot PRs`が本題です．
-    * `steps.metadata.outputs.package-ecosystem == 'mix'` はDependabotの`package-ecosystem`が`mix`の時を表します．
+    * `steps.metadata.outputs.package-ecosystem == 'hex'` はDependabotの`package-ecosystem`が`hex`の時を表します．`dependabot.yml`では`mix`と指定するのに，ここでは`hex`と指定する必要があるみたいです．
     * `steps.metadata.outputs.update-type == 'version-update:semver-patch'`とすることで，パッチバージョン(バージョン番号が`x.y.z`だった時に`z`のこと)に更新があった時を表します．
     * これらのアンド`&&`を取るので，両方の条件が成立した時に実行します．
-    * さらに`steps.metadata.outputs.package-ecosystem == 'github-actions'`は，Dependabotの`package-ecosystem`が`github-actions`の時を表していて，それとのオア`||`を取るので，全体として，`mix`でかつパッチバージョン更新の時か，`github-actions`の時に実行するようにします．
+    * さらに`steps.metadata.outputs.package-ecosystem == 'github-actions'`は，Dependabotの`package-ecosystem`が`github-actions`の時を表していて，それとのオア`||`を取るので，全体として，`hex`でかつパッチバージョン更新の時か，`github-actions`の時に実行するようにします．
     * 次の`run`により，`gh`コマンドを使用して，PRをapproveしてから，PRのタイトルの先頭に`(auto merged)`を付加し，auto-mergeします．
     * その際に必要な環境変数を`env`以下で設定します．
 
