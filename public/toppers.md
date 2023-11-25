@@ -1,11 +1,11 @@
 ---
 title: TOPPERSプロジェクトRISC-Vワーキンググループの活動開始について
 tags:
-  - 'TOPPERS'
-  - 'RISC-V'
+  - TOPPERS
+  - RISC-V
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-11-25T09:23:27+09:00'
+id: f36851185f9af4331aa8
 organization_url_name: null
 slide: false
 ignorePublish: false
