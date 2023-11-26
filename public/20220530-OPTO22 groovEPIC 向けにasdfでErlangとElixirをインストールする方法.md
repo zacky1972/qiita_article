@@ -25,6 +25,7 @@ ignorePublish: false
 追記 20230930: Elixir, Erlang, OpenSSL, asdfを最新版に追従しました．
 追記 20231022: Elixir, Erlangを最新版に追従しました．
 追記 20231026: OpenSSLを最新版に追従しました．
+追記 20231127: OpenSSLを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -73,37 +74,21 @@ sudo ln -s /usr/lib/jvm/zulu-openjdk-8.0.332/bin/jar /usr/bin/jar
 
 たとえば `/usr/local/src` にソースコードを配置し， `/usr/local/openssl`にインストールするとします。
 
-インストールするErlang/OTPのバージョンによって異なります．Erlang/OTP 25.0系列以前ではOpenSSL 1.1系列が，Erlang/OTP 25.1系列以降では OpenSSL 3系列がそれぞれ推奨です．
+Erlang/OTP 25.0系列以前ではOpenSSL 1.1系列が推奨でしたが，OpenSSL 1.1系列は2023年9月にサポート外となったので，Erlang/OTP 25.0系列以前の使用を推奨されません．
+
+Erlang/OTP 25.1系列以降では OpenSSL 3系列が推奨です．
 
 ### OpenSSL 3系列をインストールする場合(Erlang/OTP 25.1系列以降の推奨)
 
-2023年10月時点での OpenSSL 3系列の最新版はOpenSSL 3.1.4です．ソースコードは`https://www.openssl.org/source/openssl-3.1.4.tar.gz`にあります．
+2023年10月時点での OpenSSL 3系列の最新版はOpenSSL 3.2.0です．ソースコードは`https://www.openssl.org/source/openssl-3.2.0.tar.gz`にあります．
 
 ```bash
 sudo mkdir /usr/local/src
 sudo su
 cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-3.1.4.tar.gz
-tar xvzf openssl-3.1.4.tar.gz
-cd openssl-3.1.4
-./config -fPIC shared --prefix=/usr/local/openssl
-make
-make install_sw
-exit
-```
-
-### OpenSSL 1.1系列をインストールする場合(Erlang/OTP 25.0系列以前の推奨)
-
-2023年9月時点での OpenSSL 1.1.1 の最新版のソースコードは，`https://www.openssl.org/source/openssl-1.1.1w.tar.gz` にありました。
-これらを適宜変更する必要があります。
-
-```bash
-sudo mkdir /usr/local/src
-sudo su
-cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-1.1.1w.tar.gz
-tar xvzf openssl-1.1.1w.tar.gz
-cd openssl-1.1.1w
+curl -OL https://www.openssl.org/source/openssl-3.2.0.tar.gz
+tar xvzf openssl-3.2.0.tar.gz
+cd openssl-3.2.0
 ./config -fPIC shared --prefix=/usr/local/openssl
 make
 make install_sw

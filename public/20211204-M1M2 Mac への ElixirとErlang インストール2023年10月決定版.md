@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2023年10月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2023年11月決定版
 tags:
   - Erlang
   - homebrew
@@ -38,6 +38,7 @@ Elixir 1.15.7 (compiled with Erlang/OTP 26)
 2023.9.26 追記: Xcodeのバージョンを最新にしました．Elixirのバージョンを明記しました．
 2023.9.28 追記: Erlangのバージョンアップをしました．
 2023.10.21 追記: Erlangのバージョンアップをしました．
+2023.11.27 追記: OpenSSL 1.1系列がサポート外になったことを踏まえて，記述を見直しました．
 
 # 1. macOSアップグレード
 
@@ -120,7 +121,9 @@ Erlang/OTP 25.1以降をインストールする場合には，次のように�
 export KERL_CONFIGURE_OPTIONS="--with-ssl=$(brew --prefix openssl@3) --with-odbc=$(brew --prefix unixodbc)" CC="/usr/bin/gcc -I$(brew --prefix unixodbc)/include" LDFLAGS=-L$(brew --prefix unixodbc)/lib
 ```
 
-もしErlang/OTP 25.0以前をインストールする場合には，次のようにしてOpenSSL 1.1系列を用いるように環境変数を設定します。
+2023.11.27 追記: OpenSSL 1.1系列がサポート外になったことを踏まえて，記述を見直しました．
+
+もしErlang/OTP 25.0以前をインストールする場合には，次のようにしてOpenSSL 1.1系列を用いるように環境変数を設定します．ただし，OpenSSL 1.1系列は2023年9月にサポート外になりましたので，Erlang/OTP 25.0系列以前の使用を推奨されません．．
 
 ```zsh
 brew install openssl@1.1
