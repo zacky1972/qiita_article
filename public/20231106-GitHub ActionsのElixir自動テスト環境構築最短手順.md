@@ -13,6 +13,12 @@ ignorePublish: false
 ---
 本記事では表題通り，GitHub Actionsを用いてElixir自動テスト環境を構築する最短手順をご紹介します．Dependabotの設定もつけています．
 
+## GitHub Actions による自動テスト環境を導入する意義
+
+GitHubを用いて開発しているときに，ソースコード改変のたびにLinux/Windows/macOS等の様々な環境でテストして動作を確認するのは大変な労力がかかります．
+
+自動テスト環境がすでに構築されている場合(Elixirの場合では，`mix test`による自動テストを実施できている場合)に，本記事に沿って環境を設定するだけで，ソースコードをGitHubのmainブランチにpushもしくはPull Requestを送るたびに，GitHubのクラウド上のUbuntu環境で自動テストを実行して結果を得ることができます．
+
 ## 手順
 
 本手法の手順は次のとおりです．
