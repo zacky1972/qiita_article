@@ -5,7 +5,7 @@ tags:
   - dependabot
   - GitHubActions
 private: false
-updated_at: '2023-11-09T01:12:32+09:00'
+updated_at: '2023-12-01T00:47:12+09:00'
 id: 993f50a2add27763edf3
 organization_url_name: fukuokaex
 slide: false
