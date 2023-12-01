@@ -1,10 +1,12 @@
 ---
-title: 第13回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門 への「RISC-Vプロファイルに沿ったRISC-V64ビットプロセッサ向けTOPPERSカーネル標準化」の提案 
+title: >-
+  第13回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門
+  への「RISC-Vプロファイルに沿ったRISC-V64ビットプロセッサ向けTOPPERSカーネル標準化」の提案
 tags:
   - TOPPERS
   - RISC-V
 private: false
-updated_at: '2023-12-01T00:47:12+09:00'
+updated_at: '2023-12-02T01:51:01+09:00'
 id: f36851185f9af4331aa8
 organization_url_name: null
 slide: false
