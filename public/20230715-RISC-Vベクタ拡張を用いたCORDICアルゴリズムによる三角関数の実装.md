@@ -7,7 +7,7 @@ tags:
   - RISC-V
   - CORDIC
 private: false
-updated_at: '2023-07-15T12:02:05+09:00'
+updated_at: '2023-12-03T05:59:51+09:00'
 id: e3ec1e57168e685e2893
 organization_url_name: fukuokaex
 slide: false
