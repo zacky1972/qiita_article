@@ -6,7 +6,7 @@ tags:
   - TOPPERS
   - RISC-V
 private: false
-updated_at: '2023-12-02T01:51:01+09:00'
+updated_at: '2023-12-02T09:02:45+09:00'
 id: f36851185f9af4331aa8
 organization_url_name: null
 slide: false
