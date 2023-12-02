@@ -21,7 +21,7 @@ ignorePublish: false
 
 $\sin$関数と$\cos$関数を同時に求めるアルゴリズムとしてCORDICアルゴリズムがあります．これは下記論文に示すように，非常に古くからあるアルゴリズムで，初稿が1956年に遡ります．
 
-* Volder, J. E.: Binary Computation Algorithms for Coordinate Rotation and Function Generation (1956). (internal report), Convair, Aeroelectronics group, IAR-1.148. 
+* Volder, J. E.: Binary Computation Algorithms for Coordinate Rotation and Function Generation (1956). (internal report), Convair, Aeroelectronics group, IAR-1.148.
 * Volder, J. E.: The Birth of CORDIC, Journal of VLSI Signal Processing, Vol. 25, No. 2 (Special issue on CORDIC), pp. 101–105 (online), DOI: 10.1023/A:1008110704586 (2000).  
 
 本研究の動機としては，RISC-Vベクタ拡張(RVV)を用いて，複数の角度に対するCORDICアルゴリズムでの計算をベクトル化してみようというものです．RISC-Vはオープン標準である命令セットアーキテクチャ(ISA)であり，RVVはRISC-Vの目玉機能として規格の策定が進められて，2021年にバージョン1.0として批准されました．
