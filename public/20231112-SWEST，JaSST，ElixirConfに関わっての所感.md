@@ -6,7 +6,7 @@ tags:
   - 技術カンファレンス
   - 組込みシステム
 private: false
-updated_at: '2023-11-12T10:43:35+09:00'
+updated_at: '2023-12-03T05:53:41+09:00'
 id: 48c8b99919b70a5eeaca
 organization_url_name: fukuokaex
 slide: false
