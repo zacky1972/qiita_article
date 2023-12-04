@@ -12,7 +12,7 @@ ignorePublish: false
 ---
 AtCoder Beginners Selectionは初心者向けのAtCoderの問題ですが，最後の問題 ABC086C Travelingを Elixir で解こうとすると，TLE(実行時間制限超過)になってしまって，なかなか解けないでいました．しかし，Streamを駆使することで，ついに解けましたので，ご報告します．
 
-https://atcoder.jp/contests/abs/submissions/48188980
+https://atcoder.jp/contests/abs/submissions/48189543
 
 ```elixir
 defmodule Main do
@@ -79,7 +79,6 @@ defmodule Main do
         {:halt, t}
       end
     end)
-    |> Enum.to_list()
     |> Enum.count()
     |> case do
       ^n -> "Yes"
@@ -168,7 +167,6 @@ defmodule Main do
         {:halt, t}
       end
     end)
-    |> Enum.to_list()
     |> Enum.count()
     |> case do
       ^n -> "Yes"
@@ -181,7 +179,7 @@ end
 
 これにより，TLE(実行時間制限超過)が2つにまで減りました．
 
-https://atcoder.jp/contests/abs/submissions/48188939
+https://atcoder.jp/contests/abs/submissions/48189564
 
 入力例と`IO.stream`の挙動について考察してみると，改行を境に一度に3つの値を読み込むような感じになります．もし，バッファリングされていないのだとすると，細切れに値を読み込むことになります．ここがボトルネックになりそうです．
 
