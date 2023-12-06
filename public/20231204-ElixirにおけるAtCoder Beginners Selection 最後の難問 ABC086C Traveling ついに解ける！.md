@@ -4,7 +4,7 @@ tags:
   - AtCoder
   - Elixir
 private: false
-updated_at: '2023-12-04T17:24:49+09:00'
+updated_at: '2023-12-07T05:54:54+09:00'
 id: 810a7e8567dbd1688ae3
 organization_url_name: fukuokaex
 slide: false
