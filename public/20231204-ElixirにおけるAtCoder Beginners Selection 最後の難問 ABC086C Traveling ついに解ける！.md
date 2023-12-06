@@ -10,7 +10,7 @@ organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
-AtCoder Beginners Selectionは初心者向けのAtCoderの問題ですが，最後の問題 ABC086C Travelingを Elixir で解こうとすると，TLE(実行時間制限超過)になってしまって，なかなか解けないでいました．しかし，Streamを駆使することで，ついに解けましたので，ご報告します．
+AtCoder Beginners Selectionは初心者向けのAtCoderの問題ですが，新しいレギュレーションになって以来，最後の問題 ABC086C Travelingを Elixir で解こうとすると，TLE(実行時間制限超過)になってしまって，なかなか解けないでいました．しかし，Streamを駆使することで，ついに解けましたので，ご報告します．
 
 https://atcoder.jp/contests/abs/submissions/48189543
 
