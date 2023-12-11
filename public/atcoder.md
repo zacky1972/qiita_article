@@ -1,12 +1,12 @@
 ---
 title: AtCoder Beginner Contest 332 A Online Shopping を Elixir と C で解いてみた
 tags:
+  - C
   - AtCoder
   - Elixir
-  - C
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-11T17:11:37+09:00'
+id: 61f8dcefc71cb6d0117b
 organization_url_name: null
 slide: false
 ignorePublish: false
