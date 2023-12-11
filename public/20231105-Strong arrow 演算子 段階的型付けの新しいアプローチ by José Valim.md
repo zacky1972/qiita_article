@@ -4,7 +4,7 @@ tags:
   - Elixir
   - 型システム
 private: true
-updated_at: '2023-12-11T17:11:36+09:00'
+updated_at: '2023-12-11T17:13:33+09:00'
 id: e8ffa1be10e0e4fad427
 organization_url_name: null
 slide: false
