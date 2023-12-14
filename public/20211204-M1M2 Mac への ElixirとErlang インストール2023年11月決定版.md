@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2023年11月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2023年12月決定版
 tags:
   - Erlang
   - homebrew
@@ -39,6 +39,7 @@ Elixir 1.15.7 (compiled with Erlang/OTP 26)
 2023.9.28 追記: Erlangのバージョンアップをしました．
 2023.10.21 追記: Erlangのバージョンアップをしました．
 2023.11.27 追記: OpenSSL 1.1系列がサポート外になったことを踏まえて，記述を見直しました．
+2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
 
 # 1. macOSアップグレード
 
@@ -101,13 +102,14 @@ source ${ZDOTDIR:-~}/.zshrc
 この手順がポイントです。まず前提となるライブラリ群をインストールします。なお，OpenSSLは`asdf`を入れる際に3系統が入る模様です。
 
 2023.6.23 追記: 最初にインストールされるOpenSSLのバージョンが3系統になっていたのを確認しました．
+2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
 
 
 ```zsh
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
 brew install wxwidgets
 brew install openjdk
-echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ${ZDOTDIR:-~}/.zshrc
+echo 'export PATH=$(brew --prefix openjdk)/bin:$PATH"' >> ${ZDOTDIR:-~}/.zshrc
 source ${ZDOTDIR:-~}/.zshrc
 brew install fop
 ```
