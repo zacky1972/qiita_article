@@ -5,7 +5,7 @@ tags:
   - Nerves
   - Pelemay
 private: false
-updated_at: '2021-12-22T13:49:35+09:00'
+updated_at: '2023-12-16T08:51:47+09:00'
 id: f0b47eded7c902008871
 organization_url_name: fukuokaex
 slide: false

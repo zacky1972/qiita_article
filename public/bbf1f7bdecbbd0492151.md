@@ -4,10 +4,10 @@ tags:
   - Java
   - C
   - Elixir
-private: true
-updated_at: '2023-12-16T08:51:47+09:00'
-id: 1482c8cc091e82f0cc79
-organization_url_name: null
+private: false
+updated_at: '2023-01-13T20:07:39+09:00'
+id: bbf1f7bdecbbd0492151
+organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
@@ -17,10 +17,11 @@ ignorePublish: false
 
 シリーズ
 
-1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その1「背景: クロック周波数の停滞とコア数の増加」](https://qiita.com/zacky1972/private/a0de62e98424fa63f3f8)
+1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その1「背景: クロック周波数の停滞とコア数の増加」](https://qiita.com/zacky1972/items/bfb3bd920f7bcea02c23)
 1. **並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その2「スレッドと同期・排他制御」**(本記事)
-1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その3「同期・排他制御の2つの問題点」](https://qiita.com/zacky1972/private/b34077c59784b6cfb71a)
-1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その4「イミュータブル性の利点」](https://qiita.com/zacky1972/private/8330e53feb792f9d55ea)
+1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その3「同期・排他制御の2つの問題点」](https://qiita.com/zacky1972/items/10787cb6104c82016487)
+1. [並行・並列プログラミングと同期・排他制御とイミュータブル性の話〜その4「イミュータブル性の利点」](https://qiita.com/zacky1972/items/fa362f4d9b1252a207ad)
+
 
 # スレッド
 
@@ -395,4 +396,4 @@ C言語に比べて，Javaだと並行・並列プログラミングがだいぶ
 
 このように並行・並列プログラミングにおいて，同期・排他制御は重要な役割を演じるのですが，問題点があります．そのことについて次の記事で紹介します．
 
-https://qiita.com/zacky1972/private/b34077c59784b6cfb71a
+https://qiita.com/zacky1972/items/10787cb6104c82016487
