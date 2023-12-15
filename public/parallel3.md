@@ -4,8 +4,8 @@ tags:
   - C
   - Elixir
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-12-16T08:38:14+09:00'
+id: b34077c59784b6cfb71a
 organization_url_name: null
 slide: false
 ignorePublish: false
