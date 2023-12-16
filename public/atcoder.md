@@ -12,6 +12,12 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
+トヨタシステムズプログラミングコンテスト2023(AtCoder Beginner Contest 330)の A - Counting Passes を Elixir で解きましたので，ご報告します．
+
+## 問題
+
+https://atcoder.jp/contests/abc330/tasks/abc330_a
+
 ## 簡易ローカルテスト環境の構築
 
 次のようなMakefileを書きました．
@@ -32,7 +38,7 @@ Code.eval_file("main.exs")
 Main.main()
 ```
 
-入力例1を`in1.txt`，出力例1を`out1.txt`のように与え，`main.exs`に解答を書きます．
+入力例1を`in1.txt`，出力例1を`out1.txt`のように与え，`main.exs`に解答を書きます．その後，`make`コマンドを実行します．
 
 ## 解答例
 
