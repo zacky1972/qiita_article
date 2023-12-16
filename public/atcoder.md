@@ -1,11 +1,13 @@
 ---
-title: A - Counting Passes を Elixir で解いた〜トヨタシステムズプログラミングコンテスト2023(AtCoder Beginner Contest 330)
+title: >-
+  A - Counting Passes を Elixir で解いた〜トヨタシステムズプログラミングコンテスト2023(AtCoder Beginner
+  Contest 330)
 tags:
-  - Elixir
   - AtCoder
+  - Elixir
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-12-17T06:49:43+09:00'
+id: 39e09321c75c7b41526f
 organization_url_name: null
 slide: false
 ignorePublish: false

@@ -5,7 +5,7 @@ tags:
   - テスト自動化
   - GitHubActions
 private: true
-updated_at: '2023-12-16T08:51:46+09:00'
+updated_at: '2023-12-17T06:49:43+09:00'
 id: 51fe2db6c54c56b1ecea
 organization_url_name: null
 slide: false
