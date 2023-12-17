@@ -39,7 +39,7 @@ Main.main()
 
 入力例1を`in1.txt`，出力例1を`out1.txt`のように与え，`main.exs`に解答を書きます．その後，`make`コマンドを実行します．
 
-## アルゴリズム上の工夫$O(n^3)$から　$O(n)$へ
+## アルゴリズム上の工夫
 
 下記のプログラムをもとにアルゴリズム上の工夫を検討します．
 
@@ -127,7 +127,7 @@ end
 
 ローカルで実行して，結果が変わらないことを確認します．以後，プログラムを修正するたびに，結果が変わらないことを確認します．
 
-Enum.reduceをEnum.mapとEnum.reduceに分解します．
+`Enum.reduce`を`Enum.map`と`Enum.reduce`に分解します．
 
 ```elixir:main.exs
 defmodule Main do
