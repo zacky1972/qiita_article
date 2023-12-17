@@ -1,12 +1,12 @@
 ---
 title: OSS "Pelemay Backend" で行っているGitHub Actionsによる自動化事例2023年12月版
 tags:
-  - GitHubActions
   - Elixir
   - テスト自動化
+  - GitHubActions
 private: true
-updated_at: ''
-id: null
+updated_at: '2023-12-18T07:31:19+09:00'
+id: c56da534e391de50f597
 organization_url_name: null
 slide: false
 ignorePublish: false
