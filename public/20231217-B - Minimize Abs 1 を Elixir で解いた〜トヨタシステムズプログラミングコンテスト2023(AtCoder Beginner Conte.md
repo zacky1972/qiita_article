@@ -6,7 +6,7 @@ tags:
   - AtCoder
   - Elixir
 private: true
-updated_at: '2023-12-18T07:31:20+09:00'
+updated_at: '2023-12-18T08:00:08+09:00'
 id: b35641d2dc838ef34bdb
 organization_url_name: null
 slide: false
