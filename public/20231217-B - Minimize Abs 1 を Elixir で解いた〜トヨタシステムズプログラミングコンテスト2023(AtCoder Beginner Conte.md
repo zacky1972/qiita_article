@@ -763,7 +763,7 @@ defmodule Main do
 end
 ```
 
-この条件を満たすのは，`x = r`の時だけですので，次のようになります．
+この条件を満たすのは，`x == r`の時だけですので，次のようになります．
 
 ```elixir:main.exs
 defmodule Main do
