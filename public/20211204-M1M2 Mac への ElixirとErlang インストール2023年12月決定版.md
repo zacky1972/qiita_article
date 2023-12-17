@@ -7,7 +7,7 @@ tags:
   - asdf
   - M1
 private: false
-updated_at: '2023-12-14T10:00:00+09:00'
+updated_at: '2023-12-17T17:56:02+09:00'
 id: c94baef2ee9379c21fa1
 organization_url_name: fukuokaex
 slide: false
@@ -55,7 +55,7 @@ Finderでアプリケーション＞ユーティリティを開いて，`ター�
 
 # 3. Homebrewインストール
 
-ターミナルを起動し，[Homebrew公式サイト](https://brew.sh/index_ja)の手順に則ってインストールした後，コマンドラインで表示されるインストール後の手順をします。
+ターミナルを起動し，[Homebrew公式サイト](https://brew.sh/ja/)の手順に則ってインストールした後，コマンドラインで表示されるインストール後の手順をします。
 
 ここにコマンドを転載しておきますが，↑と照合して確認して使用してくださいね。(途中，`sudo`によるmacOSログインのパスワード入力が求められます)
 
