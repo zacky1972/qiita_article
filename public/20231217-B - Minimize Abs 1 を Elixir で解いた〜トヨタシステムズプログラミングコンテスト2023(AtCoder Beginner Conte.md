@@ -1,13 +1,13 @@
 ---
 title: >-
   B - Minimize Abs 1 を Elixir で解いた〜トヨタシステムズプログラミングコンテスト2023(AtCoder Beginner
-  Contest 330) その1
+  Contest 330) その2
 tags:
   - AtCoder
   - Elixir
 private: true
 updated_at: '2023-12-17T09:52:27+09:00'
-id: 883494d31349b60804d2
+id: b35641d2dc838ef34bdb
 organization_url_name: null
 slide: false
 ignorePublish: false
@@ -39,494 +39,9 @@ Main.main()
 
 入力例1を`in1.txt`，出力例1を`out1.txt`のように与え，`main.exs`に解答を書きます．その後，`make`コマンドを実行します．
 
-## ローカルテストを通すまでの試行錯誤の過程
+## アルゴリズム上の工夫$O(n^3)$から　$O(n)$へ
 
-ひとまず入力を一通り読み込むところを作ります．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    IO.inspect(n, label: "n")
-    IO.inspect(l, label: "l")
-    IO.inspect(r, label: "r")
-    IO.inspect(a, label: "a")
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-テスト実行するときは次のようにします．
-
-```zsh
-% elixir test.exs < in1.txt 
-n: 5
-l: 4
-r: 7
-a: [3, 1, 4, 9, 7]
-```
-
-ちゃんと入力できていますので，次に進みます．
-
-`IO.inspect(n, label: "n")`のようにすると，`n: 5`のように表示してくれます．便利ですね．
-
-さしあたり，`a`を一通り走査してみましょう．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      IO.inspect(a, label: "a")
-    end)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "l" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-warning: variable "r" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-a: 3
-a: 1
-a: 4
-a: 9
-a: 7
-```
-
-警告は無視すると，ちゃんと`a`を走査できています．
-
-`x`を`l`から`r`まで走査する二重ループを書いてみましょうか．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x -> 
-        IO.inspect({a, x}, label: "{a, x}")
-      end)
-    end)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-{a, x}: {3, 4}
-{a, x}: {3, 5}
-{a, x}: {3, 6}
-{a, x}: {3, 7}
-{a, x}: {1, 4}
-{a, x}: {1, 5}
-{a, x}: {1, 6}
-{a, x}: {1, 7}
-{a, x}: {4, 4}
-{a, x}: {4, 5}
-{a, x}: {4, 6}
-{a, x}: {4, 7}
-{a, x}: {9, 4}
-{a, x}: {9, 5}
-{a, x}: {9, 6}
-{a, x}: {9, 7}
-{a, x}: {7, 4}
-{a, x}: {7, 5}
-{a, x}: {7, 6}
-{a, x}: {7, 7}
-```
-
-良い感じです．
-
-条件 $|X_i - A_i|$ を表示してみましょう．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x -> 
-        IO.inspect(abs(x - a), label: "abs(x - a)")
-      end)
-    end)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-abs(x - a): 1
-abs(x - a): 2
-abs(x - a): 3
-abs(x - a): 4
-abs(x - a): 3
-abs(x - a): 4
-abs(x - a): 5
-abs(x - a): 6
-abs(x - a): 0
-abs(x - a): 1
-abs(x - a): 2
-abs(x - a): 3
-abs(x - a): 5
-abs(x - a): 4
-abs(x - a): 3
-abs(x - a): 2
-abs(x - a): 3
-abs(x - a): 2
-abs(x - a): 1
-abs(x - a): 0
-```
-
-良い感じです．
-
-このノリで，三重ループで`y`も求めてみましょう．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x -> 
-        l..r
-        |> Enum.map(fn y ->
-          IO.inspect({abs(x - a) <= abs(y - a), x}, label: "{abs(x - a) <= abs(y - a), x}")
-        end)
-      end)
-    end)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-実行すると次のような感じです．
-
-```zsh
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {false, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {false, 4}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {false, 5}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 6}
-{abs(x - a) <= abs(y - a), x}: {false, 6}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-{abs(x - a) <= abs(y - a), x}: {true, 7}
-```
-
-`Enum.reduce`を使って$|X_i - A_i| \leq |Y_i - A_i|$を累積してみましょう．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x ->
-        b = Enum.reduce(l..r, true, fn y, acc ->
-          abs(x - a) <= abs(y - a) and acc
-        end)
-
-        IO.inspect({x, b}, label: "{x, true or false}")
-      end)
-    end)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-{x, true or false}: {4, true}
-{x, true or false}: {5, false}
-{x, true or false}: {6, false}
-{x, true or false}: {7, false}
-{x, true or false}: {4, true}
-{x, true or false}: {5, false}
-{x, true or false}: {6, false}
-{x, true or false}: {7, false}
-{x, true or false}: {4, true}
-{x, true or false}: {5, false}
-{x, true or false}: {6, false}
-{x, true or false}: {7, false}
-{x, true or false}: {4, false}
-{x, true or false}: {5, false}
-{x, true or false}: {6, false}
-{x, true or false}: {7, true}
-{x, true or false}: {4, false}
-{x, true or false}: {5, false}
-{x, true or false}: {6, false}
-{x, true or false}: {7, true}
-```
-
-良い感じで判定できました．あとは，`Enum.filter`で，2番目が`true`のものだけ抜き出せば良いです．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x ->
-        b = Enum.reduce(l..r, true, fn y, acc ->
-          abs(x - a) <= abs(y - a) and acc
-        end)
-
-        {x, b}
-      end)
-      |> Enum.filter(fn {_, b} -> b end)
-      |> Enum.map(fn {x, _} -> x end)
-    end)
-    |> IO.inspect()
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-[[4], [4], [4], ~c"\a", ~c"\a"]
-```
-
-結果が文字化けしてしまいましたので，最後の`IO.inspect()`を`IO.inspect(charlists: :as_lists)`とします．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x ->
-        b = Enum.reduce(l..r, true, fn y, acc ->
-          abs(x - a) <= abs(y - a) and acc
-        end)
-
-        {x, b}
-      end)
-      |> Enum.filter(fn {_, b} -> b end)
-      |> Enum.map(fn {x, _} -> x end)
-    end)
-    |> IO.inspect(charlists: :as_list)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-[[4], [4], [4], [7], [7]]
-```
-
-大体結果が出ましたね．あとは，リストが多重になっているので，[`List.flatten/1`](https://hexdocs.pm/elixir/1.15.7/List.html#flatten/1)を使って平らにします．
-
-```elixir:main.exs
-defmodule Main do
-  def main() do
-    [n, l, r] = read_int_list()
-    a = read_int_list()
-
-    a
-    |> Enum.map(fn a ->
-      l..r
-      |> Enum.map(fn x ->
-        b = Enum.reduce(l..r, true, fn y, acc ->
-          abs(x - a) <= abs(y - a) and acc
-        end)
-
-        {x, b}
-      end)
-      |> Enum.filter(fn {_, b} -> b end)
-      |> Enum.map(fn {x, _} -> x end)
-    end)
-    |> List.flatten()
-    |> IO.inspect(charlists: :as_list)
-  end
-
-  def read_int_list() do
-    IO.read(:line)
-    |> String.trim()
-    |> String.split(" ")
-    |> Enum.map(&String.to_integer/1)
-  end
-end
-```
-
-```zsh
-% elixir test.exs < in1.txt
-warning: variable "n" is unused (if the variable is not meant to be used, prefix it with an underscore)
-  main.exs:3: Main.main/0
-
-[4, 4, 4, 7, 7]
-```
-
-これで，結果が出たので，`Enum.join`と`IO.puts`に書き換えます．また，`n`は使わなかったので，`_n`としておきます．
+下記のプログラムをもとにアルゴリズム上の工夫を検討します．
 
 ```elixir:main.exs
 defmodule Main do
@@ -561,26 +76,1095 @@ defmodule Main do
 end
 ```
 
-`make`コマンドを実行してみましょう．
+まず，絶対値を展開してみましょう．
 
-```zsh
-% make
-elixir test.exs < in1.txt | diff - out1.txt
-elixir test.exs < in2.txt | diff - out2.txt
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      l..r
+      |> Enum.map(fn x ->
+        b = Enum.reduce(l..r, true, fn y, acc ->
+          p =
+            if x >= a do
+              x - a
+            else
+              a - x
+            end
+
+          q =
+            if y >= a do
+              y - a
+            else
+              a - y
+            end
+
+          p <= q and acc
+        end)
+
+        {x, b}
+      end)
+      |> Enum.filter(fn {_, b} -> b end)
+      |> Enum.map(fn {x, _} -> x end)
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
 ```
 
-成功です．
+ローカルで実行して，結果が変わらないことを確認します．以後，プログラムを修正するたびに，結果が変わらないことを確認します．
 
-ではAtCoderで提出してみましょう．
+Enum.reduceをEnum.mapとEnum.reduceに分解します．
 
-https://atcoder.jp/contests/abc330/submissions/48602835
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
 
-おやおや，TLE(実行時間制限超過)になってしまいました．答えそのものは合っていそうです．
+    a
+    |> Enum.map(fn a ->
+      l..r
+      |> Enum.map(fn x ->
+        b =
+          l..r
+          |> Enum.map(fn y ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
 
-AtCoderの楽しみ方として，一旦はここまででも良いのかと思います．しかし，できればTLE(実行時間制限超過)をクリアしたいですよね．
+            {y, p}
+          end)
+          |> Enum.map(fn {y, p} ->
+            q =
+              if y >= a do
+                y - a
+              else
+                a - y
+              end
 
-今回の方法だと，三重ループを使っているので，計算量で言うと$O(n^3)$となるので，いかにも遅そうです．実際，問題の制約条件を見てみると，$O(n^3)$のアルゴリズムでは到底AC(正解)は得られないものと考えられます．
+            {y, p, q}
+          end)
+          |> Enum.reduce(true, fn {_y, p, q}, acc ->
+            p <= q and acc
+          end)
 
-次の記事では，まずアルゴリズム上の工夫をしてみたいと思います．
+        {x, b}
+      end)
+      |> Enum.filter(fn {_, b} -> b end)
+      |> Enum.map(fn {x, _} -> x end)
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+`p`の計算は`y`と関わりがないので，一つ外のループに出すことができます．このようなコード最適化を「ループ不変式の削除」といいます．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      l..r
+      |> Enum.map(fn x ->
+        p =
+          if x >= a do
+            x - a
+          else
+            a - x
+          end
+
+        b =
+          l..r
+          |> Enum.map(fn y ->
+            q =
+              if y >= a do
+                y - a
+              else
+                a - y
+              end
+
+            {y, q}
+          end)
+          |> Enum.reduce(true, fn {_y, q}, acc ->
+            p <= q and acc
+          end)
+
+        {x, b}
+      end)
+      |> Enum.filter(fn {_, b} -> b end)
+      |> Enum.map(fn {x, _} -> x end)
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+いらなくなった変数を削除して綺麗にしましょう．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      l..r
+      |> Enum.map(fn x ->
+        p =
+          if x >= a do
+            x - a
+          else
+            a - x
+          end
+
+        b =
+          l..r
+          |> Enum.map(fn y ->
+            if y >= a do
+              y - a
+            else
+              a - y
+            end
+          end)
+          |> Enum.reduce(true, fn q, acc ->
+            p <= q and acc
+          end)
+
+        {x, b}
+      end)
+      |> Enum.filter(fn {_, b} -> b end)
+      |> Enum.map(fn {x, _} -> x end)
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+絶対値の計算なので，`a`の場合を境にして場合わけをしてみます．
+
+Cで，`if (条件1) {節1} else if (条件2) {節2} else {節3}`のように書く時には，Elixirでは`cond`というものを用います．すなわち，次のように書きます．
+
+```elixir
+cond do
+  条件1 -> 節1
+  条件2 -> 節2
+  true -> 節3
+end
+```
+
+まずは愚直に式を展開します．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+          a > r ->
+            l..r
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              b =
+                l..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+                |> Enum.reduce(true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+            true ->
+              l..r
+              |> Enum.map(fn x ->
+                p =
+                  if x >= a do
+                    x - a
+                  else
+                    a - x
+                  end
+
+                b =
+                  l..r
+                  |> Enum.map(fn y ->
+                    if y >= a do
+                      y - a
+                    else
+                      a - y
+                    end
+                  end)
+                  |> Enum.reduce(true, fn q, acc ->
+                    p <= q and acc
+                  end)
+
+                {x, b}
+              end)
+              |> Enum.filter(fn {_, b} -> b end)
+              |> Enum.map(fn {x, _} -> x end)
+        end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+まず，`a < l`を検討します．`x >= a`と`y >= a`は，それぞれ，常に真になりますので，次のように展開できます．
+
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l ->
+          l..r
+          |> Enum.map(fn x ->
+            p = x - a
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                y - a
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        a > r ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        true ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+              b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+`p`,`q`を展開すると次のようになります．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l ->
+          l..r
+          |> Enum.map(fn x ->
+            b =
+              l..r
+              |> Enum.reduce(true, fn y, acc ->
+                x - a <= y - a and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        a > r ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        true ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+`x`と`y`の値域を考えると，`x == l`の場合のみ成立しますので，次のように`x`と`y`のループをなくすことができます．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        true ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+同様に，`a > r`の時には，次のように展開できます．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r ->
+          l..r
+          |> Enum.map(fn x ->
+            b =
+              l..r
+              |> Enum.reduce(true, fn y, acc ->
+                a - x <= a - y and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+
+        true ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+この条件を満たすのは，`x = r`の時だけですので，次のようになります．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r -> r
+
+        true ->
+          l..r
+          |> Enum.map(fn x ->
+            p =
+              if x >= a do
+                x - a
+              else
+                a - x
+              end
+
+            b =
+              l..r
+              |> Enum.map(fn y ->
+                if y >= a do
+                  y - a
+                else
+                  a - y
+                end
+              end)
+              |> Enum.reduce(true, fn q, acc ->
+                p <= q and acc
+              end)
+
+            {x, b}
+          end)
+          |> Enum.filter(fn {_, b} -> b end)
+          |> Enum.map(fn {x, _} -> x end)
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+同様に，残りの条件では，`l <= a <= r`です．`l..a`と`a..r`に場合わけし，リストを結合してみたいと思います．リスト`l1`と`l2`の結合は `l1 ++ l2`と書きます．次のように書き換えてみますが，こうすると，`x == a`の時が重複しますので，値が1つ多く出てしまいます．ですが，わかりやすさのために一旦このまま進めます．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r -> r
+
+        true ->
+          lx1 =
+            l..a
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              b =
+                l..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+                |> Enum.reduce(true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+          lx2 =
+            a..r
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              b =
+                l..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+                |> Enum.reduce(true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+          lx1 ++ lx2
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+`y`についても同様に展開します．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r -> r
+
+        true ->
+          lx1 =
+            l..a
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              ly1 =
+                l..a
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              ly2 =
+                a..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              b =
+                Enum.reduce(ly1 ++ ly2, true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+          lx2 =
+            a..r
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              ly1 =
+                l..a
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              ly2 =
+                a..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              b =
+                Enum.reduce(ly1 ++ ly2, true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+          lx1 ++ lx2
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+それぞれの場合について検討します．
+
+`lx1`と`ly1`の組合せの時，すなわち，$L \leq X_i \leq A_i$かつ$L \leq Y \leq A_i$の時には，全ての$Y$について$|X_i - A_i| \leq |Y - A_i|$を満たすのは，$X_i = A_i$の時のみです．
+
+同様に，`lx1`と`ly2`の組合せの時，すなわち，$L \leq X_i \leq A_i$かつ$A_i \leq Y \leq R$の時には，全ての$Y$について$|X_i - A_i| \leq |Y - A_i|$を満たすのは，$X_i = A_i$の時のみです．
+
+したがって，次のように最適化できます．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+
+        a > r -> r
+
+        true ->
+          lx1 = [a]
+
+          lx2 =
+            a..r
+            |> Enum.map(fn x ->
+              p =
+                if x >= a do
+                  x - a
+                else
+                  a - x
+                end
+
+              ly1 =
+                l..a
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              ly2 =
+                a..r
+                |> Enum.map(fn y ->
+                  if y >= a do
+                    y - a
+                  else
+                    a - y
+                  end
+                end)
+
+              b =
+                Enum.reduce(ly1 ++ ly2, true, fn q, acc ->
+                  p <= q and acc
+                end)
+
+              {x, b}
+            end)
+            |> Enum.filter(fn {_, b} -> b end)
+            |> Enum.map(fn {x, _} -> x end)
+
+          lx1 ++ lx2
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+同様に，`lx2`の場合も同じことが言えます．したがって，次のようにループを削減できます(値の重複もなくなりました)．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+        a > r -> r
+        true -> a
+      end
+    end)
+    |> List.flatten()
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+`List.flatten/1`はもはや不要です．
+
+```elixir:main.exs
+defmodule Main do
+  def main() do
+    [_n, l, r] = read_int_list()
+    a = read_int_list()
+
+    a
+    |> Enum.map(fn a ->
+      cond do
+        a < l -> l
+        a > r -> r
+        true -> a
+      end
+    end)
+    |> Enum.join(" ")
+    |> IO.puts()
+  end
+
+  def read_int_list() do
+    IO.read(:line)
+    |> String.trim()
+    |> String.split(" ")
+    |> Enum.map(&String.to_integer/1)
+  end
+end
+```
+
+これはとてもシンプルなプログラムですね．計算量も$O(n)$です．下記のように，見事ACできました．
+
+https://atcoder.jp/contests/abc330/submissions/48603780
 
 
