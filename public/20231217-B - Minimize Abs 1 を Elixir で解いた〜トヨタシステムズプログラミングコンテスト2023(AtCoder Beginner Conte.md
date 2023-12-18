@@ -1,6 +1,6 @@
 ---
 title: >-
-  試行錯誤編〜B - Minimize Abs 1 を Elixir で解いた〜トヨタシステムズプログラミングコンテスト2023(AtCoder
+  試行錯誤編: B - Minimize Abs 1 を Elixir で解いた〜トヨタシステムズプログラミングコンテスト2023(AtCoder
   Beginner Contest 330)
 tags:
   - AtCoder
