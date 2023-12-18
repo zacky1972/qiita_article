@@ -1,5 +1,5 @@
 ---
-title: Arch LinuxをIntel Macにインストールしようとする日々その1
+title: Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その1
 tags:
   - Mac
   - Linux
@@ -11,7 +11,7 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最初のLinuxディストリビューションであるAsahi LinuxがArch Linuxベースであるというところから強く興味を持ちました．@mnishiguchi さんがArch Linux使いになったと聞き，いよいよArch Linuxをやってみようと決意しました．この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文です．
+Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最初のLinuxディストリビューションであるAsahi LinuxがArch Linuxベースであるというところから強く興味を持ちました．Linuxの仕組みを深く知りたいというのも動機の1つです．@mnishiguchi さんがArch Linux使いになったと聞き，いよいよArch Linuxをやってみようと決意しました．この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文です．
 
 ## まず公式ドキュメントを見る
 
@@ -183,3 +183,5 @@ ip link
 試しに適当な外部のIPアドレスに`ping`を打ってみると，反応してくれます．やった！インターネットにつながっている！
 
 今日までに試したのは，ここまでです．少しずつ育てていきます．次はSSDへのインストールかなあ．
+
+Linuxへの深い理解をしたいというのがArch Linuxを習得しようとする動機の1つなので， @mnishiguchi さんの話では `archinstall` コマンドを使えば楽勝だということなのですが，あえてそれを用いずに，1つ1つ基本的なコマンドを確かめながらインストールしていこうと考えています．`archinstall` コマンドを使うのだと，Ubuntuのインストーラーを使うのと同程度にしか，Linuxを理解できないと思いましたので！ 楽したい人は，このシリーズの続きを読むのではなく，`archinstall`の使い方を調べてくださいませ．
