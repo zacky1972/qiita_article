@@ -4,14 +4,14 @@ tags:
   - Mac
   - Linux
   - archLinux
-private: true
+private: false
 updated_at: '2023-12-18T09:01:49+09:00'
 id: 9f447f9a11f91e90f6e8
 organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最初のLinuxディストリビューションであるAsahi LinuxがArch Linuxベースであるというところから強く興味を持ちました．@mnishiguchi さんがArch Linux使いになったと聞き，いよいよArch Linuxをやってみようと決意しました．この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文です．
+Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最初のLinuxディストリビューションであるAsahi LinuxがArch Linuxベースであるというところから強く興味を持ちました．@mnishiguchi さんがArch Linux使いになったと聞き，いよいよArch Linuxをやってみようと決意しました．この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文です．
 
 ## まず公式ドキュメントを見る
 
@@ -126,8 +126,60 @@ diskutil eraseDisk MS-DOS UNTITLED $USB_MEMORY
 diskutil unmountDisk $USB_MEMORY
 ```
 
-最後に意を決して書き込みます．仮にダウンロードしたイメージファイルのパスを`/path/to/archlinux-image.iso`とします．
+最後に意を決して書き込みます．仮にダウンロードしたイメージファイルのパスを`/path/to/archlinux-image.iso`とします．`sudo`コマンドを使っているので，MacOSのログインパスワードが聞かれます．
 
 ```zsh
 sudo dd if=/path/to/archlinux-image.iso of=$USB_MEMORY conv=fsync oflag=direct status=progress
 ```
+
+出来上がったUSBメモリを用いて，live環境をブートします．
+
+Intel Macの場合には，起動時にoptionキーを長押しすると，起動メディアの選択になります．
+
+https://support.apple.com/ja-jp/guide/mac-help/mchlp1034/mac
+
+こんな感じになると思うので，
+
+![booting_choose_macOS.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/1a697121-9008-78bd-b858-c6f34a7c94a2.png)
+
+右矢印キーを押してUSBメモリを選択し，Enterします．
+
+![booting_choose_USBmemory.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/b1347c21-ec17-e2cc-e506-6af821585fab.png)
+
+すると見慣れたGRUBの起動画面になります．一番上のArch Linux install mediumを選択します．多分2番目を選択すると，読み上げてくれるのかな？
+
+![GRUB.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/6c1aa113-96db-7216-8583-f55549d11b43.png)
+
+起動が始まります．起動の途中で "Welcome to Arch Linux!"と，温かく出迎えてくれます．
+
+![WelcomeToArchLinux.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/ebeeb65b-fc9b-4554-7e3d-d8e854d84d9c.png)
+
+しばらく待つと，下記のようにコマンドラインになります．やった！
+
+![CommandLine.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/12f1f188-0f3a-4e56-db6d-86fbbd02c538.png)
+
+なお，この時点では，まだSSDに何も書き込んでいないので，引き返せます．
+
+## 諸々いじってみる
+
+私が最初に起動させたのは，機種IDがMacBookAir6,1でした．下記ページを見ると，MacBook Air (11-inch, Early 2014)に該当します．
+
+https://support.apple.com/ja-jp/102869
+
+最初にキーボードの設定を必要があるのですが，私のMacBookはUS配列なので，このままでOKです．日本語配列の場合には，いろいろ設定する必要があるのでしょうね．
+
+次に，ネットワークに繋いでみます．
+
+Apple Thunderbolt - ギガビットEthernetアダプタというものを合わせて購入して持っています．下記だと思います．
+
+https://www.apple.com/jp/shop/product/MD463ZM/A/apple-thunderbolt-ギガビットethernetアダプタ
+
+これを接続して，インターネットにつながっている有線LANに繋いでみます．その上で，次のコマンドを実行すると，何やら，つながっているっぽいことがわかります(ループバックの他に，イーサーネットがつながっているように出力される)．
+
+```bash
+ip link
+```
+
+試しに適当な外部のIPアドレスに`ping`を打ってみると，反応してくれます．やった！インターネットにつながっている！
+
+今日までに試したのは，ここまでです．少しずつ育てていきます．次はSSDへのインストールかなあ．
