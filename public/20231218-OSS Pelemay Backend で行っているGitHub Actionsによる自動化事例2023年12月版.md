@@ -74,3 +74,9 @@ CIの対象になっているところのみ
         * matrix_reduced_test_1.yml
         * matrix_reduced_test_2.yml
         * matrix_test.yml
+
+## 2023年12月現在のPelemay Backendのブランチ構成
+
+* main
+* check_by_SHR
+
