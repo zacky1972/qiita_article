@@ -1,5 +1,5 @@
 {
-  "includePrivate": false,
+  "includePrivate": true,
   "host": "localhost",
   "port": 8888
 }
