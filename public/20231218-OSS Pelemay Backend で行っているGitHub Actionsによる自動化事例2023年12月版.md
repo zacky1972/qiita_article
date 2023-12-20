@@ -85,6 +85,8 @@ CIの対象になっているところのみ
 1. Issueごとに新しくブランチを作成して作業する
 2. 1が出来上がったら，`check_by_SHR`にPRを送って，GitHub-hosted Runnerによるチェック(Ubuntu)を受ける．
 3. 2のPRのコード差分を読んで，脆弱性の確認と，macOS固有のコードの有無を確認する．特にmacOS固有のコードがある場合には熟読して精査する．
-4. 2,3のチェックをクリアしたら，マージし，`main`にPRを送って，macOS(x86_64, Apple Silicon)のSelf-hosted Runnerによるチェックを受ける．
+4. 2,3のチェックをクリアしたら，マージし，`main`にPRを送って，Self-hosted Runnerによるチェックを受ける．2023年12月現在は次のSelf-hosted Runnerが存在する
+    * macOS Sonoma 14.2.1 / x86_64
+    * macOS Sonoma 14.2.1 / Apple Silicon 
 5. 4のチェックをクリアしたらマージする．
 
