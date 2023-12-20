@@ -32,7 +32,7 @@ ignorePublish: false
 
 ```zsh
 $ elixir -v
-Erlang/OTP 26 [erts-14.1.1] [source] [32-bit] [smp:4:4] [ds:4:4:10] [async-threads:1]
+Erlang/OTP 26 [erts-14.2.1] [source] [32-bit] [smp:4:4] [ds:4:4:10] [async-threads:1]
 
 Elixir 1.15.7 (compiled with Erlang/OTP 26)
 $ uname -a
