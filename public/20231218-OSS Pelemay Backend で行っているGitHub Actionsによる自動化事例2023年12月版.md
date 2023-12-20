@@ -37,36 +37,92 @@ https://qiita.com/zacky1972/items/d1d159f8bcf24d012fbc
 
 CIの対象になっているところのみ
 
-* utilities
-    * node_activator
+* `utilities`
+    * `node_activator`
         * A module to activate VM nodes.
         * https://hex.pm/packages/node_activator
-    * spawn_co_elixir
+    * `spawn_co_elixir`
         * SpawnCoElixir spawns cooperative Elixir nodes that are supervised.
         * https://hex.pm/packages/spawn_co_elixir
-        * Depends on node_activator
-    * http_downloader
+        * Depends on `node_activator`
+    * `http_downloader`
         * Downloads remote file with progress bar.
         * https://hex.pm/packages/http_downloader
-* benchmarks
-    * onnx_to_axon_bench
+* `benchmarks`
+    * `onnx_to_axon_bench`
         * A benchmark program of loading ONNX to Axon.
-        * Depends on http_downloader
-    * distributed_computing_bench (WIP)
-        * Depends on spawn_co_elixir and http_downloader
-* .github
-    * dependabot.yml
-    * workflows
-        * ci_distributed_computing_bench.yml
-        * ci_http_downloader.yml
-        * ci_node_activator.yml
-        * ci_onnx_to_axon_bench.yml
-        * ci_self_hosted_macos.yml
-        * ci_spawn_co_elixir.yml
-        * dependabot_auto_merge.yml
-        * reusable_ci_for_self_hosted_runner_macos.yml
-        * reusable_ci_with_working_directory.yml
-        * reusable_ci.yml
+        * Depends on `http_downloader`
+    * `distributed_computing_bench` (WIP)
+        * Depends on `spawn_co_elixir` and `http_downloader`
+* `.github`
+    * `dependabot.yml`
+        * Dependabotの設定．下記の更新をチェックする
+            * GitHub Actions
+            * Hex
+    * `workflows`
+        * `ci_node_activator.yml`
+            * `utilities/node_activator`に更新があった時に実行するワークフロー
+            * `node_activator`と，`node_activator`に依存する下記のモジュールのテストを行う
+                * `spawn_co_elixir`
+                * `distributed_computing_bench`
+        * `ci_spawn_co_elixir.yml`
+            * `utilities/spawn_co_elixir`に更新があった時に実行するワークフロー
+            * `spawn_co_elixir`と，`spawn_co_elixir`に依存する下記のモジュールのテストを行う
+                * `distributed_computing_bench`
+        * `ci_http_downloader.yml`
+            * `utilities/http_downloader`に更新があった時に実行するワークフロー
+            * `http_downloader`と，`http_downloader`に依存する下記のモジュールのテストを行う
+                * `onnx_to_axon_bench`
+                * `distributed_computing_bench`
+        * `ci_onnx_to_axon_bench.yml`
+            * `benchmarks/onnx_to_axon_bench`に更新があった時に実行する
+            * `onnx_to_axon_bench`のテストを行う
+        * `ci_distributed_computing_bench.yml`
+            * `benchmarks/distributed_computing_bench`に更新があった時に実行するワークフロー
+            * `distributed_computing_bench`のテストを行う
+        * `reusable_ci.yml`
+            * 下記の引数を伴って呼び出されるGitHub-hosted runnerのワークフロー
+                * `working_directory`
+                * `os`
+                * `matrix`
+                    * 下記を与える
+                        * `otp-version`
+                        * `elixir-version`
+                * `perform-check`
+                    * `true`の時は，下記を行う
+                        * `mix compile --warnings-as-errors`
+                        * `mix format --check-formatted`
+                        * `mix credo`
+                        * `mix dialyzer`
+                    * `false`の時は下記を行う
+                        * `mix test`
+            * 次の手順を実行する
+                1. チェックアウト
+                2. `kenchan0130/actions-system-info`によるシステム情報の取得
+                3. OTPのメジャーバージョンとマイナーバーションの取得
+                4. ElixirとErlangのバージョンの設定
+                5. `erlef/setup-beam`によるElixirのセットアップ
+                6. 5が失敗した時
+                    1. `asdf`インストール
+                    2. `asdf`キャッシュからの復旧
+                    3. 2が失敗した時に`asdf`による設定
+                7. dependenciesキャッシュからの復旧
+                8. 7が失敗した時に次を実行
+                    1. `mix local.hex`
+                    2. `mix local.rebar`
+                    3. `mix deps.get`
+                9. `perform-check`が`true`の時に次の手順を実行
+                    1. `mix compile --warnings-as-errors`
+                    2. `mix format --check-formatted`
+                    3. `mix credo`
+                    4. `dialyzer`キャッシュ復旧
+                    5. `mix dialyzer`
+                10. `perform-check`が`false`の時に次の手順を実行
+                    1. `mix test`
+        * `ci_self_hosted_macos.yml`
+        * `dependabot_auto_merge.yml`
+        * `reusable_ci_for_self_hosted_runner_macos.yml`
+        * `reusable_ci_with_working_directory.yml`
     * actions
         * matrix_check.yml
         * matrix_dependabot.yml
