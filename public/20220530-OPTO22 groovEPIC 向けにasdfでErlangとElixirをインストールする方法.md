@@ -26,6 +26,7 @@ ignorePublish: false
 追記 20231022: Elixir, Erlangを最新版に追従しました．
 追記 20231026: OpenSSLを最新版に追従しました．
 追記 20231127: OpenSSLを最新版に追従しました．
+追記 20231221: Erlangを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -141,10 +142,10 @@ asdf install erlang latest
 asdf list-all erlang
 ```
 
-例えば26.1.2をインストールするには次のようにします。
+例えば26.2.1をインストールするには次のようにします。
 
 ```bash
-asdf install erlang 26.1.2
+asdf install erlang 26.2.1
 ```
 
 ## 9. `asdf install elixir (インストールしたいバージョン)` とします。最新版の時には `asdf install elixir latest`とします
