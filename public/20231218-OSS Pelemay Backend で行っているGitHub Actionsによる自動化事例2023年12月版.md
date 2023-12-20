@@ -80,3 +80,11 @@ CIの対象になっているところのみ
 * main
 * check_by_SHR
 
+運用としては次のようにします．
+
+1. Issueごとに新しくブランチを作成して作業する
+2. 1が出来上がったら，`check_by_SHR`にPRを送って，GitHub-hosted Runnerによるチェック(Ubuntu)を受ける．
+3. 2のPRのコード差分を読んで，脆弱性の確認と，macOS固有のコードの有無を確認する．特にmacOS固有のコードがある場合には熟読して精査する．
+4. 2,3のチェックをクリアしたら，マージし，`main`にPRを送って，macOS(x86_64, Apple Silicon)のSelf-hosted Runnerによるチェックを受ける．
+5. 4のチェックをクリアしたらマージする．
+
