@@ -17,21 +17,20 @@ ignorePublish: false
 
 https://github.com/zeam-vm/pelemay_backend
 
-## 今まで山崎進が書いたGitHub Actions関連のQiita記事
+## 2023年12月現在のPelemay Backendのブランチ構成
 
-https://qiita.com/zacky1972/items/4a7614bff401650fb7d6
+* main
+* check_by_SHR
 
-https://qiita.com/zacky1972/items/f89ed230ce91b57b6b71
+運用としては次のようにします．
 
-https://qiita.com/zacky1972/items/e0d25c3f77effeb69a94
-
-https://qiita.com/zacky1972/items/eca1ab95fba97cfae96b
-
-https://qiita.com/zacky1972/items/26cfba3d093420bf80a0
-
-https://qiita.com/zacky1972/items/993f50a2add27763edf3
-
-https://qiita.com/zacky1972/items/d1d159f8bcf24d012fbc
+1. Issueごとに新しくブランチを作成して作業する
+2. 1が出来上がったら，`check_by_SHR`にPRを送って，GitHub-hosted Runnerによるチェック(Ubuntu)を受ける．
+3. 2のチェックをクリアしたら，マージし，`main`にPRを作成し，コード差分を読む．ライブラリの更新があった時には，Changelogを読む．脆弱性の確認と，機種依存のコードの有無を確認する．特に機種依存のコードがある場合には熟読して精査する．
+4. 3に問題がなければ，PRを送って，Self-hosted Runnerによるチェックを受ける．2023年12月現在は次のSelf-hosted Runnerが存在する
+    * macOS Sonoma 14.2.1 / x86_64
+    * macOS Sonoma 14.2.1 / Apple Silicon 
+5. 4のチェックをクリアしたらマージする．
 
 ## 2023年12月現在のPelemay Backendのディレクトリ構成
 
@@ -108,21 +107,6 @@ CIの対象になっているところのみ
         * matrix_reduced_test_2.yml
         * matrix_test.yml
 
-## 2023年12月現在のPelemay Backendのブランチ構成
-
-* main
-* check_by_SHR
-
-運用としては次のようにします．
-
-1. Issueごとに新しくブランチを作成して作業する
-2. 1が出来上がったら，`check_by_SHR`にPRを送って，GitHub-hosted Runnerによるチェック(Ubuntu)を受ける．
-3. 2のチェックをクリアしたら，マージし，`main`にPRを作成し，コード差分を読む．ライブラリの更新があった時には，Changelogを読む．脆弱性の確認と，機種依存のコードの有無を確認する．特に機種依存のコードがある場合には熟読して精査する．
-4. 3に問題がなければ，PRを送って，Self-hosted Runnerによるチェックを受ける．2023年12月現在は次のSelf-hosted Runnerが存在する
-    * macOS Sonoma 14.2.1 / x86_64
-    * macOS Sonoma 14.2.1 / Apple Silicon 
-5. 4のチェックをクリアしたらマージする．
-
 ## 再利用可能ワークフロー
 
 次の手順を実行する
@@ -149,3 +133,20 @@ CIの対象になっているところのみ
     5. `mix dialyzer`
 10. `perform-check`が`false`の時に次の手順を実行
     1. `mix test`
+
+## 今まで山崎進が書いたGitHub Actions関連のQiita記事
+
+https://qiita.com/zacky1972/items/4a7614bff401650fb7d6
+
+https://qiita.com/zacky1972/items/f89ed230ce91b57b6b71
+
+https://qiita.com/zacky1972/items/e0d25c3f77effeb69a94
+
+https://qiita.com/zacky1972/items/eca1ab95fba97cfae96b
+
+https://qiita.com/zacky1972/items/26cfba3d093420bf80a0
+
+https://qiita.com/zacky1972/items/993f50a2add27763edf3
+
+https://qiita.com/zacky1972/items/d1d159f8bcf24d012fbc
+
