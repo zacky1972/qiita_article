@@ -129,13 +129,29 @@ CIの対象になっているところのみ
                     * 下記のいずれかを与える
                         * `X64`
                         * `ARM64`
-    * actions
-        * matrix_check.yml
-        * matrix_dependabot.yml
-        * matrix_for_self_hosted_macos.yml
-        * matrix_reduced_test_1.yml
-        * matrix_reduced_test_2.yml
-        * matrix_test.yml
+    * `actions`
+        * `matrix_check.yml`
+            * チェック用のマトリクス
+            * 単一Elixir/Erlang環境
+        * `matrix_test.yml`
+            * テスト用の環境
+            * Elixir/Erlangのサポート環境を網羅
+        * `matrix_reduced_test_1.yml`
+            * 回帰テスト用の環境
+            * 組み合わせを削減
+            * `matrix_reduced_test_2.yml`と合わせることで，Elixir/Erlangのサポート環境を網羅
+        * `matrix_reduced_test_2.yml`
+            * 回帰テスト用の環境
+            * 組み合わせを削減
+            * `matrix_reduced_test_1.yml`と合わせることで，Elixir/Erlangのサポート環境を網羅
+        * `matrix_dependabot.yml`
+            * Dependabot Automerge用のマトリクス
+            * `working-directory`がついている
+            * 今のところ単一Elixir/Erlang環境
+        * `matrix_for_self_hosted_macos.yml`
+            * Self-hosted Runner用の環境
+            * `working-directory`がついている
+            * 今のところ単一Elixir/Erlang環境
 
 ## 再利用可能ワークフロー
 
