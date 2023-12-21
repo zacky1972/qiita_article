@@ -96,29 +96,6 @@ CIの対象になっているところのみ
                         * `mix dialyzer`
                     * `false`の時は下記を行う
                         * `mix test`
-            * 次の手順を実行する
-                1. チェックアウト
-                2. `kenchan0130/actions-system-info`によるシステム情報の取得
-                3. OTPのメジャーバージョンとマイナーバーションの取得
-                4. ElixirとErlangのバージョンの設定
-                5. `erlef/setup-beam`によるElixirのセットアップ
-                6. 5が失敗した時
-                    1. `asdf`インストール
-                    2. `asdf`キャッシュからの復旧
-                    3. 2が失敗した時に`asdf`による設定
-                7. dependenciesキャッシュからの復旧
-                8. 7が失敗した時に次を実行
-                    1. `mix local.hex`
-                    2. `mix local.rebar`
-                    3. `mix deps.get`
-                9. `perform-check`が`true`の時に次の手順を実行
-                    1. `mix compile --warnings-as-errors`
-                    2. `mix format --check-formatted`
-                    3. `mix credo`
-                    4. `dialyzer`キャッシュ復旧
-                    5. `mix dialyzer`
-                10. `perform-check`が`false`の時に次の手順を実行
-                    1. `mix test`
         * `ci_self_hosted_macos.yml`
         * `dependabot_auto_merge.yml`
         * `reusable_ci_for_self_hosted_runner_macos.yml`
@@ -146,3 +123,29 @@ CIの対象になっているところのみ
     * macOS Sonoma 14.2.1 / Apple Silicon 
 5. 4のチェックをクリアしたらマージする．
 
+## 再利用可能ワークフロー
+
+次の手順を実行する
+
+1. チェックアウト
+2. `kenchan0130/actions-system-info`によるシステム情報の取得
+3. OTPのメジャーバージョンとマイナーバーションの取得
+4. ElixirとErlangのバージョンの設定
+5. `erlef/setup-beam`によるElixirのセットアップ
+6. 5が失敗した時
+    1. `asdf`インストール
+    2. `asdf`キャッシュからの復旧
+    3. 2が失敗した時に`asdf`による設定
+7. dependenciesキャッシュからの復旧
+8. 7が失敗した時に次を実行
+    1. `mix local.hex`
+    2. `mix local.rebar`
+    3. `mix deps.get`
+9. `perform-check`が`true`の時に次の手順を実行
+    1. `mix compile --warnings-as-errors`
+    2. `mix format --check-formatted`
+    3. `mix credo`
+    4. `dialyzer`キャッシュ復旧
+    5. `mix dialyzer`
+10. `perform-check`が`false`の時に次の手順を実行
+    1. `mix test`
