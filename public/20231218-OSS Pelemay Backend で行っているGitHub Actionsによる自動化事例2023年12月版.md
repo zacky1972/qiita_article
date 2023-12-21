@@ -80,7 +80,7 @@ CIの対象になっているところのみ
             * `benchmarks/distributed_computing_bench`に更新があった時に実行するワークフロー
             * `distributed_computing_bench`のテストを行う
         * `reusable_ci.yml`
-            * 下記の引数を伴って呼び出されるGitHub-hosted runnerのワークフロー
+            * 下記の引数を伴って呼び出されるGitHub-hosted runnerのワークフロー([詳細](#再利用可能ワークフロー))
                 * `working_directory`
                 * `os`
                 * `matrix`
@@ -95,10 +95,28 @@ CIの対象になっているところのみ
                         * `mix dialyzer`
                     * `false`の時は下記を行う
                         * `mix test`
-        * `ci_self_hosted_macos.yml`
         * `dependabot_auto_merge.yml`
-        * `reusable_ci_for_self_hosted_runner_macos.yml`
+            * Dependabotを実行しているとき，再利用可能ワークフローをテストしてパスした後，次のいずれかの条件の時には，自動でマージする
+                * パッケージシステムが`hex`で，パッチバージョンのみの変更だった場合
+                * パッケージシステムがGitHub Actions
         * `reusable_ci_with_working_directory.yml`
+            * 下記の引数を伴って呼び出されるGitHub-hosted runnerのワークフロー([詳細](#再利用可能ワークフロー))
+                * `os`
+                * `matrix`
+                    * 下記を与える
+                        * `otp-version`
+                        * `elixir-version`
+                        * `working_directory`
+                * `perform-check`
+                    * `true`の時は，下記を行う
+                        * `mix compile --warnings-as-errors`
+                        * `mix format --check-formatted`
+                        * `mix credo`
+                        * `mix dialyzer`
+                    * `false`の時は下記を行う
+                        * `mix test`
+        * `ci_self_hosted_macos.yml`
+        * `reusable_ci_for_self_hosted_runner_macos.yml`
     * actions
         * matrix_check.yml
         * matrix_dependabot.yml
