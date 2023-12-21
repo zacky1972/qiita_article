@@ -116,7 +116,19 @@ CIの対象になっているところのみ
                     * `false`の時は下記を行う
                         * `mix test`
         * `ci_self_hosted_macos.yml`
+            * macOS向けSelf-hosted Runnerのワークフロー
+            * テストのみを行う
         * `reusable_ci_for_self_hosted_runner_macos.yml`
+            * 下記の引数を伴って呼び出されるmacOSのSelf-hosted runnerのワークフロー
+                * `matrix`
+                    * 下記を与える
+                        * `otp-version`
+                        * `elixir-version`
+                        * `working_directory`
+                * `arch`
+                    * 下記のいずれかを与える
+                        * `X64`
+                        * `ARM64`
     * actions
         * matrix_check.yml
         * matrix_dependabot.yml
