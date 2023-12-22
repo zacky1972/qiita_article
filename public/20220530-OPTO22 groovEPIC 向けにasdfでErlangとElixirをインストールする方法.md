@@ -27,6 +27,7 @@ ignorePublish: false
 追記 20231026: OpenSSLを最新版に追従しました．
 追記 20231127: OpenSSLを最新版に追従しました．
 追記 20231221: Erlangを最新版に追従しました．
+追記 20231223: Elixirを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -34,7 +35,7 @@ ignorePublish: false
 $ elixir -v
 Erlang/OTP 26 [erts-14.2.1] [source] [32-bit] [smp:4:4] [ds:4:4:10] [async-threads:1]
 
-Elixir 1.15.7 (compiled with Erlang/OTP 26)
+Elixir 1.16.0 (compiled with Erlang/OTP 26)
 $ uname -a
 Linux opto-04-88-28 4.1.15-rt18-nxtio-2.1.0+g28bea2e #2 SMP PREEMPT RT Thu Sep 1 18:49:10 PDT 2022 armv7l GNU/Linux
 ```
@@ -162,10 +163,10 @@ asdf install elixir latest
 asdf list-all elixir
 ```
 
-例えば1.15.7-otp-26をインストールするには次のようにします。
+例えば1.16.0-otp-26をインストールするには次のようにします。
 
 ```bash
-asdf install elixir 1.15.7-otp-26
+asdf install elixir 1.16.0-otp-26
 ```
 
 ### 10. `asdf global erlang (インストールしたバージョン)` `asdf global elixir (インストールしたバージョン)`として，ErlangとElixirを選択する
