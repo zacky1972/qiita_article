@@ -5,7 +5,7 @@ title: >-
 tags:
   - AtCoder
   - Elixir
-private: true
+private: false
 updated_at: '2023-12-18T19:12:16+09:00'
 id: da168a93427d173ea057
 organization_url_name: null
