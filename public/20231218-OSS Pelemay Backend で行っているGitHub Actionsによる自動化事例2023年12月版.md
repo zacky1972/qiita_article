@@ -151,7 +151,7 @@ CIの対象になっているところのみ
         * `matrix_for_self_hosted_macos.yml`
             * Self-hosted Runner用の環境
             * `working-directory`がついている
-            * 今のところ単一Elixir/Erlang環境
+            * 今のところ単一Erlang環境/複数Elixir環境
 
 ## 再利用可能ワークフロー
 
