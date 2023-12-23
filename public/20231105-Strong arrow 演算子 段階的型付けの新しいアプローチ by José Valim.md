@@ -1,5 +1,5 @@
 ---
-title: 'Strong arrow 演算子: 段階的型付けの新しいアプローチ by José Valim'
+title: 'Strong arrow: 段階的型付けの新しいアプローチ by José Valim'
 tags:
   - Elixir
   - 型システム
@@ -10,7 +10,7 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-# Strong arrow 演算子: 段階的型付けの新しいアプローチ by José Valim
+# Strong arrow: 段階的型付けの新しいアプローチ by José Valim
 
 本記事は，[ElixirConf US 2023 でのJosé Valimのkeynoteで議論された「段階的集合論的型付け」のトピック(The foundations of the Elixir type system)](https://www.youtube.com/watch?v=giYbq4HmfGA)を元にした翻訳記事です．
 
@@ -166,4 +166,86 @@ end
 * 動的コードから静的コードを呼び出すと，`dynamic()`が返され，さらなる静的型付けチェックの機会が失われます(これは健全です)．
 * 動的コードから静的コードを呼び出すと静的型が返され，実行時に型の不一致が発生する可能性があります (これは不健全です)．
 * 動的コードから静的コードを呼び出すと，実行時チェックが追加された静的型が返され，両方の動作が統合されますが，パフォーマンスに影響を与える可能性があります(これは健全です)．
+
+## Strong arrow　の導入
+
+私はいつも，Erixir は Erlang のおかげでアサーティブな言語であると述べてきました，たとえば，恒等関数`identity`が数値のみに制限されている場合，実際には次のように記述することになるでしょう:
+
+```elixir
+$ a -> a when a: number()
+def identity(arg) when is_number(arg), do: arg
+```
+
+上の例では，数値以外の値が指定された場合，関数`identity`は失敗します．私たちはパターン・マッチングとガードに依存することが多く，これらは，作業している型を表明するのに役立ちます．それだけでなく，[Erlang の JIT コンパイラーはすでにこの情報に依存して，可能な限り最適化を実行します(リンク先: Type-Based Optimizations in the JIT)．](https://www.erlang.org/blog/type-based-optimizations-in-the-jit/)
+
+また，Elixir は関数と演算子が暗黙的な型変換を回避するため，厳密に型指定されているとも言えます．次の関数は，入力がその型と一致しない場合にも失敗します: 
+
+```elixir
+$ binary() -> binary()
+def debug(string), do: "we got: " <> string
+
+$ (integer() -> integer()) and (float() -> float())
+def increment(number), do: number + 1
+```
+
+`<>` は引数としてバイナリのみを受け入れ，それ以外の場合は例外を発生します．`+`は数値(整数または浮動小数点)のみを受け入れ，それ以外の場合は例外を発生します。 `+` は，次に示すように，文字列から数値へのような非数値型の暗黙的な変換を実行しません:
+
+```elixir
+iex(1)> increment(1)
+2
+iex(2)> increment(13.0)
+14.0
+iex(3)> increment("foobar")
+** (ArithmeticError) bad argument in arithmetic expression: "foobar" + 1
+```
+
+言い換えれば，Elixir のランタイムは実行時に値とその型を一貫してチェックします．数値以外の値が指定されたときにインクリメントが失敗する場合は，`dynamic()` 型が実行時の入力と一致しないときに失敗します．これにより，`increment` が宣言された型を返すことが保証されるため，型なしコードから関数を呼び出すときに実行時の型チェックを導入する必要がなくなります．
+
+上記の`identity`, `debug`, および`increment`関数を見ると，開発者として，これらの関数は入力と一致しない値が与えられたときに例外が発生するとみなせます．しかし，この特性を型システム自体によって計算されるように一般化するにはどうすればよいでしょうか？ これを行うために，集合論的な型に依存してこのプロパティを導き出す，strong arrowと呼ばれる新しい概念を導入します．
+
+strong arrowの考え方は次のとおりです: strong arrowは，入力型(つまり，その定義域)以外の値で評価されるとエラーになることが静的に証明できるような関数です．たとえば，`increment`関数で`string()`を引数として渡すと，`string() + integer()` は有効な演算ではないため，型チェックは行われません．集合論的型のおかげで，集合の否定を計算することで定義域外のすべての値を計算できます．`increment/1` が`number()` 以外のすべての型で失敗することを考えると，この関数はstrongだと言えます．
+
+このルールをすべての型付き関数に適用すると，どの関数がstrongでどの関数がそうではないかがわかります． 関数がstrongであれば，型システムは，`dynamic()` 型で呼び出すと常にその戻り値の型が評価されると認識します．したがって，`increment(dynamic())` の戻り値の型は`number()` であると言えます．これは健全であり，それ以上の実行時チェックは必要ありません．
+
+`debug`関数に戻ると，ガードされた`identity`関数とともに使用すると，追加の実行時チェックを導入することなく，コンパイル時に警告を発し，実行時にエラーを発することができます:
+
+```elixir
+$ a -> a when a: number()
+def identity(arg) when is_number(arg), do: arg
+
+def debug(arg) do
+  "we got: " <> identity(arg)
+end
+```
+
+ただし，`identity`関数がstrongでない場合は，前のセクションの戦略のいずれかにフォールバックする必要があります．
+
+strong arrowのもう1つの強力な特性は，構成可能であることです．論文から例を取り上げてみましょう: 
+
+```elixir
+$ number(), number() -> number()
+def subtract(a, b) do
+  a + negate(b)
+end
+
+$ number() -> number()
+def negate(int), do: -int
+```
+
+上の例では，`negate/1` の型は，定義域の入力に対して発生するため，strong arrowです． `+` と私たちの`negate`も両方ともstrong arrowであるため，`subtract/2` の型もstrong arrowです．これは，`dynamic()` 型がシステム全体に広がる方法を制限するため，重要な能力です．
+
+> 正誤表: 私のプレゼンテーションでは，上記の例で，`number()` の代わりに `integer()` 型を使用しました．しかし，それはスライドの間違いでした．`integer()` 型を指定すると，`integer() -> integer()` で`subtract`関数を呼び出し，`integer() -> integer()` で`negate`関数を呼び出しても，`subtract`はstrong arrowにはなりません． 理由を考えてみてください．
+
+幸いなことに，他の段階的に型付けされた言語でも，strong arrowを利用できます．ただし，言語とその関数がpolymorphicであればあるほど，与えられた関数がstrongであると結論付ける可能性は低くなります．たとえば，Python や Ruby などの他の段階的に型付けされた言語では，`+` 演算子は拡張可能であり，ユーザーは演算が有効なカスタム型を定義できます．TypeScript では，`"foobar" + 1` も有効な操作であり，関数定義域を拡張します．どちらの場合も，演算子は`number()`以外のすべての型で失敗しないため，数値に制限された`increment`関数にはstrong arrow型はありません．したがって，健全性を維持するには，さらなる実行時チェックでオペランドを制限するか，`dynamic()` を返す(コンパイル時チェックの数を減らす)必要があります．
+
+最後に考慮すべきシナリオが1つありますが，簡潔にするためにkeynoteでは含めませんでした．この関数を取り上げます:
+
+```elixir
+$ integer() -> :ok
+def receives_integer_and_returns_ok(_arg), do: :ok
+```
+
+上記の関数は任意の型を受け取り、`:ok` を返すことができます． この型はstrong arrowでしょうか？ 私たちの定義によれば，そうではありません． 入力を否定しても，型チェックは失敗せず，`:ok` を返すからです．
+
+ただし，戻り値の型が常に同じであることを考えると，これはstrong arrowになるはずです．そのために，strong arrowの定義を修正して言い換えてみましょう．関数の定義域(つまり，入力)を否定し，それを型チェックします．関数が `none()` (つまり，型チェックを行わない) またはそのs終域(訳註: codomain, 写像$f: X \arrow Y$の集合$Y$，これに対し，値域は$f(X)$を指すので注意)の部分集合である型 (つまり，その出力) を返す場合，それはstrong arrowです．
 
