@@ -1,11 +1,13 @@
 ---
-title: C - Repunit Trio を Elixir で解いた〜トヨタ自動車プログラミングコンテスト2023#8（AtCoder Beginner Contest 333）
+title: >-
+  C - Repunit Trio を Elixir で解いた〜トヨタ自動車プログラミングコンテスト2023#8（AtCoder Beginner
+  Contest 333）
 tags:
   - AtCoder
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-23T12:10:02+09:00'
+id: 4f6782794f50d91196e4
 organization_url_name: null
 slide: false
 ignorePublish: false
