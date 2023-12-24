@@ -1,11 +1,13 @@
 ---
-title: B - Christmas TreesをElixirで解いた〜ユニークビジョンプログラミングコンテスト2023 クリスマス (AtCoder Beginner Contest 334)
+title: >-
+  B - Christmas TreesをElixirで解いた〜ユニークビジョンプログラミングコンテスト2023 クリスマス (AtCoder
+  Beginner Contest 334)
 tags:
   - AtCoder
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-24T10:12:07+09:00'
+id: 52532477b8df160d5f97
 organization_url_name: null
 slide: false
 ignorePublish: false
