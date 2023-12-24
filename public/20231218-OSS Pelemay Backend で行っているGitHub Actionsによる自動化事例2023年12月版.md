@@ -196,3 +196,6 @@ https://qiita.com/zacky1972/items/993f50a2add27763edf3
 
 https://qiita.com/zacky1972/items/d1d159f8bcf24d012fbc
 
+## 謝辞
+
+本研究の一部は，北九州産業学術推進機構(FAIS)旭興産グループ研究支援プログラムの支援を受けた．
