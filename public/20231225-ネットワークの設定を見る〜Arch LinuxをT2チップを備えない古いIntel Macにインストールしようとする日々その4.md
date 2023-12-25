@@ -5,7 +5,7 @@ tags:
   - Linux
   - archLinux
 private: false
-updated_at: '2023-12-25T14:59:34+09:00'
+updated_at: '2023-12-25T17:57:08+09:00'
 id: fcce6bdeaf2b87697e3f
 organization_url_name: null
 slide: false
