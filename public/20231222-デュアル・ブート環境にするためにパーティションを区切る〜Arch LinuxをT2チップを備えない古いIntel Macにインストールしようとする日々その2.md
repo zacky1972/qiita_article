@@ -13,6 +13,12 @@ ignorePublish: false
 ---
 この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の2回目です．今回は，表題の通り，MacBook Air (11-inch, Early 2014, MacBookAir6,1)をmacOSとArch Linuxのデュアル・ブート環境にするために，パーティションを区切るのを行いたいと思います．
 
+## シリーズ
+
+1. [Arch LinuxをブートできるUSBメモリを用意する](https://qiita.com/zacky1972/items/9f447f9a11f91e90f6e8)
+2. デュアル・ブート環境にするためにパーティションを区切る(本記事)
+3. [いよいよArch Linuxをインストールする](https://qiita.com/zacky1972/items/da1db6795b84151186ab)
+
 ## パーティションの作成(Disk Utililty)1回目
 
 まず，Macを起動する際にコマンドキー＋Rを押して，ディスク・ユーティリティを起動します．macOSのパーティション領域を小さくします．

@@ -1,5 +1,5 @@
 ---
-title: Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その1
+title: Arch LinuxをブートできるUSBメモリを用意する〜Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その1
 tags:
   - Mac
   - Linux
@@ -12,6 +12,12 @@ slide: false
 ignorePublish: false
 ---
 Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最初のLinuxディストリビューションであるAsahi LinuxがArch Linuxベースであるというところから強く興味を持ちました．Linuxの仕組みを深く知りたいというのも動機の1つです．@mnishiguchi さんがArch Linux使いになったと聞き，いよいよArch Linuxをやってみようと決意しました．この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文です．
+
+## シリーズ
+
+1. Arch LinuxをブートできるUSBメモリを用意する(本記事)
+2. [デュアル・ブート環境にするためにパーティションを区切る](https://qiita.com/zacky1972/items/4b3d8240ff1f4a599908)
+3. [いよいよArch Linuxをインストールする](https://qiita.com/zacky1972/items/da1db6795b84151186ab)
 
 ## まず公式ドキュメントを見る
 
