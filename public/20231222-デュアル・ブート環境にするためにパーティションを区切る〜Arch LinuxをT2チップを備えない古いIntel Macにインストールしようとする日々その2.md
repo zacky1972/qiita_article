@@ -18,6 +18,7 @@ ignorePublish: false
 1. [Arch LinuxをブートできるUSBメモリを用意する](https://qiita.com/zacky1972/items/9f447f9a11f91e90f6e8)
 2. デュアル・ブート環境にするためにパーティションを区切る(本記事)
 3. [いよいよArch Linuxをインストールする](https://qiita.com/zacky1972/items/da1db6795b84151186ab)
+4. [ネットワークの設定を見る](https://qiita.com/zacky1972/items/fcce6bdeaf2b87697e3f)
 
 ## パーティションの作成(Disk Utililty)1回目
 

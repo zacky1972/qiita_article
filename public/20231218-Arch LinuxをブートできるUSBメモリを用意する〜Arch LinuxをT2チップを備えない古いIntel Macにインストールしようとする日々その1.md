@@ -20,6 +20,7 @@ Arch Linuxに前から興味がありました．Apple Silicon Mac向けの最�
 1. Arch LinuxをブートできるUSBメモリを用意する(本記事)
 2. [デュアル・ブート環境にするためにパーティションを区切る](https://qiita.com/zacky1972/items/4b3d8240ff1f4a599908)
 3. [いよいよArch Linuxをインストールする](https://qiita.com/zacky1972/items/da1db6795b84151186ab)
+4. [ネットワークの設定を見る](https://qiita.com/zacky1972/items/fcce6bdeaf2b87697e3f)
 
 ## まず公式ドキュメントを見る
 
