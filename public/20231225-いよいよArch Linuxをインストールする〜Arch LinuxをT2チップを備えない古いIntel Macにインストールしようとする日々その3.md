@@ -11,7 +11,7 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の2回目です．今回は，表題の通り，いよいよMacBook Air (11-inch, Early 2014, MacBookAir6,1)にArch Linuxインストールする作業を行いたいと思います．
+この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の3回目です．今回は，表題の通り，いよいよMacBook Air (11-inch, Early 2014, MacBookAir6,1)にArch Linuxインストールする作業を行いたいと思います．
 
 ## シリーズ
 
