@@ -1,11 +1,13 @@
 ---
-title: Arch LinuxをブートできるUSBメモリを用意する〜Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その1
+title: >-
+  Arch LinuxをブートできるUSBメモリを用意する〜Arch LinuxをT2チップを備えない古いIntel
+  Macにインストールしようとする日々その1
 tags:
   - Mac
   - Linux
   - archLinux
 private: false
-updated_at: '2023-12-18T11:42:12+09:00'
+updated_at: '2023-12-25T13:45:52+09:00'
 id: 9f447f9a11f91e90f6e8
 organization_url_name: null
 slide: false
