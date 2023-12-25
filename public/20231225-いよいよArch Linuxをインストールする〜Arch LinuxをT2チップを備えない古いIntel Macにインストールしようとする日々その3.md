@@ -223,6 +223,12 @@ https://qiita.com/mdps513/items/4c29be9d080b47534e7c
 useradd -m -g wheel -s /bin/bash zacky
 ```
 
+パスワードを設定します．
+
+```bash
+passwd zacky
+```
+
 `sudo`をインストールします．
 
 ```bash
