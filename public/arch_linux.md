@@ -1,12 +1,14 @@
 ---
-title: Mac Pro (Mid 2010)にArch Linuxをインストールする〜Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その5
+title: >-
+  Mac Pro (Mid 2010)にArch Linuxをインストールする〜Arch LinuxをT2チップを備えない古いIntel
+  Macにインストールしようとする日々その5
 tags:
   - Mac
   - Linux
   - archLinux
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-25T17:54:58+09:00'
+id: 2904a0a07f9335fdb2de
 organization_url_name: null
 slide: false
 ignorePublish: false
