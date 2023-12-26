@@ -3,7 +3,7 @@ title: 多項式を計算するホーナー法をElixirで実装する
 tags:
   - Elixir
 private: false
-updated_at: '2023-12-27T02:58:12+09:00'
+updated_at: '2023-12-27T03:08:45+09:00'
 id: 9cd93daeac737e160e9b
 organization_url_name: null
 slide: false
