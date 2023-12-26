@@ -3,8 +3,8 @@ title: ニュートン法をElixirで実装してみた
 tags:
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-27T08:22:10+09:00'
+id: e7f1c91bb9ac24fe54f3
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
