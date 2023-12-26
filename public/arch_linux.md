@@ -14,7 +14,7 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の5回目です．前回まででMac Pro(Mid 2010)へArch Linuxをインストールできたものの，ネットワークも繋がらない最小構成でした．今回は，この状態でもElixirをインストールして実行することができるのかを検証してみたいと思います．
+この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の6回目です．前回まででMac Pro(Mid 2010)へArch Linuxをインストールできたものの，ネットワークも繋がらない最小構成でした．今回は，この状態でもElixirをインストールして実行することができるのかを検証してみたいと思います．
 
 ## シリーズ
 
