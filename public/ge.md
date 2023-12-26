@@ -19,29 +19,17 @@ defmodule GuessianElimination do
   def solve(a, b) do
     {n, n} = Nx.shape(a)
 
+    {a, b}
+    |> forward_elimination(n)
+    |> backward_substitution(n)
+    |> Nx.tensor()
+  end
+
+  defp forward_elimination({a, b}, n) do
     0..n-2
-    # Forward elimination
     |> Enum.reduce({a, b}, fn k, {a, b} ->
-
-      # Pivot
-      {a, b} =
-        Nx.transpose(a)[k]
-        |> Nx.slice([k], [n - k])
-        |> Nx.argmax()
-        |> Nx.add(k)
-        |> Nx.to_number()
-        |> case do
-          l when l != k ->
-            {
-              swap(a, {indices(n, k), k}, {indices(n, l), l}),
-              swap(b, {Nx.tensor([k]), k}, {Nx.tensor([l]), l})
-            }
-
-          _ -> {a, b}
-        end
-
       k+1..n-1
-      |> Enum.reduce({a, b}, fn i, {a, b} ->
+      |> Enum.reduce(pivot({a, b}, n, k), fn i, {a, b} ->
         alpha = Nx.negate(Nx.divide(a[i][k], a[k][k]))
 
         {
@@ -50,19 +38,35 @@ defmodule GuessianElimination do
         }
       end)
     end)
-    # Backward substitution
-    |> then(fn {a, b} ->
-      Enum.reduce(n-2..0, [Nx.to_number(b[n-1]) / Nx.to_number(a[n-1][n-1])], fn k, x ->
-        r =
-          k+1..n-1
-          |> Enum.map(& {Nx.to_number(a[k][&1]), Enum.at(x, &1 - k - 1)})
-          |> Enum.map(fn {a, b} -> a * b end)
-          |> Enum.sum()
+  end
 
-        [(Nx.to_number(b[k]) - r) / Nx.to_number(a[k][k]) | x]
-      end)
+  defp backward_substitution({a, b}, n) do
+    Enum.reduce(n-2..0, [Nx.to_number(b[n-1]) / Nx.to_number(a[n-1][n-1])], fn k, x ->
+      r =
+        k+1..n-1
+        |> Enum.map(& {Nx.to_number(a[k][&1]), Enum.at(x, &1 - k - 1)})
+        |> Enum.map(fn {a, b} -> a * b end)
+        |> Enum.sum()
+
+      [(Nx.to_number(b[k]) - r) / Nx.to_number(a[k][k]) | x]
     end)
-    |> Nx.tensor()
+  end
+
+  defp pivot({a, b}, n, k) do
+    Nx.transpose(a)[k]
+    |> Nx.slice([k], [n - k])
+    |> Nx.argmax()
+    |> Nx.add(k)
+    |> Nx.to_number()
+    |> case do
+      l when l != k ->
+        {
+          swap(a, {indices(n, k), k}, {indices(n, l), l}),
+          swap(b, {Nx.tensor([k]), k}, {Nx.tensor([l]), l})
+        }
+
+      _ -> {a, b}
+    end
   end
 
   defp swap(t, {indices_l, l}, {indices_k, k}) do
@@ -79,6 +83,6 @@ defmodule GuessianElimination do
 end
 ```
 
-`# Forward elimination`は前進消去，`# Backward substitution`は後退代入というフェーズです．前進消去の中の，`# Pivot`は，部分ピボット選択(対角成分の最も大きな行を選択する処理)です．
+関数`forward_elimination`は前進消去，関数`backward_substitution`は後退代入，関数`pivot`は，部分ピボット選択(対角成分の最も大きな行を選択する処理)です．
 
 作るのもとても難しかったですが，できたプログラムコードを説明するのも，とても難しいです...
