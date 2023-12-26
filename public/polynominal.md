@@ -16,7 +16,7 @@ ignorePublish: false
 $a_0 x^n + a_1 x^{n - 1} + a_2 x^{n - 2} \cdots + a_{n - 2} x^2 + a_{n - 1} x + a_n$ を計算するのですが，リスト`a`として $[a_0, a_1, a_2, \cdots, a_{n - 2}, a_{n - 1}, a_n ]$ を与えます．
 
 ```elixir
-fn x, a ->
+fn a, x ->
   Enum.reduce(tl(a), hd(a), fn a, y -> y * x + a end)
 end
 ```
@@ -33,3 +33,32 @@ end
 そこで，`tl(a)` すなわち リスト$[a_1, a_2, \cdots, a_{n - 1}, a_n]$に対して，初期値`hd(a)` すなわち $a_0$ を初期値として，漸化式 `fn a, y -> y * x + a` を累積する[`Enum.reduce/3`](https://hexdocs.pm/elixir/1.16.0/Enum.html#reduce/3) を計算します．
 
 ホーナー法が，Elixirだとこんなにも単純に書けるのは，少し感動しますね．
+
+## 応用
+
+先ほどの式を変形して，次のように定義します．
+
+```elixir
+fn a ->
+  fn x ->
+    Enum.reduce(tl(a), hd(a), fn a, y -> y * x + a end)
+  end
+end
+```
+
+この関数を`f`とすると，次のようにすると，$g(x) = x^2 + 2x + 1$ を計算する関数`g`を得ることができます．
+
+```elixir
+g = f.([1, 2, 1])
+```
+
+```elixir
+iex> g.(1)
+4
+iex> g.(2)
+9
+iex> g.(3)
+16
+```
+
+ちなみに，このような手法をカリー化と言います．
