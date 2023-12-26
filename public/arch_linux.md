@@ -1,13 +1,15 @@
 ---
-title: ネットワークが繋がらない最小構成のままElixirをインストールして実行してみる〜Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その5
+title: >-
+  ネットワークが繋がらない最小構成のままElixirをインストールして実行してみる〜Arch LinuxをT2チップを備えない古いIntel
+  Macにインストールしようとする日々その5
 tags:
   - Mac
   - Linux
   - archLinux
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-26T10:29:49+09:00'
+id: 9a145632c6c12c650bed
 organization_url_name: null
 slide: false
 ignorePublish: false
