@@ -4,8 +4,8 @@ tags:
   - Elixir
   - nx
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-27T06:58:45+09:00'
+id: 9c5aaa135c3360a48014
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
