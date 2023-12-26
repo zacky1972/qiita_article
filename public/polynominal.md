@@ -3,8 +3,8 @@ title: 多項式を計算するホーナー法をElixirで実装する
 tags:
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-27T02:58:12+09:00'
+id: 9cd93daeac737e160e9b
 organization_url_name: null
 slide: false
 ignorePublish: false
