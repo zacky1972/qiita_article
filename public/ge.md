@@ -22,7 +22,6 @@ defmodule GuessianElimination do
     {a, b}
     |> forward_elimination(n)
     |> backward_substitution(n)
-    |> Nx.tensor()
   end
 
   defp forward_elimination({a, b}, n) do
@@ -50,6 +49,7 @@ defmodule GuessianElimination do
 
       [(Nx.to_number(b[k]) - r) / Nx.to_number(a[k][k]) | x]
     end)
+    |> Nx.tensor()
   end
 
   defp pivot({a, b}, n, k) do
