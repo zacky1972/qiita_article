@@ -7,7 +7,7 @@ tags:
 private: false
 updated_at: '2023-12-26T10:33:05+09:00'
 id: fcce6bdeaf2b87697e3f
-organization_url_name: null
+organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
