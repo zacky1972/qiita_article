@@ -4,7 +4,7 @@ tags:
   - Elixir
   - 型システム
 private: false
-updated_at: '2023-12-24T08:55:00+09:00'
+updated_at: '2023-12-26T14:22:40+09:00'
 id: e8ffa1be10e0e4fad427
 organization_url_name: fukuokaex
 slide: false
