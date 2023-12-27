@@ -3,8 +3,8 @@ title: 2分法をElixirで実装してみた
 tags:
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2023-12-27T09:11:20+09:00'
+id: fb7e8de1455bb194f769
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
