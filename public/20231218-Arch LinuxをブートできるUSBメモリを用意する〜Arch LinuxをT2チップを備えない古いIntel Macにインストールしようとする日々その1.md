@@ -7,7 +7,7 @@ tags:
   - Linux
   - archLinux
 private: false
-updated_at: '2023-12-26T14:22:40+09:00'
+updated_at: '2024-01-04T09:02:34+09:00'
 id: 9f447f9a11f91e90f6e8
 organization_url_name: fukuokaex
 slide: false
