@@ -8,7 +8,7 @@ tags:
   - archLinux
   - Elixir
 private: false
-updated_at: '2024-01-04T10:58:22+09:00'
+updated_at: '2024-01-05T05:37:45+09:00'
 id: ab537e53fd30ac0d15a6
 organization_url_name: fukuokaex
 slide: false
