@@ -23,6 +23,8 @@ ignorePublish: false
 4. [ネットワークの設定を見る](https://qiita.com/zacky1972/items/fcce6bdeaf2b87697e3f)
 5. Mac Pro (Mid 2010)にArch Linuxをインストールする(本記事)
 6. [ネットワークが繋がらない最小構成のままElixirをインストールして実行してみる](https://qiita.com/zacky1972/items/9a145632c6c12c650bed)
+7. [ネットワークが繋がらない最小構成のままElixirをasdfではなくソースコードビルドしてインストールする](https://qiita.com/zacky1972/items/ab537e53fd30ac0d15a6)
+
 
 
 ## Mac Pro (Mid 2010)の仕様
