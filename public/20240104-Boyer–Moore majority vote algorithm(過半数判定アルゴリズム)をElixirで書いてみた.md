@@ -33,7 +33,8 @@ defmodule Majority do
   """
   @spec get(list(any())) :: any()
   def get(list) do
-    Enum.reduce(list, {nil, 0}, fn
+    list
+    |> Enum.reduce({nil, 0}, fn
       x, {_, 0} -> {x, 1}
       x, {x, c} -> {x, c + 1}
       _, {m, c} -> {m, c - 1}
