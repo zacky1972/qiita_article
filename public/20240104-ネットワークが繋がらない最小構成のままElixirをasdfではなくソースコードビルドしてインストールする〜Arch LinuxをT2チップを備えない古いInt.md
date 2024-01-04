@@ -52,7 +52,7 @@ Mac Pro (Mid 2010)の2024年1月4日現在の`fdisk -l`の結果は次のとお�
 
 https://elixir-lang.org/install.html#compiling-from-source
 
-今回は，latest releaseをインストールしたいと思っています．2024年1月4日現在の最新版は1.16.0です．下記のようにをダウンロードします．
+今回は，latest releaseをインストールしたいと思っています．2024年1月4日現在の最新版は1.16.0です．下記のようにダウンロードします．
 
 ```bash
 cd
