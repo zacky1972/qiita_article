@@ -20,6 +20,18 @@ ignorePublish: false
 1. [Nerves化構想を思い立つ](https://qiita.com/zacky1972/items/d1da49dedfaafae57cbb)
 1. buildrootをビルドして起動する(本記事)
 
+## Nervesの移植方法について
+
+Nervesの移植方法については，下記にドキュメント化されています．
+
+https://github.com/nerves-project/nerves_system_br/blob/main/README.md
+
+2024年1月現在では次のことを最初に行います．
+
+Create a minimal Buildroot `defconfig` that boots and runs on the board. This doesn't use Nerves at all.
+
+というわけで，Buildrootに取り組んでみます．
+
 ## buildrootの作成
 
 buildrootの作成ですが，まずは試しなので，適当なUbuntuマシンでサクッと作ってしまいました．後で，ArchLinuxでの構築を試そうと思っています．
