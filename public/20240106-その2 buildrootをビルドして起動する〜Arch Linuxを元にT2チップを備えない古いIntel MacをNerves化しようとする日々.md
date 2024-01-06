@@ -26,7 +26,7 @@ Nervesの移植方法については，下記にドキュメント化されて�
 
 https://github.com/nerves-project/nerves_system_br/blob/main/README.md
 
-2024年1月現在では次のことを最初に行います．
+2024年1月現在では次のことを最初に行うと書かれています．
 
 Create a minimal Buildroot `defconfig` that boots and runs on the board. This doesn't use Nerves at all.
 
