@@ -45,3 +45,5 @@ https://qiita.com/zacky1972/items/b9bde6aa6724960340ab
 Arch Linuxを元にすれば，T2チップを備えない古いIntel MacのNerves化は，なんとなく出来そうな予感がします！
 
 つづく
+
+https://qiita.com/zacky1972/items/4ce0032514978a7d2f1f
