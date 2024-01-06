@@ -217,6 +217,15 @@ Mac Pro (Mid 2010)を再起動して，optionキーを押し続けて待機し�
 
 本記事は，ひとまず，ここまでです．
 
+## 追記
 
+デバイスドライバが足りないのであれば，Arch Linuxの`dmesg`の出力結果が参考になると思いました．
 
+また，Nerves Project代表のFrank Hunlethさん曰く，
 
+> It looks like the root filesystem isn't showing up. I didn't look hard enough to see whether it was due to a device driver missing or the the hard drive that it's looking for having a different name.
+> When Linux hangs like your screenshot shows, it usually has to something to do with mounting the root filesystem.
+
+ということ，つまり，SSDが想定されているドライブの位置に接続されていないので，ドライブ名違いでrootをマウントできない可能性があることを指摘してくださいました．
+
+Mac Pro (Mid 2010)の特に気に入っている点の1つは，ドライブの交換がとても簡単であるという点です．早速，あとで試してみたいと思います．
