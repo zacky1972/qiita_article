@@ -6,7 +6,7 @@ tags:
   - Elixir
   - Nerves
 private: false
-updated_at: '2024-01-05T18:00:41+09:00'
+updated_at: '2024-01-06T12:24:01+09:00'
 id: d1da49dedfaafae57cbb
 organization_url_name: fukuokaex
 slide: false
