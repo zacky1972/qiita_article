@@ -115,10 +115,12 @@ diskutil list
 この環境では，`/dev/disk2`でした．
 
 ```bash
-dd if=disk.img of=/dev/disk2 conv=fsync oflag=direct status=progress
+dd if=disk.img of=/dev/disk2
 ```
 
 ## 起動する
 
-SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さてどうなるか？　つづく
+SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さてどうなるか？
+
+
 
