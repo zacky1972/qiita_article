@@ -64,3 +64,4 @@ buildrootを設定してみたら，すぐわかることでした．
 
 つづく
 
+https://qiita.com/zacky1972/items/4e150e1f80e31ac69be7
