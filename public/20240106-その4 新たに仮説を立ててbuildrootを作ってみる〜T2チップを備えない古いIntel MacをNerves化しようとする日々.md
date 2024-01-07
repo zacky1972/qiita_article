@@ -7,7 +7,7 @@ tags:
   - buildroot
   - Nerves
 private: false
-updated_at: '2024-01-07T08:10:12+09:00'
+updated_at: '2024-01-07T08:14:10+09:00'
 id: 4e150e1f80e31ac69be7
 organization_url_name: fukuokaex
 slide: false
@@ -122,5 +122,17 @@ dd if=disk.img of=/dev/disk2
 
 SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さてどうなるか？
 
+![buildrootのGRUB](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/3ebd2f0f-44c9-a816-d641-2ff934d2dd0c.jpeg)
+![buildrootのブートログ](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/11400af3-3d66-8909-e491-929592673c76.jpeg)
 
+残念，またしてもここで止まってしまいました．
 
+Nerves Project代表のFrank Hunlethさんより
+
+> I might try changing the Buildroot configuration to make a initramfs rather than a rootfs. That way the Linux kernel contains the root filesystem, and you should be able to get past the place where Linux hangs waiting for it. Once you can boot to a shell prompt, you'll have more tools to investigate why the root filesystem doesn't mount (assuming that that is the problem).
+
+とありました．次は`initramfs`を試してみたいと思います！
+
+続きはこちら
+
+https://qiita.com/zacky1972/items/812fb744a62bc30661b3
