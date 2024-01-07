@@ -9,7 +9,7 @@ tags:
   - buildroot
   - Nerves
 private: false
-updated_at: '2024-01-07T11:05:23+09:00'
+updated_at: '2024-01-07T11:17:48+09:00'
 id: 812fb744a62bc30661b3
 organization_url_name: fukuokaex
 slide: false
@@ -191,3 +191,14 @@ dd if=disk.img of=/dev/disk0
 
 SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さてどうなるか？
 
+![buildrootのGRUB](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/c0dda21d-575d-9e8e-b910-26fb6b7e2bc3.jpeg)
+
+ブートログをできる限り写してみました．
+
+![buildrootのブートログ1枚目](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/aa9d63cc-b804-1020-3a57-77d642714e4b.jpeg)
+
+![buildrootのブートログ2枚目](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/a9c882d2-dfee-081c-4e89-ce2f17b952b0.jpeg)
+
+![buildrootのブートログ3枚目](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/7545ca6f-0a03-09d5-0ab3-55249df8abd9.jpeg)
+
+ここまででとまりました．
