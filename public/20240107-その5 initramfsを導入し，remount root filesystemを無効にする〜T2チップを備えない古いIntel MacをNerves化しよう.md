@@ -9,7 +9,7 @@ tags:
   - buildroot
   - Nerves
 private: false
-updated_at: '2024-01-07T10:16:09+09:00'
+updated_at: '2024-01-07T11:05:23+09:00'
 id: 812fb744a62bc30661b3
 organization_url_name: fukuokaex
 slide: false
