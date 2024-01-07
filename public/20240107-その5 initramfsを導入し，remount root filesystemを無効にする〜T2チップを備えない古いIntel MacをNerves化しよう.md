@@ -27,6 +27,29 @@ ignorePublish: false
 
 ## やってみたbuidrootの設定
 
+やっていくうちに次のエラーが出るようになりました．
+
+```
+>>>   Executing post-image script board/pc/post-image-efi.sh
+INFO: cmd: "mkdir -p "/home/zacky/buildroot/output/build/genimage.tmp"" (stderr):
+INFO: cmd: "rm -rf "/home/zacky/buildroot/output/build/genimage.tmp"/*" (stderr):
+INFO: cmd: "mkdir -p "/home/zacky/buildroot/output/build/genimage.tmp"" (stderr):
+INFO: cmd: "cp -a "/tmp/tmp.LbDAomNaaQ" "/home/zacky/buildroot/output/build/genimage.tmp/root"" (stderr):
+INFO: cmd: "mkdir -p "/home/zacky/buildroot/output/images"" (stderr):
+INFO: vfat(efi-part.vfat): cmd: "mkdosfs   '/home/zacky/buildroot/output/images/efi-part.vfat'" (stderr):
+INFO: vfat(efi-part.vfat): adding file 'efi-part/EFI' as 'EFI' ...
+INFO: vfat(efi-part.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/home/zacky/buildroot/output/images/efi-part.vfat' '/home/zacky/buildroot/output/images/efi-part/EFI' '::EFI'" (stderr):
+INFO: vfat(efi-part.vfat): adding file 'bzImage' as 'bzImage' ...
+INFO: vfat(efi-part.vfat): cmd: "MTOOLS_SKIP_CHECK=1 mcopy -sp -i '/home/zacky/buildroot/output/images/efi-part.vfat' '/home/zacky/buildroot/output/images/bzImage' '::bzImage'" (stderr):
+Disk full
+INFO: vfat(efi-part.vfat): cmd: "rm -f "/home/zacky/buildroot/output/images/efi-part.vfat"" (stderr):
+ERROR: vfat(efi-part.vfat): failed to generate efi-part.vfat
+make[1]: *** [Makefile:820: target-post-image] エラー 1
+make: *** [Makefile:82: _all] エラー 2
+```
+
+Nerves ProjectのFrank Hunlethに対処方法を教えてもらいました．EFIがいっぱいになっているので，プログラムを減らすか，容量を大きくするかです．後者をするには，下記ファイルを編集してサイズを大きくします．
+
 ```bash
 vi board/pc/genimage-efi.cfg
 ```
@@ -65,6 +88,8 @@ image disk.img {
         }
 }
 ```
+
+次にbuildrootの設定をしていきます．
 
 ```bash
 make pc_x86_64_efi_defconfig
@@ -153,3 +178,16 @@ ls output/images/disk.img
 ```
 
 果たして，実行できるのか？
+
+## SSDを焼く
+
+Mac Pro (Mid 2010)上のmacOSで焼きます．`diskutil list`で確認すると，恐ろしいことに，今度は`/dev/disk2`ではなく`/dev/disk0`でした．毎回確認しないといけないようですね．
+
+```bash
+dd if=disk.img of=/dev/disk0
+```
+
+## 起動する
+
+SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さてどうなるか？
+
