@@ -9,7 +9,7 @@ tags:
   - buildroot
   - Nerves
 private: false
-updated_at: '2024-01-07T11:17:48+09:00'
+updated_at: '2024-01-07T11:28:59+09:00'
 id: 812fb744a62bc30661b3
 organization_url_name: fukuokaex
 slide: false
@@ -202,3 +202,13 @@ SSDを入れ替えて，ドライブ1にbuildrootのSSDを装着します．さ�
 ![buildrootのブートログ3枚目](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/7545ca6f-0a03-09d5-0ab3-55249df8abd9.jpeg)
 
 ここまででとまりました．
+
+よくみると "Welcome to Buildroot" と出ていますね．
+
+Enterキーを押してみました．
+
+![ログインが動いていた！](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/af4c582f-97bb-a89c-0a43-9055f893feaf.jpeg)
+
+ログインが機能していました！やった！
+
+ログインもしてみました．ちゃんと動きました．
