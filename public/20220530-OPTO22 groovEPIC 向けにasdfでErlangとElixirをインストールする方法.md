@@ -28,6 +28,7 @@ ignorePublish: false
 追記 20231127: OpenSSLを最新版に追従しました．
 追記 20231221: Erlangを最新版に追従しました．
 追記 20231223: Elixirを最新版に追従しました．
+追記 20240203: OpenSSLを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -82,15 +83,15 @@ Erlang/OTP 25.1系列以降では OpenSSL 3系列が推奨です．
 
 ### OpenSSL 3系列をインストールする場合(Erlang/OTP 25.1系列以降の推奨)
 
-2023年10月時点での OpenSSL 3系列の最新版はOpenSSL 3.2.0です．ソースコードは`https://www.openssl.org/source/openssl-3.2.0.tar.gz`にあります．
+2024年2月時点での OpenSSL 3系列の最新版はOpenSSL 3.2.1です．ソースコードは`https://www.openssl.org/source/openssl-3.2.1.tar.gz`にあります．
 
 ```bash
 sudo mkdir /usr/local/src
 sudo su
 cd /usr/local/src
-curl -OL https://www.openssl.org/source/openssl-3.2.0.tar.gz
-tar xvzf openssl-3.2.0.tar.gz
-cd openssl-3.2.0
+curl -OL https://www.openssl.org/source/openssl-3.2.1.tar.gz
+tar xvzf openssl-3.2.1.tar.gz
+cd openssl-3.2.1
 ./config -fPIC shared --prefix=/usr/local/openssl
 make
 make install_sw
