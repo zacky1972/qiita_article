@@ -28,7 +28,7 @@ ignorePublish: false
 追記 20231127: OpenSSLを最新版に追従しました．
 追記 20231221: Erlangを最新版に追従しました．
 追記 20231223: Elixirを最新版に追従しました．
-追記 20240203: OpenSSLを最新版に追従しました．
+追記 20240203: OpenSSLとasdfを最新版に追従しました．
 
 ![groovEPIC](https://zacky1972.github.io/assets/images/groovEPIC.jpg)
 
@@ -108,10 +108,10 @@ export KERL_CONFIGURE_OPTIONS="--with-ssl=/usr/local/openssl"
 
 ## 6. GitHubから`asdf`をインストールします
 
-2023年9月時点での`asdf`の最新版はv0.13.1です。適宜指定します。
+2024年2月時点での`asdf`の最新版はv0.14.0です。適宜指定します。
 
 ```bash
-git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.13.1
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
 ```
 
 `~/.bashrc` に下記を追記します。
