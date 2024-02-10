@@ -5,12 +5,13 @@ tags:
   - verilator
   - GitHubActions
 private: false
-updated_at: '2023-01-24T14:13:34+09:00'
+updated_at: '2024-02-10T09:13:57+09:00'
 id: 5062e599a447ab529880
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
+
 Verilatorのいいところは，macOSでも使える点と，GitHub ActionsでCIを組める点です．
 Verilator 5になって，`--timing`オプションが使えるようになり，テストベンチで `#10;` すなわち10クロック待つ，みたいな記述ができるようになり，SystemVerilogでテストベンチが完結できるみたいです．それ以前のVerilatorだとCプログラムでテストベンチを書く必要がありました．(とはいえ，記述できるのは，ディジタル回路設計とコンピュータアーキテクチャ第2版にあるような，自己点検テストベンチまでで，テストベクタファイル付きテストベンチは意図通りにファイルを読み込めなかったのですけど)
 
