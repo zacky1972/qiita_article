@@ -5,7 +5,7 @@ tags:
   - verilator
   - GitHubActions
 private: false
-updated_at: '2024-02-10T09:13:57+09:00'
+updated_at: '2024-02-10T09:22:30+09:00'
 id: 5062e599a447ab529880
 organization_url_name: fukuokaex
 slide: false
