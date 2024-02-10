@@ -126,3 +126,12 @@ Verilator 4.211 devel rev v4.210-59-g3ec3c2c2
 ```
 
 
+20240210追記:
+
+本記事から大幅アップデートした手法について，[FPGAマガジン特別版No.2で紹介しております https://fpga.tokyo/no2-2/](https://fpga.tokyo/no2-2/)
+
+大変光栄なことに，トップを飾っております．
+
+> 第1章　Verilator 5とGitHub Actionsによるテストベンチ自動検証
+
+他にも有用な記事が満載ですので，ぜひこの機会にInterfaceを定期購読ください！
