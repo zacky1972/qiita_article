@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2023年12月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2024年2月決定版
 tags:
   - Erlang
   - homebrew
@@ -21,9 +21,9 @@ M1 Mac の初期状態からElixirとErlangを Homebrew と`asdf`でインスト
 
 ```zsh
 % elixir -v
-Erlang/OTP 26 [erts-14.1.1] [source] [64-bit] [smp:20:20] [ds:20:20:10] [async-threads:1] [jit]
+Erlang/OTP 26 [erts-14.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit]
 
-Elixir 1.15.7 (compiled with Erlang/OTP 26)
+Elixir 1.16.1 (compiled with Erlang/OTP 26)
 ```
 
 
@@ -40,6 +40,7 @@ Elixir 1.15.7 (compiled with Erlang/OTP 26)
 2023.10.21 追記: Erlangのバージョンアップをしました．
 2023.11.27 追記: OpenSSL 1.1系列がサポート外になったことを踏まえて，記述を見直しました．
 2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
+2024.2.15 追記: Erlang/OTP 27に対応しました．
 
 # 1. macOSアップグレード
 
@@ -103,7 +104,9 @@ source ${ZDOTDIR:-~}/.zshrc
 
 2023.6.23 追記: 最初にインストールされるOpenSSLのバージョンが3系統になっていたのを確認しました．
 2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
+2024.2.15 追記: Erlang/OTP 27に対応しました．
 
+Erlang/OTP 26以前は，下記のようにインストールの準備をします．
 
 ```zsh
 asdf plugin add erlang https://github.com/asdf-vm/asdf-erlang.git
@@ -113,6 +116,20 @@ echo 'export PATH=$(brew --prefix openjdk)/bin:$PATH"' >> ${ZDOTDIR:-~}/.zshrc
 source ${ZDOTDIR:-~}/.zshrc
 brew install fop
 ```
+
+Erlang/OTP 27をインストールする時には，ドキュメントの生成に`ex_doc`コマンドを使用するので，上記に加えて，一旦，Erlang/OTP 26以前をインストールし，最新版のElixirもインストールした後で，次の手順を行います．
+
+```zsh
+mix escript.install hex ex_doc
+```
+
+すると例えば次のように表示されます．
+
+```zsh
+* creating .../.asdf/installs/elixir/1.16.1-otp-26/.mix/escripts/ex_doc
+```
+
+このディレクトリ(最後の`ex_doc`を抜いたパス)を`PATH`に追加します．
 
 2021.12.16 追記: Erlang/OTP 24.2以降はOpenSSL 3.0に対応したので，その場合には次のようにします。
 2023.3.30 追記: Erlang/OTP 25.1 からOpenSSL 3.0を本採用して大丈夫という情報を得たので，追記しました．
