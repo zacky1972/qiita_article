@@ -1,13 +1,13 @@
 ---
 title: シリーズ Google Home の Cloud-to-cloud を使ってみたい！ Phoenix Frameworkで出来る?!
 tags:
-  - GoogleHome
   - Elixir
   - Phoenix
   - 技術ポエム
+  - GoogleHome
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-02-26T17:19:28+09:00'
+id: e3bc81c35d403a181994
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
