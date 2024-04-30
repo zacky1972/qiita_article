@@ -1,10 +1,10 @@
 ---
 title: Elixirでシングルコア／マルチコア性能ベンチマークを走らせてみたらM3 Maxの方がM1 Ultraより速かった
 tags:
-  - 'Apple Silicon'
-  - 'M1'
-  - 'M3'
-  - 'Elixir'
+  - AppleSilicon
+  - M1
+  - M3
+  - Elixir
 private: false
 updated_at: ''
 id: null
