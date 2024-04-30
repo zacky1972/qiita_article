@@ -6,7 +6,7 @@ tags:
   - AppleSilicon
   - M2
 private: false
-updated_at: '2024-04-30T17:41:05+09:00'
+updated_at: '2024-04-30T17:45:32+09:00'
 id: 61164dccbb472682e3df
 organization_url_name: null
 slide: false
