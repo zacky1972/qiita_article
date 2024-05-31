@@ -1,0 +1,45 @@
+---
+title: ElixirからCを呼び出す方法
+tags:
+  - 'Elixir'
+  - 'C'
+private: false
+updated_at: ''
+id: null
+organization_url_name: fukuokaex
+slide: false
+ignorePublish: false
+---
+ElixirからCプログラムを呼び出す方法についてまとめてみました．
+
+# Native Implemented Functions (NIFs)
+
+https://www.erlang.org/doc/apps/erts/erl_nif
+
+https://erlang.org/documentation/doc-15.0-rc1/doc/system/myths.html#myth-a-nif-always-speeds-up-your-program
+
+NIFの欠点は，Cプログラムがアボートすると，Erlang VMごと異常終了することです．
+
+# Ports
+
+https://www.erlang.org/docs/25/tutorial/c_port
+
+## Ports + Node
+
+PortだとElixirのデータとのやりとりに少し困るので，Nodeと組み合わせる方法があります．具体的には，Cのプログラムで，`ei.h` をインクルードして，Nodeインタフェースを持たせます．
+
+https://www.erlang.org/doc/system/erl_interface.html
+
+Nodeについて基本的なことはこちら
+
+https://elixirschool.com/ja/lessons/advanced/otp_distribution
+
+# SpawnCoElixir + NIF
+
+SpawnCoElixirは，Elixirをコマンド起動し，Node接続します．Nodeとのやりとりを Elixir 側で行い，NIFに渡します．
+
+https://hex.pm/packages/spawn_co_elixir
+
+起動したElixirでNIFを起動することができます．こうすると，NIFがアボートしても，SupervisorがElixir+NIFを起動し直してくれます．
+
+したがって，従来のNIFのコードをそのまま利用することができ，かつ，NIFがアボートしても異常終了することなく，再起動できます．
