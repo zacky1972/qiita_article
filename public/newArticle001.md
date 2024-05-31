@@ -1,11 +1,11 @@
 ---
 title: ElixirからCを呼び出す方法
 tags:
-  - 'Elixir'
-  - 'C'
+  - C
+  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-05-31T20:11:36+09:00'
+id: 47363018d0a3468af52b
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
