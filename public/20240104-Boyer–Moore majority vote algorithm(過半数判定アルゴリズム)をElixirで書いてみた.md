@@ -18,6 +18,11 @@ https://qiita.com/tatmius/items/37707bce1ef079616c93
 
 https://en.wikipedia.org/wiki/Boyer–Moore_majority_vote_algorithm
 
+原著論文も参照しました．
+
+Robert S. Boyer and J. Strother Moore: MJRTY---A Fast Majority Vote Algorithm, Institute for Computing Science and Computer Applications, Texas University, Austin, Texas, USA, February, 1981.
+
+
 ## 実装例
 
 プログラム本体は次のとおりです．
