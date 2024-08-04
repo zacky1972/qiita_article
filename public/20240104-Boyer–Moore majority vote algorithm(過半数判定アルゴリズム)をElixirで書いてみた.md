@@ -52,7 +52,7 @@ defmodule Majority do
     |> case do
       {c, k} when k > mid -> c
 
-      {c, k} -> 
+      {c, _} -> 
         enum
         |> Enum.filter(& &1 == c) 
         |> Enum.count() 
