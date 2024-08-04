@@ -50,7 +50,8 @@ defmodule Majority do
       _, {m, k} -> {m, k - 1}
     end)
     |> case do
-      {c, k} when k > mid -> c
+      {c, k} when k > mid -> 
+        c
 
       {c, _} -> 
         enum
