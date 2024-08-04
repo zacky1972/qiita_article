@@ -37,19 +37,38 @@ defmodule Majority do
   Returns the majority of the given `list`.
   """
   @spec get(list(any())) :: any()
-  def get(list) do
-    list
+  def get(enum) do
+    mid = 
+      enum
+      |> Enum.count()
+      |> Bitwise.bsr(1)
+
+    enum
     |> Enum.reduce({nil, 0}, fn
-      x, {_, 0} -> {x, 1}
-      x, {x, c} -> {x, c + 1}
-      _, {m, c} -> {m, c - 1}
+      a, {_, 0} -> {a, 1}
+      a, {a, k} -> {a, k + 1}
+      _, {m, k} -> {m, k - 1}
     end)
-    |> elem(0)
+    |> case do
+      {c, k} when k > mid -> c
+
+      {c, k} -> 
+        enum
+        |> Enum.filter(& &1 == c) 
+        |> Enum.count() 
+        |> then(& &1 > mid)
+        |> case do
+          true -> c
+          _ -> nil
+        end
+    end 
   end
 end
 ```
 
 あっさり，[`Enum.reduce/3`](https://hexdocs.pm/elixir/1.16.0/Enum.html#reduce/3)で書けました．
+
+202408004 修正: 原著論文のコードをに合わせました．
 
 テストコードは次のとおりです．
 
@@ -74,8 +93,12 @@ defmodule MajorityTest do
     test "[1, 2, 2, 2, 3, 2, 3]" do
       assert Majority.get([1, 2, 2, 2, 3, 2, 3]) == 2
     end
+
+    test "[1, 2, 3, 2, 1]" do
+      assert Majority.get([1, 2, 3, 2, 1]) == nil
+    end
   end
 end
 ```
 
-
+多数決が決まらなかった時には `nil` を返します．(なお，Wikipedia中のコードではランダムな値が返ってくる不完全なコードです．)
