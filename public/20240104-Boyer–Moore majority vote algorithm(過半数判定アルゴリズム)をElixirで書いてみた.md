@@ -38,7 +38,7 @@ defmodule Majority do
   """
   @spec get(list(any())) :: any()
   def get(enum) do
-    mid = 
+    mid =
       enum
       |> Enum.count()
       |> Bitwise.bsr(1)
@@ -50,19 +50,18 @@ defmodule Majority do
       _, {m, k} -> {m, k - 1}
     end)
     |> case do
-      {c, k} when k > mid -> 
+      {c, k} when k > mid ->
         c
 
-      {c, _} -> 
+      {c, _} ->
         enum
-        |> Enum.filter(& &1 == c) 
-        |> Enum.count() 
-        |> then(& &1 > mid)
+        |> Enum.count(&(&1 == c))
+        |> then(&(&1 > mid))
         |> case do
           true -> c
           _ -> nil
         end
-    end 
+    end
   end
 end
 ```
