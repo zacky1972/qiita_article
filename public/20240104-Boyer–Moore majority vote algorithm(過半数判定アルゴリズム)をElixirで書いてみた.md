@@ -20,7 +20,7 @@ https://en.wikipedia.org/wiki/Boyer–Moore_majority_vote_algorithm
 
 原著論文も参照しました．
 
-Robert S. Boyer and J. Strother Moore: MJRTY---A Fast Majority Vote Algorithm, Institute for Computing Science and Computer Applications, Texas University, Austin, Texas, USA, February, 1981.
+Robert S. Boyer and J. Strother Moore: MJRTY---A Fast Majority Vote Algorithm, Institute for Computing Science and Computer Applications, Texas University, Austin, Texas, USA, February, 1981. Appear in *Automated Reasoning: Essays in Honor of Woody Bledsoe*, Edited by Robert S. Boyer, Springer Science+Business Media, B.V., 1991.
 
 
 ## 実装例
