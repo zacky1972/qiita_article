@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2024年2月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2024年9月決定版
 tags:
   - Erlang
   - homebrew
@@ -41,6 +41,7 @@ Elixir 1.16.1 (compiled with Erlang/OTP 26)
 2023.11.27 追記: OpenSSL 1.1系列がサポート外になったことを踏まえて，記述を見直しました．
 2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
 2024.2.15 追記: Erlang/OTP 27に対応しました．
+2024.9.23 追記: Xcode 16.0に対応しました。
 
 # 1. macOSアップグレード
 
@@ -153,9 +154,12 @@ export KERL_CONFIGURE_OPTIONS="--with-ssl=$(brew --prefix openssl@1.1) --with-od
 
 https://github.com/asdf-vm/asdf-erlang/issues/191
 
+2024.9.23 追記: Xcode 16.0に対応しました。
+
 その後，最新版をインストールするなら次の手順です。結構時間がかかります。
 
 ```zsh
+ulimit -n 65536
 asdf install erlang latest
 asdf global erlang latest
 ```
