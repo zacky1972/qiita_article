@@ -5,7 +5,7 @@ tags:
   - Vulkan
   - homebrew
 private: false
-updated_at: '2024-11-02T07:16:25+09:00'
+updated_at: null
 id: 967d6ea213ee658bfa43
 organization_url_name: null
 slide: false
@@ -84,4 +84,4 @@ brew --prefix vulkan-extensionlayer vulkan-headers vulkan-loader vulkan-profiles
 
 あるっぽい．
 
-つづく，かも．
+[つづく](https://qiita.com/zacky1972/items/65ac97e850441958a7ea)
