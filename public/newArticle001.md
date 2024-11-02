@@ -1,12 +1,12 @@
 ---
 title: 'Vulkan日記その2: デモンストレーション・プログラムを動かす'
 tags:
+  - homebrew
   - macOS
   - Vulkan
-  - homebrew
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-03T07:55:05+09:00'
+id: 65ac97e850441958a7ea
 organization_url_name: null
 slide: false
 ignorePublish: false
