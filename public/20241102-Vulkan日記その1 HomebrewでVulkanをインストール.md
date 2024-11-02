@@ -5,7 +5,7 @@ tags:
   - macOS
   - Vulkan
 private: false
-updated_at: '2024-11-03T07:53:17+09:00'
+updated_at: '2024-11-03T08:02:24+09:00'
 id: 967d6ea213ee658bfa43
 organization_url_name: null
 slide: false
