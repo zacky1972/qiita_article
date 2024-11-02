@@ -3,6 +3,7 @@ title: 'Vulkan日記その1: HomebrewでVulkanをインストール'
 tags:
   - macOS
   - Vulkan
+  - homebrew
 private: false
 updated_at: '2024-11-02T07:16:25+09:00'
 id: 967d6ea213ee658bfa43
