@@ -7,7 +7,7 @@ tags:
   - Vulkan
   - raspberrypi5
 private: false
-updated_at: '2024-11-04T08:26:14+09:00'
+updated_at: '2024-11-04T08:39:14+09:00'
 id: 85bbcb135db4f90ad09e
 organization_url_name: fukuokaex
 slide: false
