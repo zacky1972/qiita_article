@@ -44,7 +44,7 @@ https://docs.mesa3d.org/vulkan/index.html
 
 ## アーキテクチャ構成図
 
-![Vulkan on Nerves](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/69d42633-0d6c-3bc1-67aa-8e18b09a9d7c.png)
+![Vulkan on Nerves](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/671653e4-5fcf-c774-4028-555486e7a343.png)
 
 ## まとめ
 
