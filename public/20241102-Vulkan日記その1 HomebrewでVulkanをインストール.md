@@ -11,8 +11,6 @@ organization_url_name: null
 slide: false
 ignorePublish: false
 ---
-# Vulkan日記その1:　HomebrewでVulkanをインストール
-
 今年のQiita Advent Calendar 2024での連載記事の1つは，Vulkanにしようかなと思いました．行き当たりばったりでつらつらと書きます．
 
 まずは，Homebrewでインストールを試みてみます．

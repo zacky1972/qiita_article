@@ -12,8 +12,6 @@ organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
-# Vulkan日記その3: Raspberry Pi 5 + Nerves で Vulkanが動くっぽい
-
 調べたところ，Raspberry Pi 5 + Nerves で Vulkan を動かすことが可能っぽいです．
 
 - [Vulkan日記その1: HomebrewでVulkanをインストール](https://qiita.com/zacky1972/items/967d6ea213ee658bfa43)
