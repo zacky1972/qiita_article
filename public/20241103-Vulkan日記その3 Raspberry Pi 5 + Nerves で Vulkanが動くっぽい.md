@@ -44,6 +44,10 @@ Frank Hunlethさん:
 
 https://docs.mesa3d.org/vulkan/index.html
 
+## アーキテクチャ構成図
+
+![VulkanOnNerves.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/cc5d86e4-d21d-e127-a848-33638d35fe4f.png)
+
 ## まとめ
 
 以上をまとめると，Raspberry Pi 5 上の Nerves で Vulkan を動かせるっぽいです．
