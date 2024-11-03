@@ -2,13 +2,13 @@
 title: 'Vulkan日記その4: buildrootでVulkanをインストールする方法について'
 tags:
   - RaspberryPi
+  - buildroot
   - Nerves
   - Vulkan
   - raspberrypi5
-  - buildroot
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-04T08:26:14+09:00'
+id: 85bbcb135db4f90ad09e
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
