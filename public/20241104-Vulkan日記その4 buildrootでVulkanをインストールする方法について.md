@@ -65,6 +65,10 @@ BR2_PACKAGE_MESA3D_VULKAN_DRIVER=y
 BR2_PACKAGE_MESA3D_VULKAN_DRIVER_BROADCOM=y
 ```
 
+このような設定で構築すると，次のようなアーキテクチャ構成を実現できるものと思います．
+
+![Vulkan on Nerves](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/fa8396c6-6476-f8b9-451b-7527fe6ba8b6.png)
+
 ## まとめ
 
 以上をまとめると，buildrootの設定を変えることで，Raspberry Pi 5 上の Nerves で， Mesa3D の Vulkan をインストールすることができそうです．
