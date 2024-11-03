@@ -1,13 +1,13 @@
 ---
 title: 'Vulkan日記その3: Raspberry Pi 5 + Nerves で Vulkanが動くっぽい'
 tags:
+  - RaspberryPi
   - Nerves
   - Vulkan
   - raspberrypi5
-  - RaspberryPi
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-03T12:17:05+09:00'
+id: 1b76e79b47fd58f90c80
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
