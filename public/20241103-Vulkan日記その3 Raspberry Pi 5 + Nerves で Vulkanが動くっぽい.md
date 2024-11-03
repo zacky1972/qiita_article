@@ -50,4 +50,4 @@ https://docs.mesa3d.org/vulkan/index.html
 
 以上をまとめると，Raspberry Pi 5 上の Nerves で Vulkan を動かせるっぽいです．
 
-つづく，かも．
+[つづく](https://qiita.com/zacky1972/items/85bbcb135db4f90ad09e)
