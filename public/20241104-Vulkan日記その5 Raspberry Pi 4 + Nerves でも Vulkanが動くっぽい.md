@@ -14,6 +14,11 @@ ignorePublish: false
 ---
 調べたところ，Raspberry Pi 5だけでなく，Raspberry Pi 4でも，Nerves で Vulkan を動かすことが可能っぽいです．
 
+- [Vulkan日記その1: HomebrewでVulkanをインストール](https://qiita.com/zacky1972/items/967d6ea213ee658bfa43)
+- [Vulkan日記その2: デモンストレーション・プログラムを動かす](https://qiita.com/zacky1972/items/65ac97e850441958a7ea)
+- [Vulkan日記その3: Raspberry Pi 5 + Nerves で Vulkanが動くっぽい](https://qiita.com/zacky1972/items/1b76e79b47fd58f90c80)
+- [Vulkan日記その4: buildrootでVulkanをインストールする方法について](https://qiita.com/zacky1972/items/85bbcb135db4f90ad09e)
+
 ## RasPi 4 のGPUは Broadcom VideoCore VI
 
 https://www.raspberrypi.com/products/raspberry-pi-4-model-b/specifications/
