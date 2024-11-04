@@ -4,8 +4,8 @@ tags:
   - TOPPERS
   - RISC-V
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-04T22:07:45+09:00'
+id: 4945656dedbf0fd88690
 organization_url_name: null
 slide: false
 ignorePublish: false
