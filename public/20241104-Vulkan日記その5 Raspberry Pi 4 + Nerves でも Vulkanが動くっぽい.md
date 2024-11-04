@@ -40,3 +40,4 @@ https://vulkan.gpuinfo.org
 
 以上をまとめると，Raspberry Pi 4 上の Nerves で Vulkan を動かせるっぽいです．
 
+つづく，かも．
