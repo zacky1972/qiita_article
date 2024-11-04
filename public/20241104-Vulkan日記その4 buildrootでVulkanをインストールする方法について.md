@@ -73,4 +73,4 @@ BR2_PACKAGE_MESA3D_VULKAN_DRIVER_BROADCOM=y
 
 以上をまとめると，buildrootの設定を変えることで，Raspberry Pi 5 上の Nerves で， Mesa3D の Vulkan をインストールすることができそうです．
 
-つづく，かも．
+[つづく](https://qiita.com/zacky1972/items/a67c0139ee6eee431de9)
