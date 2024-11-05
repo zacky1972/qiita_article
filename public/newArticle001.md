@@ -1,14 +1,16 @@
 ---
-title: '第14回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門 への「並列プログラミング言語Elixir(エリクサー)からTOPPERSカーネル利用C・アセンブリコードを生成するサイドチャネル攻撃防御指向コンパイラ」の提案'
+title: >-
+  第14回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門
+  への「並列プログラミング言語Elixir(エリクサー)からTOPPERSカーネル利用C・アセンブリコードを生成するサイドチャネル攻撃防御指向コンパイラ」の提案
 tags:
-  - TOPPERS
-  - Elixir
-  - サイドチャネル攻撃
   - C
   - compiler
+  - Elixir
+  - TOPPERS
+  - サイドチャネル攻撃
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-06T08:24:27+09:00'
+id: 32ea9887fceb058ee5da
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
