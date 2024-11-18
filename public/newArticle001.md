@@ -1,13 +1,11 @@
 ---
-title: >-
-  第14回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門
-  への「箱庭時間管理手法に関する先行研究調査と改良」の提案
+title: 第14回TOPPERS活用アイデア・アプリケーション開発コンテスト 活用アイデア部門 への「箱庭時間管理手法に関する先行研究調査と改良」の提案
 tags:
   - TOPPERS
   - 箱庭
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-11-18T18:14:47+09:00'
+id: c0922fa671c9734b5aa5
 organization_url_name: null
 slide: false
 ignorePublish: false
