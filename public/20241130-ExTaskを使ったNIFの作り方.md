@@ -6,7 +6,7 @@ tags:
   - task
   - Elixir
 private: false
-updated_at: '2024-11-30T19:51:02+09:00'
+updated_at: '2024-11-30T20:03:36+09:00'
 id: 4fa132017f0e6d5e620b
 organization_url_name: fukuokaex
 slide: false
