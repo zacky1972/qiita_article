@@ -182,6 +182,8 @@ tasks:
       - mkdir -p {{.BUILD}}
       - cc -c {{.CFLAGS}} -o {{.BUILD}}/libnif.o {{.NIF_SRC_DIR}}/libnif.c
       - cc -o {{.NIF}} {{.LDFLAGS}} {{.BUILD}}/libnif.o
+    status:
+      - test -f {{.NIF}}
     silent: true
 ```
 
