@@ -1,5 +1,5 @@
 ---
-title: M1/M2 Mac への ElixirとErlang インストール2024年9月決定版
+title: M1/M2 Mac への ElixirとErlang インストール2024年11月決定版
 tags:
   - Erlang
   - homebrew
@@ -21,10 +21,12 @@ M1 Mac の初期状態からElixirとErlangを Homebrew と`asdf`でインスト
 
 ```zsh
 % elixir -v
-Erlang/OTP 26 [erts-14.2.2] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit]
+Erlang/OTP 27 [erts-15.1.2] [source] [64-bit] [smp:16:16] [ds:16:16:10] [async-threads:1] [jit]
 
-Elixir 1.16.1 (compiled with Erlang/OTP 26)
+Elixir 1.17.3 (compiled with Erlang/OTP 27)
 ```
+
+なお，Erlang/OTPのインストールの最新の方法は[Community-maintained pre-compiled Erlang/OTP for macOS を使ってErlangをインストールする](https://qiita.com/zacky1972/items/ddb5f99464dd10339e52)と思います．コンパイル時間が不要かつバージョン指定できるので，便利です！
 
 
 2021.12.16 追記: Erlang/OTP 24.2でOpenSSL 3.0に対応したので，その場合のインストール手順を追記しました。
@@ -42,6 +44,8 @@ Elixir 1.16.1 (compiled with Erlang/OTP 26)
 2023.12.14 修正: 1箇所，PATHをベタガキしていたところを修正しました．これでIntel Macでもこの手順でいけると思います．
 2024.2.15 追記: Erlang/OTP 27に対応しました．
 2024.9.23 追記: Xcode 16.0に対応しました。
+2024.11.30 追記: Community-maintained pre-compiled Erlang/OTP for macOS について言及しました．
+
 
 # 1. macOSアップグレード
 
