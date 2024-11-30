@@ -14,11 +14,13 @@ ignorePublish: false
 ---
 ExTaskを使ってNIFを作るサンプルプログラムを作りました．
 
-https://github.com/zacky1972/ex_task
-
 TaskはGoでできたプラットフォーム非依存の新しいタスクランナーです．
 
 https://taskfile.dev
+
+ExTaskは私が作ったElixirのOSSで，`elixir_make`みたいに，ElixirからTaskを呼び出せるようにします．
+
+https://github.com/zacky1972/ex_task
 
 たとえば次のようなCコードをNIFとして作りたいとします．
 
