@@ -10,7 +10,7 @@ organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
 ---
-Community-maintained pre-compiled Erlang/OTP for macOS というのが出ました．
+Community-maintained pre-compiled Erlang/OTP for macOS というのが出ました．これは，macOSにErlang/OTPをインストールする，コンパイル時間がかからず，かつ指定したバージョンをインストールできる，新しい方法です．
 
 https://elixirforum.com/t/new-community-maintained-otp-builds-for-macos/67338
 
