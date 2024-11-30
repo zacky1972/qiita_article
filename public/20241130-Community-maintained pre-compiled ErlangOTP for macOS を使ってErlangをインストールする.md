@@ -4,7 +4,7 @@ tags:
   - Erlang
   - macOS
 private: false
-updated_at: '2024-11-30T09:28:39+09:00'
+updated_at: '2024-11-30T10:26:05+09:00'
 id: ddb5f99464dd10339e52
 organization_url_name: fukuokaex
 slide: false
