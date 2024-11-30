@@ -34,5 +34,5 @@ erl_install.sh latest
 erl_install.sh 27.1.2
 ```
 
-インストールしたErlang/OTPを使うには`PATH`に`$HOME/.erl/(バージョン番号)`を追加します．
+インストールしたErlang/OTPを使うには`PATH`に`$HOME/.erl/(バージョン番号)/bin`を追加します．
 
