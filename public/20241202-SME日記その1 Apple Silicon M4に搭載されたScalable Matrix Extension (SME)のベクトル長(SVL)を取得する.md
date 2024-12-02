@@ -39,13 +39,18 @@ https://developer.arm.com/documentation/ddi0602/2024-09/SME-Instructions/RDSVL--
 #include <stdint.h>
 #include <stdio.h>
 
-int main()
+uint64_t rdsvl8()
 {
   uint64_t len;
   asm volatile ("rdsvl %0, 8"
                 : "=r"(len)
                );
-  printf("%llu\n", len);
+  return len;
+}
+
+int main()
+{
+  printf("%llu\n", rdsvl8());
 }
 ```
 
