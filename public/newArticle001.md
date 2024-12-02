@@ -1,14 +1,14 @@
 ---
-title: 'Apple Silicon M4はM3シリーズからScalable Matrix Extension (SME)命令などが足されている'
+title: Apple Silicon M4はM3シリーズからScalable Matrix Extension (SME)命令などが足されている
 tags:
   - M4
   - M3
-  - M2
   - M1
   - AppleSilicon
+  - M2
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-02T19:40:14+09:00'
+id: 69fd802fd41ae4d7d469
 organization_url_name: null
 slide: false
 ignorePublish: false
