@@ -5,7 +5,7 @@ tags:
   - macOS
   - Elixir
 private: false
-updated_at: '2024-11-30T10:26:05+09:00'
+updated_at: '2024-12-02T18:51:10+09:00'
 id: ddb5f99464dd10339e52
 organization_url_name: fukuokaex
 slide: false
