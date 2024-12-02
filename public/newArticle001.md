@@ -1,13 +1,15 @@
 ---
-title: 'SME日記その1: Apple Silicon M4に搭載されたScalable Matrix Extension (SME)のベクトル長(SVL)を取得する'
+title: >-
+  SME日記その1: Apple Silicon M4に搭載されたScalable Matrix Extension
+  (SME)のベクトル長(SVL)を取得する
 tags:
-  - AppleSilicon
+  - assembly
   - M4
-  - Assembly
+  - AppleSilicon
   - SME
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-02T22:08:55+09:00'
+id: 231fd22a1fdef15d4108
 organization_url_name: null
 slide: false
 ignorePublish: false
