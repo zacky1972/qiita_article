@@ -1,17 +1,16 @@
 ---
-title: >-
-  SME日記その2: Apple Silicon M4にはCVTW命令は備わっていない？
+title: 'SME日記その2: Apple Silicon M4にはCVTW命令は備わっていない？'
 tags:
   - assembly
   - M4
   - AppleSilicon
   - SME
 private: false
-updated_at: null
-id: null
+updated_at: '2024-12-05T04:31:10+09:00'
+id: a4fc98614df085586175
 organization_url_name: null
 slide: false
-ignorePublish:
+ignorePublish: false
 ---
 Apple Silicon M4でダイレクトにCVTW命令を実行してみたところ，`illegal hardware instruction` 例外が発生したので，Apple Silicon M4にはCVTW命令が備わっていない可能性があります．
 
