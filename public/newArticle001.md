@@ -5,8 +5,8 @@ tags:
   - Elixir
   - evision
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-05T22:29:01+09:00'
+id: 9b37f73290ae6b57d42f
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
