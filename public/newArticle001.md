@@ -1,15 +1,14 @@
 ---
-title: >-
-  SME日記その3: Apple Silicon M4にどの命令が実装されているかを`sysctl hw`の実行結果tとドキュメントから推測する
+title: 'SME日記その3: Apple Silicon M4にどの命令が実装されているかを`sysctl hw`の実行結果tとドキュメントから推測する'
 tags:
   - assembly
+  - Elixir
   - M4
   - AppleSilicon
   - SME
-  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-05T21:09:22+09:00'
+id: 427035001554cb9768bc
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
