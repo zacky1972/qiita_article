@@ -14,6 +14,8 @@ ignorePublish: false
 ---
 今までApple Silicon M4で実行できたsvcntw()とRDSVL命令の実行結果の関係性を考察します．
 
+SMEシリーズ
+
 - [Apple Silicon M4はM3シリーズからScalable Matrix Extension (SME)命令などが足されている](https://qiita.com/zacky1972/items/69fd802fd41ae4d7d469)
 - [SME日記その1: Apple Silicon M4に搭載されたScalable Matrix Extension(SME)のベクトル長(SVL)を取得する](https://qiita.com/zacky1972/items/231fd22a1fdef15d4108)
 - [SME日記その2: Apple Silicon M4にはCVTW命令は備わっていない？](https://qiita.com/zacky1972/items/a4fc98614df085586175)
