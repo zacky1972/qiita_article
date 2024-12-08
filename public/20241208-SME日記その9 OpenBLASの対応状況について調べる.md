@@ -49,5 +49,5 @@ Version 0.3.28に下記の記述を見つけました．
 - fixed potential miscompilation of the SVE SDOT and DDOT kernels
 - fixed potential miscompilation of the non-SVE CDOT and ZDOT kernels
 
-よって，OpenBLASの現行バージョン(Version 0.3.28)は，SVEに対応していない可能性が高く，これからSVE対応していくものと思います．
+よって，OpenBLASの現行バージョン(Version 0.3.28)は，SMEに対応していない可能性が高く，これからSVE対応していくものと思います．
 
