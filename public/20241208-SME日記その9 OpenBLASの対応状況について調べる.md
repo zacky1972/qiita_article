@@ -1,5 +1,5 @@
 ---
-title: SME日記その9 OpenBLASの対応状況について調べる
+title: SME日記その9 OpenBLASのSME対応状況について調べる
 tags:
   - assembly
   - OpenBLAS
