@@ -2,13 +2,13 @@
 title: SME日記その9 OpenBLASの対応状況について調べる
 tags:
   - assembly
+  - OpenBLAS
   - M4
   - AppleSilicon
   - SME
-  - OpenBLAS
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-08T16:26:21+09:00'
+id: 0c6f5aed0365f1b4fdb6
 organization_url_name: null
 slide: false
 ignorePublish: false
