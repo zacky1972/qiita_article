@@ -6,7 +6,7 @@ tags:
   - DRP-AI
   - Kakip
 private: false
-updated_at: '2024-12-10T20:41:39+09:00'
+updated_at: '2024-12-10T20:45:41+09:00'
 id: 3ebf021cab1e972890f8
 organization_url_name: null
 slide: false
