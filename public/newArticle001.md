@@ -1,13 +1,13 @@
 ---
 title: DRP-AI日記その1 なぜDRP-AIシリーズに取り組むのか
 tags:
+  - Elixir
+  - AI
   - DRP-AI
   - Kakip
-  - AI
-  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-10T20:41:39+09:00'
+id: 3ebf021cab1e972890f8
 organization_url_name: null
 slide: false
 ignorePublish: false
