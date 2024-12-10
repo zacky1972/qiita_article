@@ -6,8 +6,8 @@ tags:
   - AppleSilicon
   - SME
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-10T20:08:25+09:00'
+id: ba3e07a8bc1e5e56d19a
 organization_url_name: null
 slide: false
 ignorePublish: false
