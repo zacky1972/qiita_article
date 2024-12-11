@@ -1,14 +1,14 @@
 ---
 title: SME日記その11 OpenBLASのSSCALでSMEが使われているかを検証してみる Part.1
 tags:
+  - Elixir
+  - OpenBLAS
   - M4
   - AppleSilicon
   - SME
-  - OpenBLAS
-  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-12T07:45:37+09:00'
+id: 15bca5a0dcd3073d4d60
 organization_url_name: null
 slide: false
 ignorePublish: false
