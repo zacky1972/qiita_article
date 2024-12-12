@@ -1,5 +1,5 @@
 ---
-title: SME日記その12 OpenBLASのSSCALでSMEが使われているかを検証してみる Part.3
+title: SME日記その13 OpenBLASのSSCALでSMEが使われているかを検証してみる Part.3
 tags:
   - Elixir
   - OpenBLAS
