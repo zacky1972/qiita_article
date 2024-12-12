@@ -151,4 +151,3 @@ ips が，Small < Medium なのは想定していましたが，Medium > Bigger 
 
 次はいよいよM4 Proで実行してみます．
 
-つづく．
