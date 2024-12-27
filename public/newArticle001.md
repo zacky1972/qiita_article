@@ -13,6 +13,11 @@ ignorePublish: false
 ---
 Kakipのネットワーク等を初期設定しました．
 
+DRP-AIシリーズ・Kakip
+
+- [DRP-AI日記その1 なぜDRP-AIシリーズに取り組むのか](https://qiita.com/zacky1972/items/3ebf021cab1e972890f8)
+- [DRP-AI日記その2 Kakipを起動してみた](https://qiita.com/zacky1972/items/438ddc192fc499fb697c)
+
 電力が不足しているのか，熱がまずいのか，ディスプレイ出力が安定しません．USBハブを使うのを諦めて，キーボードとマウスを抜き差ししながら，慎重に作業を進めます．
 
 1. 最初にキーボードを繋いで初期ユーザー・初期パスワードでログインします．
