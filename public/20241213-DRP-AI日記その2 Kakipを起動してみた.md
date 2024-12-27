@@ -42,6 +42,10 @@ https://yds-kakip-team.github.io/techdoc/jp/2/2-1/
 
 * [MacでOSイメージをSDカードに焼く](https://qiita.com/ishihamat/items/f1fb1f30327373dffac7)
 
+`dd` コマンドの進捗を出すために，`status=progress` を末尾につけます．
+
+* [ddコマンドの進捗を出力する方法](https://armadillo.atmark-techno.com/blog/15288/10423)
+
 ## 起動
 
 https://yds-kakip-team.github.io/techdoc/jp/2/2-2/
