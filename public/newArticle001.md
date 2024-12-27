@@ -1,12 +1,12 @@
 ---
 title: DRP-AI日記その3 Kakipネットワーク等初期設定
 tags:
+  - Ubuntu
   - DRP-AI
   - Kakip
-  - Ubuntu
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-27T17:53:17+09:00'
+id: ab6a176f0ad481473f71
 organization_url_name: null
 slide: false
 ignorePublish: false
