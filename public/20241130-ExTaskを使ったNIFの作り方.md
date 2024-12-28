@@ -140,7 +140,7 @@ tasks:
       CFLAGS_O:
         sh: |
           if [ -z $CROSSCOMPILE ]; then
-          if [ $(uname -s) -ne 'Darwin' ]; then
+          if [ $(uname -s) != 'Darwin' ]; then
           echo -fPIC
           else
           :
@@ -151,7 +151,7 @@ tasks:
       LDFLAGS_O:
         sh: |
           if [ -z $CROSSCOMPILE ]; then
-          if [ $(uname -s) -ne 'Darwin' ]; then
+          if [ $(uname -s) != 'Darwin' ]; then
           echo -fPIC -shared
           else
           echo -undefined dynamic_lookup -dynamiclib
