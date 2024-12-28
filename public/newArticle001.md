@@ -3,12 +3,12 @@ title: DRP-AI日記その5 OpenBLASを実行してみる
 tags:
   - Ubuntu
   - Elixir
+  - OpenBLAS
   - DRP-AI
   - Kakip
-  - OpenBLAS
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-28T13:47:35+09:00'
+id: 02be10d1acc013a499d2
 organization_url_name: null
 slide: false
 ignorePublish: false
