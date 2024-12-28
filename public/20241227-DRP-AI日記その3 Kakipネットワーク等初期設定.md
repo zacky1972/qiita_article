@@ -51,23 +51,41 @@ DRP-AIシリーズ・Kakip
 現在のUbuntuでは`systemd`を用いて`sshd`を運用しているようです．下記で確認できます．
 
 ```bash
-sudo systemctl statys ssh.socket
+sudo systemctl status ssh.socket
 ```
 
-`/usr/lib/systemd/system/ssh.socket`を編集します．
+ポート番号を書き換えるには，まず次のコマンドを実行して，エディタを好きなものに書き換えます．
 
-```txt:/usr/lib/systemd/system/ssh.socket
-...
+```bash
+sudo update-alternatives --config editor
+```
+
+そして次のコマンドを実行します．
+
+```bash
+sudo mkdir -p /etc/systemd/system/ssh.socket.d
+sudo systemctl edit ssh.socket
+```
+
+`/etc/systemd/system/ssh.socket.d/override.conf`というファイルが作成されて，テキストエディタが開きます．
+
+```txt:/etc/systemd/system/ssh.socket.d/override.conf
+### Editing /etc/systemd/system/ssh.socket.d/override.conf
+### Anything between here and the comment beflow will become the contents of the drop-in file
+
 [Socket]
-ListenStream=22
+ListenStream=
+ListenStream=(指定したいポート番号)
+
+### Edits below this comment will be discarded
 ```
 
-ここの22を変更したいポート番号にします．
+(指定したいポート番号)のところにポート番号を記載します．その前の `ListenStream=`という空の行で既存のエントリを削除しています．これが無いと，22番ポートでも待ち受けてしまいます．
+
 
 その後，次のコマンドを実行します．
 
 ```bash
-sudo systemctl daemon-reload
 sudo systemctl restart ssh.socket
 sudo systemctl status ssh.socket
 ```
