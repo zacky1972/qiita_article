@@ -1,14 +1,14 @@
 ---
 title: DRP-AI日記その4 Elixirのインストール
 tags:
+  - Erlang
   - Ubuntu
+  - Elixir
   - DRP-AI
   - Kakip
-  - Elixir
-  - Erlang
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-28T11:08:01+09:00'
+id: 922176433e54046b8338
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
