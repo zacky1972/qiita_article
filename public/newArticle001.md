@@ -160,3 +160,10 @@ Nx (multiply vector x scalar)        134.72        7.42 ms     ±0.74%        7.
 Name                                    ips        average  deviation         median         99th %
 Nx (multiply vector x scalar)        1.28 K      782.82 μs     ±2.37%      781.08 μs      828.11 μs
 ```
+
+* Bigger: 24.3倍 M3 Max の方が高速
+* Medium: 23.0倍 M3 Max の方が高速
+* Small: 23.6倍 M3 Max の方が高速
+
+CPUの性能比はそんなもんですかね．
+
