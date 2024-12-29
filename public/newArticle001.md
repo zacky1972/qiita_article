@@ -2,13 +2,13 @@
 title: ElixirChipとElixirChip Liteで超低消費電力・高性能の世界へ
 tags:
   - Elixir
-  - ElixirChip
   - AppleSilicon
   - DRP-AI
   - 技術的ポエム
+  - ElixirChip
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-29T21:47:49+09:00'
+id: 960f67189705c388b3a7
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
