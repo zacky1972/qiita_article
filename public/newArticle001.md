@@ -2,13 +2,13 @@
 title: SME日記その16 Scalable Matrix Extension (SME)の研究の今後の展望についての技術的ポエム
 tags:
   - Elixir
-  - 技術的ポエム
   - M4
   - AppleSilicon
   - SME
+  - 技術的ポエム
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-29T20:26:12+09:00'
+id: 34ff853daebaf24761a4
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
