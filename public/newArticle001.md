@@ -574,7 +574,7 @@ BLAS(dot)      465.04 K
 Nx(dot)         12.34 K - 37.69x slower +78.89 μs
 ```
 
-## M4 Pro / OpenLAS
+## M4 Pro / OpenBLAS
 
 ```elixir
 Operating System: macOS
@@ -630,3 +630,20 @@ Comparison:
 BLAS(dot)      476.81 K
 Nx(dot)         12.49 K - 38.17x slower +77.95 μs
 ```
+
+## 結果
+
+|BLAS          |Apple Silicon|10x10 |100x100|500x500|
+|:-------------|:------------|-----:|------:|------:|
+|OpenBLAS      |M3 Max       |365960|   2830|  89.98|
+|OpenBLAS      |M4 Pro       |476810|   3790| 104.46|
+|AppleBLAS     |M3 Max       |360760|   4020|  92.56|
+|AppleBLAS     |M4 Pro       |465040|   5160| 121.46|
+|Apple/OpenBLAS|M3 Max       |0.9858|1.42049|1.02867|
+|Apple/OpenBLAS|M4 Pro       |0.9753|1.36148|1.16274|
+
+## 考察
+
+AppleBLASはOpenBLASに比べてApple Siliconにチューニングされているようです．行列の要素数が大きくなると差が広がります．
+
+M1からM3については非公開のAMX命令を搭載していますので，今回評価したSGEMMについても，AMX命令を用いていてもおかしくなさそうな結果です．仮にそうだとすると，M4でもAMX命令を用いているか，SME命令とAMX命令の効果は同等程度という仮説が成り立ちそうです．
