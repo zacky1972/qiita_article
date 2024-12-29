@@ -7,8 +7,8 @@ tags:
   - Kakip
   - 技術的ポエム
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-29T21:07:08+09:00'
+id: 5c92779e2bac7ab631e8
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
