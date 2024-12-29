@@ -34,6 +34,10 @@ MEシリーズ
 - [SME日記その14 AppleBLASのSSCALでSMEが使われているかを検証してみる Part.1](https://qiita.com/zacky1972/items/9b22e23cd18a4912b99a)
 - [SME日記その15 AppleBLASのSGEMMでSMEが使われているかを検証してみる Part.1](https://qiita.com/zacky1972/items/e6e8d8ebe4400c6ef737)
 
+## Scalable Matrix Extension (SME)について
+
+Scalable Matrix Extension (SME)は，ARM A-Profile の拡張命令で，Apple Silicon M4に搭載された新しい命令セットです．その名の通り，CPUによる高速な行列・ベクトル演算をサポートします．
+
 ## Apple Accelerate Frameworkを超えるものを作る
 
 Apple Accelerate Frameworkというものがあります．
