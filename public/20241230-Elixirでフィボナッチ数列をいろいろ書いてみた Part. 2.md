@@ -30,9 +30,7 @@ defmodule Fibonacci.Stream do
       [0] -> {1, [1, 0]}
       [m, n] -> {m + n, [m + n, m]}
     end)
-    |> Enum.take(n + 1)
-    |> Enum.reverse()
-    |> hd()
+    |> Enum.at(n)
   end
 end
 
@@ -148,113 +146,114 @@ Formatting results...
 
 ##### With input 1 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci            1406.94 K        0.71 μs  ±2305.62%        0.67 μs        0.88 μs
-Fibonacci by Stream             281.39 K        3.55 μs   ±178.07%        3.38 μs       11.38 μs
-Fibonacci with Memoization       12.84 K       77.88 μs     ±3.91%       77.08 μs       88.22 μs
+Very Slow Fibonacci            1404.29 K        0.71 μs  ±1952.22%        0.67 μs        0.92 μs
+Fibonacci by Stream             240.19 K        4.16 μs   ±171.21%        3.92 μs       11.92 μs
+Fibonacci with Memoization       12.24 K       81.71 μs     ±4.21%       81.04 μs       95.97 μs
 
 Comparison: 
-Very Slow Fibonacci            1406.94 K
-Fibonacci by Stream             281.39 K - 5.00x slower +2.84 μs
-Fibonacci with Memoization       12.84 K - 109.58x slower +77.17 μs
+Very Slow Fibonacci            1404.29 K
+Fibonacci by Stream             240.19 K - 5.85x slower +3.45 μs
+Fibonacci with Memoization       12.24 K - 114.74x slower +81.00 μs
 
 ##### With input 2 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             931.12 K        1.07 μs  ±1467.05%           1 μs        1.33 μs
-Fibonacci by Stream             201.96 K        4.95 μs    ±96.67%        4.67 μs       13.25 μs
-Fibonacci with Memoization       12.45 K       80.29 μs     ±4.85%       81.50 μs       92.17 μs
+Very Slow Fibonacci             931.64 K        1.07 μs  ±1275.82%           1 μs        1.42 μs
+Fibonacci by Stream             208.66 K        4.79 μs   ±101.32%        4.46 μs       12.92 μs
+Fibonacci with Memoization       12.11 K       82.55 μs     ±5.75%       81.96 μs       98.36 μs
 
 Comparison: 
-Very Slow Fibonacci             931.12 K
-Fibonacci by Stream             201.96 K - 4.61x slower +3.88 μs
-Fibonacci with Memoization       12.45 K - 74.76x slower +79.22 μs
+Very Slow Fibonacci             931.64 K
+Fibonacci by Stream             208.66 K - 4.46x slower +3.72 μs
+Fibonacci with Memoization       12.11 K - 76.91x slower +81.48 μs
 
 ##### With input 3 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             693.15 K        1.44 μs   ±825.91%        1.38 μs        1.83 μs
-Fibonacci by Stream             183.73 K        5.44 μs   ±125.15%        5.29 μs       13.25 μs
-Fibonacci with Memoization       12.27 K       81.47 μs     ±4.35%       82.71 μs       90.63 μs
+Very Slow Fibonacci             690.37 K        1.45 μs   ±702.67%        1.38 μs        1.92 μs
+Fibonacci by Stream             186.12 K        5.37 μs    ±99.65%        5.04 μs       13.75 μs
+Fibonacci with Memoization       11.96 K       83.60 μs     ±3.94%       82.75 μs       98.42 μs
 
 Comparison: 
-Very Slow Fibonacci             693.15 K
-Fibonacci by Stream             183.73 K - 3.77x slower +4.00 μs
-Fibonacci with Memoization       12.27 K - 56.47x slower +80.03 μs
+Very Slow Fibonacci             690.37 K
+Fibonacci by Stream             186.12 K - 3.71x slower +3.92 μs
+Fibonacci with Memoization       11.96 K - 57.72x slower +82.15 μs
 
 ##### With input 4 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             471.11 K        2.12 μs   ±489.73%        2.08 μs        2.67 μs
-Fibonacci by Stream             157.45 K        6.35 μs    ±88.26%           6 μs       14.75 μs
-Fibonacci with Memoization       12.24 K       81.68 μs     ±3.70%       81.96 μs          90 μs
+Very Slow Fibonacci             459.56 K        2.18 μs   ±484.04%        2.08 μs        2.88 μs
+Fibonacci by Stream             168.18 K        5.95 μs    ±77.67%        5.75 μs       12.50 μs
+Fibonacci with Memoization       12.12 K       82.49 μs     ±4.87%       82.21 μs       98.42 μs
 
 Comparison: 
-Very Slow Fibonacci             471.11 K
-Fibonacci by Stream             157.45 K - 2.99x slower +4.23 μs
-Fibonacci with Memoization       12.24 K - 38.48x slower +79.55 μs
+Very Slow Fibonacci             459.56 K
+Fibonacci by Stream             168.18 K - 2.73x slower +3.77 μs
+Fibonacci with Memoization       12.12 K - 37.91x slower +80.31 μs
 
 ##### With input 5 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             312.27 K        3.20 μs   ±238.72%        3.13 μs        4.08 μs
-Fibonacci by Stream             133.63 K        7.48 μs    ±55.49%        7.04 μs       15.54 μs
-Fibonacci with Memoization       12.25 K       81.65 μs     ±5.39%       82.38 μs       98.79 μs
+Very Slow Fibonacci             306.73 K        3.26 μs   ±252.74%        3.13 μs        4.38 μs
+Fibonacci by Stream             153.15 K        6.53 μs    ±96.25%        6.21 μs       15.08 μs
+Fibonacci with Memoization       11.96 K       83.61 μs     ±5.60%       82.75 μs       99.54 μs
 
 Comparison: 
-Very Slow Fibonacci             312.27 K
-Fibonacci by Stream             133.63 K - 2.34x slower +4.28 μs
-Fibonacci with Memoization       12.25 K - 25.50x slower +78.45 μs
+Very Slow Fibonacci             306.73 K
+Fibonacci by Stream             153.15 K - 2.00x slower +3.27 μs
+Fibonacci with Memoization       11.96 K - 25.65x slower +80.35 μs
 
 ##### With input 6 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             198.97 K        5.03 μs   ±138.76%        4.92 μs        6.38 μs
-Fibonacci by Stream             119.55 K        8.37 μs    ±49.43%           8 μs       16.33 μs
-Fibonacci with Memoization       12.06 K       82.90 μs     ±5.57%       82.71 μs      101.25 μs
+Very Slow Fibonacci             194.14 K        5.15 μs   ±120.03%           5 μs        6.92 μs
+Fibonacci by Stream             139.24 K        7.18 μs    ±54.31%        6.83 μs       15.79 μs
+Fibonacci with Memoization       12.01 K       83.26 μs     ±4.48%       82.33 μs       98.75 μs
 
 Comparison: 
-Very Slow Fibonacci             198.97 K
-Fibonacci by Stream             119.55 K - 1.66x slower +3.34 μs
-Fibonacci with Memoization       12.06 K - 16.50x slower +77.88 μs
+Very Slow Fibonacci             194.14 K
+Fibonacci by Stream             139.24 K - 1.39x slower +2.03 μs
+Fibonacci with Memoization       12.01 K - 16.16x slower +78.10 μs
 
 ##### With input 7 #####
 Name                                 ips        average  deviation         median         99th %
-Very Slow Fibonacci             125.99 K        7.94 μs    ±57.76%        7.83 μs       10.21 μs
-Fibonacci by Stream             106.81 K        9.36 μs    ±45.03%        9.08 μs       15.21 μs
-Fibonacci with Memoization       12.23 K       81.77 μs     ±3.82%       82.42 μs       90.63 μs
+Fibonacci by Stream             128.01 K        7.81 μs    ±56.62%        7.50 μs       16.42 μs
+Very Slow Fibonacci             123.90 K        8.07 μs    ±52.85%        7.88 μs       10.92 μs
+Fibonacci with Memoization       12.06 K       82.91 μs     ±4.31%       82.08 μs          98 μs
 
 Comparison: 
-Very Slow Fibonacci             125.99 K
-Fibonacci by Stream             106.81 K - 1.18x slower +1.43 μs
-Fibonacci with Memoization       12.23 K - 10.30x slower +73.83 μs
+Fibonacci by Stream             128.01 K
+Very Slow Fibonacci             123.90 K - 1.03x slower +0.26 μs
+Fibonacci with Memoization       12.06 K - 10.61x slower +75.10 μs
 
 ##### With input 8 #####
 Name                                 ips        average  deviation         median         99th %
-Fibonacci by Stream              96.53 K       10.36 μs    ±36.83%       10.08 μs       15.42 μs
-Very Slow Fibonacci              79.27 K       12.61 μs    ±13.84%       12.50 μs       15.29 μs
-Fibonacci with Memoization       12.15 K       82.32 μs     ±3.03%       82.46 μs       90.63 μs
+Fibonacci by Stream             115.56 K        8.65 μs    ±54.84%        8.33 μs       17.33 μs
+Very Slow Fibonacci              77.14 K       12.96 μs    ±15.92%       12.63 μs       17.54 μs
+Fibonacci with Memoization       12.09 K       82.71 μs     ±5.32%       81.71 μs       99.13 μs
 
 Comparison: 
-Fibonacci by Stream              96.53 K
-Very Slow Fibonacci              79.27 K - 1.22x slower +2.26 μs
-Fibonacci with Memoization       12.15 K - 7.95x slower +71.96 μs
+Fibonacci by Stream             115.56 K
+Very Slow Fibonacci              77.14 K - 1.50x slower +4.31 μs
+Fibonacci with Memoization       12.09 K - 9.56x slower +74.06 μs
 
 ##### With input 9 #####
 Name                                 ips        average  deviation         median         99th %
-Fibonacci by Stream              86.40 K       11.57 μs    ±36.94%       11.71 μs       13.67 μs
-Very Slow Fibonacci              48.73 K       20.52 μs     ±6.16%       20.41 μs       23.04 μs
-Fibonacci with Memoization       12.13 K       82.42 μs     ±6.12%       82.67 μs      101.58 μs
+Fibonacci by Stream             107.45 K        9.31 μs    ±34.49%        9.13 μs       15.25 μs
+Very Slow Fibonacci              47.55 K       21.03 μs     ±9.72%       20.63 μs       28.33 μs
+Fibonacci with Memoization       12.05 K       83.00 μs     ±5.11%       82.13 μs       99.08 μs
 
 Comparison: 
-Fibonacci by Stream              86.40 K
-Very Slow Fibonacci              48.73 K - 1.77x slower +8.95 μs
-Fibonacci with Memoization       12.13 K - 7.12x slower +70.84 μs
+Fibonacci by Stream             107.45 K
+Very Slow Fibonacci              47.55 K - 2.26x slower +11.72 μs
+Fibonacci with Memoization       12.05 K - 8.92x slower +73.70 μs
 ```
 
 |                          |1    |2    |3    |4    |5    |6    |7    |8    |9    |
 |:-------------------------|----:|----:|----:|----:|----:|----:|----:|----:|----:|
-|Very Slow Fibonacci       |  710| 1070| 1440| 2120| 3200| 5030| 7940|12610|20520|
-|Fibonacci by Stream       | 3550| 4950| 5440| 6350| 7480| 8370| 9360|10360|11570|
-|Fibonacci with Memoization|77880|80290|81470|81680|81650|82900|81770|82320|82420|
+|Very Slow Fibonacci       |  710| 1070| 1450| 2180| 3260| 5150| 8070|12960|21030|
+|Fibonacci by Stream       | 4160| 4790| 5370| 5950| 6530| 7180| 7810| 8650| 9310|
+|Fibonacci with Memoization|81710|82550|83600|82490|83610|83260|82910|82710|83000|
 
-![Fibonacci by Stream](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/8bb952d9-ca35-1273-dc82-cc170f07e94b.png)
+![Fibonacci by Stream](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/55223/94f1e8ef-f68e-bab9-6801-d590b2795aaf.png)
 
-8以上でFibonacci by Streamが高速になります．Fibonacci with Memoization をStream用いても良さそうですね．トレンドラインを見ると， $y = 969.5x + 2644.7$ なので，80以上だとFibonacci with MemoizationがFibonacci by Streamより高速になる可能性があります．
+
+7以上でFibonacci by Streamが高速になります．Fibonacci with Memoization でStream用いても良さそうですね．トレンドラインを見ると， $y = 638.17x + 3448.1$ なので，120以上だとFibonacci with MemoizationがFibonacci by Streamより高速になる可能性があります．
 
 
 ## StreamつきMemoization
@@ -269,9 +268,7 @@ defmodule Fibonacci.Stream do
       [0] -> {1, [1, 0]}
       [m, n] -> {m + n, [m + n, m]}
     end)
-    |> Enum.take(n + 1)
-    |> Enum.reverse()
-    |> hd()
+    |> Enum.at(n)
   end
 end
 
@@ -294,9 +291,7 @@ defmodule Fibonacci.Memoization.Stream do
             [0] -> {1, [1, 0]}
             [m, n] -> {m + n, [m + n, m]}
           end)
-          |> Enum.take(n + 1)
-          |> Enum.reverse()
-          |> hd()
+          |> Enum.at(n)
 
         Agent.update(__MODULE__, &(Map.put(&1, n, result)))
         result
@@ -351,7 +346,7 @@ Benchee.run(
     "Fibonacci by Stream" => fn input -> Enum.reduce(1..100, fn _, _ -> Fibonacci.Stream.of(input) end) end
   },
   inputs: %{
-    "80" => 80
+    "120" => 120
   }
 )
 ```
@@ -373,26 +368,26 @@ time: 5 s
 memory time: 0 ns
 reduction time: 0 ns
 parallel: 1
-inputs: 80
+inputs: 120
 Estimated total run time: 21 s
 
-Benchmarking Fibonacci by Stream with input 80 ...
-Benchmarking Fibonacci with Memoization with input 80 ...
-Benchmarking Fibonacci with Memoization and Stream with input 80 ...
+Benchmarking Fibonacci by Stream with input 120 ...
+Benchmarking Fibonacci with Memoization with input 120 ...
+Benchmarking Fibonacci with Memoization and Stream with input 120 ...
 Calculating statistics...
 Formatting results...
 
-##### With input 80 #####
+##### With input 120 #####
 Name                                            ips        average  deviation         median         99th %
-Fibonacci with Memoization and Stream       13.02 K       76.79 μs     ±4.38%       75.67 μs       91.46 μs
-Fibonacci by Stream                         12.34 K       81.06 μs     ±6.18%       79.96 μs       97.58 μs
-Fibonacci with Memoization                   7.74 K      129.25 μs     ±3.46%      127.75 μs      148.25 μs
+Fibonacci with Memoization and Stream       12.72 K       78.60 μs     ±7.37%       76.58 μs       98.04 μs
+Fibonacci by Stream                          8.06 K      124.04 μs     ±6.33%      121.79 μs      153.08 μs
+Fibonacci with Memoization                   5.63 K      177.74 μs     ±6.33%      175.13 μs      210.29 μs
 
 Comparison: 
-Fibonacci with Memoization and Stream       13.02 K
-Fibonacci by Stream                         12.34 K - 1.06x slower +4.27 μs
-Fibonacci with Memoization                   7.74 K - 1.68x slower +52.46 μs
+Fibonacci with Memoization and Stream       12.72 K
+Fibonacci by Stream                          8.06 K - 1.58x slower +45.44 μs
+Fibonacci with Memoization                   5.63 K - 2.26x slower +99.15 μs
 ```
 
-目論見通り，80の時に，Fibonacci with Memoization and Stream が Fibonacci by Stream よりも高速になりました．
+目論見通り，120の時に，Fibonacci with Memoization and Stream が Fibonacci by Stream よりも高速になりました．
 
