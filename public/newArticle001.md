@@ -1,11 +1,11 @@
 ---
 title: 'Pythonx: Python Interpreter in Elixir'
 tags:
-  - Elixir
   - Python
+  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-29T19:16:20+09:00'
+id: 1a369949a699ffcb9a54
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
