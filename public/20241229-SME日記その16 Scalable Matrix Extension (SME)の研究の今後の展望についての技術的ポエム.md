@@ -7,7 +7,7 @@ tags:
   - SME
   - 技術的ポエム
 private: false
-updated_at: '2024-12-29T20:26:12+09:00'
+updated_at: '2024-12-29T20:42:18+09:00'
 id: 34ff853daebaf24761a4
 organization_url_name: fukuokaex
 slide: false
