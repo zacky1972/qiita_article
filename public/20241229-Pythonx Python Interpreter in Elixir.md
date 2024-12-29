@@ -143,3 +143,6 @@ locals = PyDict.new()
 
 https://qiita.com/RyoWakabayashi/items/8cd6a0b1fdf464d86156#python-スクリプトの実行
 
+P.S. Issue 書きました．
+
+https://github.com/cocoa-xu/pythonx/issues/6
