@@ -154,3 +154,172 @@ Fibonacci by Enum.reduce        754.01 - 1.01x slower +0.0136 ms
 |Fibonacci with Matrix    | 1750|4690|45410|1310000|
 
 Fibonacci with Matrix は素晴らしく速いですね！
+
+## オリジナルのフィボナッチとの比較
+
+```elixir:fib_benchee.exs
+Mix.install([:benchee])
+
+defmodule Fibonacci.Matrix do
+  def of(n) do
+    Enum.reduce(1..n, {0, 1}, fn
+      _, {p, q} -> {q, p + q}
+    end)
+    |> elem(0)
+  end
+end
+
+defmodule Fibonacci do
+  def of(n)
+  def of(0), do: 0
+  def of(1), do: 1
+  def of(n), do: of(n - 2) + of(n - 1)
+end
+Benchee.run(
+  %{
+    "Very Slow Fibonacci" => fn input -> Enum.reduce(1..100, fn _, _ -> Fibonacci.of(input) end) end,
+    "Fibonacci with Matrix" => fn input -> Enum.reduce(1..100, fn _, _ -> Fibonacci.Matrix.of(input) end) end
+  },
+  inputs: %{
+    "1" => 1,
+    "2" => 2,
+    "3" => 3,
+    "4" => 4,
+    "5" => 5,
+    "6" => 6,
+    "7" => 7,
+    "8" => 8,
+    "9" => 9
+  }
+)
+```
+
+### 実行結果
+
+```elixir
+Operating System: macOS
+CPU Information: Apple M3 Max
+Number of Available Cores: 16
+Available memory: 128 GB
+Elixir 1.18.1
+Erlang 27.2
+JIT enabled: true
+
+Benchmark suite executing with the following configuration:
+warmup: 2 s
+time: 5 s
+memory time: 0 ns
+reduction time: 0 ns
+parallel: 1
+inputs: 1, 2, 3, 4, 5, 6, 7, 8, 9
+Estimated total run time: 2 min 6 s
+
+Benchmarking Fibonacci with Matrix with input 1 ...
+Benchmarking Fibonacci with Matrix with input 2 ...
+Benchmarking Fibonacci with Matrix with input 3 ...
+Benchmarking Fibonacci with Matrix with input 4 ...
+Benchmarking Fibonacci with Matrix with input 5 ...
+Benchmarking Fibonacci with Matrix with input 6 ...
+Benchmarking Fibonacci with Matrix with input 7 ...
+Benchmarking Fibonacci with Matrix with input 8 ...
+Benchmarking Fibonacci with Matrix with input 9 ...
+Benchmarking Very Slow Fibonacci with input 1 ...
+Benchmarking Very Slow Fibonacci with input 2 ...
+Benchmarking Very Slow Fibonacci with input 3 ...
+Benchmarking Very Slow Fibonacci with input 4 ...
+Benchmarking Very Slow Fibonacci with input 5 ...
+Benchmarking Very Slow Fibonacci with input 6 ...
+Benchmarking Very Slow Fibonacci with input 7 ...
+Benchmarking Very Slow Fibonacci with input 8 ...
+Benchmarking Very Slow Fibonacci with input 9 ...
+Calculating statistics...
+Formatting results...
+
+##### With input 1 #####
+Name                            ips        average  deviation         median         99th %
+Very Slow Fibonacci          1.41 M        0.71 μs  ±1889.67%        0.67 μs        0.92 μs
+Fibonacci with Matrix        0.58 M        1.73 μs   ±783.76%        1.58 μs        2.25 μs
+
+Comparison: 
+Very Slow Fibonacci          1.41 M
+Fibonacci with Matrix        0.58 M - 2.43x slower +1.02 μs
+
+##### With input 2 #####
+Name                            ips        average  deviation         median         99th %
+Very Slow Fibonacci        931.45 K        1.07 μs  ±1252.44%           1 μs        1.38 μs
+Fibonacci with Matrix      495.09 K        2.02 μs   ±419.01%        1.92 μs        2.75 μs
+
+Comparison: 
+Very Slow Fibonacci        931.45 K
+Fibonacci with Matrix      495.09 K - 1.88x slower +0.95 μs
+
+##### With input 3 #####
+Name                            ips        average  deviation         median         99th %
+Very Slow Fibonacci        696.63 K        1.44 μs   ±808.65%        1.38 μs        1.92 μs
+Fibonacci with Matrix      420.12 K        2.38 μs   ±415.39%        2.25 μs        3.25 μs
+
+Comparison: 
+Very Slow Fibonacci        696.63 K
+Fibonacci with Matrix      420.12 K - 1.66x slower +0.94 μs
+
+##### With input 4 #####
+Name                            ips        average  deviation         median         99th %
+Very Slow Fibonacci        465.50 K        2.15 μs   ±396.15%        2.08 μs        2.88 μs
+Fibonacci with Matrix      363.66 K        2.75 μs   ±335.59%        2.58 μs        3.75 μs
+
+Comparison: 
+Very Slow Fibonacci        465.50 K
+Fibonacci with Matrix      363.66 K - 1.28x slower +0.60 μs
+
+##### With input 5 #####
+Name                            ips        average  deviation         median         99th %
+Fibonacci with Matrix      327.94 K        3.05 μs   ±324.63%        2.88 μs        4.25 μs
+Very Slow Fibonacci        307.30 K        3.25 μs   ±260.37%        3.13 μs        4.33 μs
+
+Comparison: 
+Fibonacci with Matrix      327.94 K
+Very Slow Fibonacci        307.30 K - 1.07x slower +0.20 μs
+
+##### With input 6 #####
+Name                            ips        average  deviation         median         99th %
+Fibonacci with Matrix      292.98 K        3.41 μs   ±212.03%        3.21 μs        8.67 μs
+Very Slow Fibonacci        196.20 K        5.10 μs   ±138.86%        4.96 μs        6.92 μs
+
+Comparison: 
+Fibonacci with Matrix      292.98 K
+Very Slow Fibonacci        196.20 K - 1.49x slower +1.68 μs
+
+##### With input 7 #####
+Name                            ips        average  deviation         median         99th %
+Fibonacci with Matrix      271.75 K        3.68 μs   ±291.31%        3.46 μs        9.67 μs
+Very Slow Fibonacci        124.97 K        8.00 μs    ±63.10%        7.83 μs       10.96 μs
+
+Comparison: 
+Fibonacci with Matrix      271.75 K
+Very Slow Fibonacci        124.97 K - 2.17x slower +4.32 μs
+
+##### With input 8 #####
+Name                            ips        average  deviation         median         99th %
+Fibonacci with Matrix      249.91 K        4.00 μs   ±162.08%        3.75 μs        5.75 μs
+Very Slow Fibonacci         78.12 K       12.80 μs    ±22.94%       12.63 μs       17.46 μs
+
+Comparison: 
+Fibonacci with Matrix      249.91 K
+Very Slow Fibonacci         78.12 K - 3.20x slower +8.80 μs
+
+##### With input 9 #####
+Name                            ips        average  deviation         median         99th %
+Fibonacci with Matrix      232.67 K        4.30 μs   ±160.95%        4.04 μs       10.38 μs
+Very Slow Fibonacci         48.32 K       20.70 μs     ±7.37%       20.54 μs       27.08 μs
+
+Comparison: 
+Fibonacci with Matrix      232.67 K
+Very Slow Fibonacci         48.32 K - 4.82x slower +16.40 μs
+```
+
+|                      |1   |2   |3   |4   |5   |6   |7   |8    |9    |
+|:---------------------|---:|---:|---:|---:|---:|---:|---:|----:|----:|
+|Very Slow Fibonacci   | 710|1070|1440|2150|3250|5100|8000|12800|20700|
+|Fibonacci with Matrix |1730|2020|2380|2750|3050|3410|3680| 4000| 4300|
+
+5で逆転しましたね．
