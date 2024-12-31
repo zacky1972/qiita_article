@@ -3,8 +3,8 @@ title: Nervesの宇宙利用について(仮題)
 tags:
   - Nerves
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-31T10:29:45+09:00'
+id: 1002367c13e33faf5334
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
