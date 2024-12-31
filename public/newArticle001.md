@@ -1,14 +1,14 @@
 ---
 title: TOPPERSカーネルと箱庭とElixirを利用したリアルタイムAIシステム・デジタルツイン構想について
 tags:
-  - TOPPERS
   - Elixir
   - AI
-  - 箱庭
+  - TOPPERS
   - Vulkan
+  - 箱庭
 private: false
-updated_at: ''
-id: null
+updated_at: '2024-12-31T09:54:41+09:00'
+id: 19bb7c70a3647a90d832
 organization_url_name: null
 slide: false
 ignorePublish: false
