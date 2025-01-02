@@ -1,14 +1,14 @@
 ---
 title: リアルとバーチャルの架け橋「箱庭ブリッジ」の宇宙応用
 tags:
-  - 箱庭
   - TOPPERS
-  - デジタルツイン
-  - 宇宙機・衛星
   - Vulkan
+  - デジタルツイン
+  - 箱庭
+  - 宇宙機・衛星
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-03T08:15:53+09:00'
+id: 9721403c71b4e94e1939
 organization_url_name: null
 slide: false
 ignorePublish: false
