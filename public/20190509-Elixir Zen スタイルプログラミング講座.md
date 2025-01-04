@@ -3,7 +3,7 @@ title: Elixir Zen スタイルプログラミング講座
 tags:
   - Elixir
 private: false
-updated_at: '2019-05-13T21:57:41+09:00'
+updated_at: '2025-01-05T07:40:39+09:00'
 id: 619f39cc77fbb52b1bbf
 organization_url_name: fukuokaex
 slide: false
