@@ -3,8 +3,8 @@ title: Self-hosted Runnerを取りやめた話
 tags:
   - GitHubActions
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-04T23:24:50+09:00'
+id: 920dfdd3349e42eb7fbb
 organization_url_name: null
 slide: false
 ignorePublish: false
