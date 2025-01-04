@@ -5,8 +5,8 @@ tags:
   - English
   - 英語学習
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-05T08:28:01+09:00'
+id: 89902981a5cb5230cf59
 organization_url_name: null
 slide: false
 ignorePublish: false
