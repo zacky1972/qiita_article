@@ -1,12 +1,12 @@
 ---
-title: エンジニアで英語が初めて役にたったと思った話〜Issueを書くことのすすめ 
+title: エンジニアで英語が初めて役にたったと思った話〜Issueを書くことのすすめ
 tags:
+  - Elixir
   - 英語
   - English
   - 英語学習
-  - Elixir
 private: false
-updated_at: '2025-01-05T08:28:01+09:00'
+updated_at: '2025-01-05T08:30:17+09:00'
 id: 89902981a5cb5230cf59
 organization_url_name: fukuokaex
 slide: false
