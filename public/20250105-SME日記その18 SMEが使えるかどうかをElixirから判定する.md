@@ -244,3 +244,73 @@ end
 P.S. このプログラムを踏まえて，Autoconfex を作成しました．
 
 https://github.com/zacky1972/autoconfex/tree/main
+
+```elixir
+Mix.install([:autoconfex])
+
+defmodule SME do
+  def available?() do
+    {:ok, pid} = Task.Supervisor.start_link()
+
+    task1 = Task.Supervisor.async(pid, fn -> runnable?() end)
+    task2 = Task.Supervisor.async(pid, fn -> compilable?() end)
+    
+    Task.await(task1) and Task.await(task2)
+  end
+
+  def runnable?() do
+    case :os.type() do
+      {:unix, :darwin} -> 
+        case execute("sysctl", ["hw.optional.arm"]) do
+          {result, 0} -> 
+            result
+            |> String.split("\n")
+            |> Enum.map(&String.trim/1)
+            |> Enum.filter(&String.match?(&1, ~r/FEAT\_SME/))
+            |> Enum.map(&String.split(&1, " "))
+            |> Enum.filter(fn [_, v] -> v == "1" end)
+            |> Enum.count()
+            |> then(& &1 != 0)
+
+          _ -> false
+        end
+
+      _ -> false
+    end
+  end
+
+  def compilable?() do
+    Autoconfex.compilable_by_cc?(
+      "/usr/bin/clang", 
+      """
+      #include <arm_sme.h>
+
+      __arm_locally_streaming
+      __arm_new("za")
+      void test_arm_new(void) {}
+      int main(int argc, char *argv[])
+      {
+        test_arm_new();
+      }
+      """,
+      ["-O2", "-march=armv9-a+sme"]
+    )
+  end
+
+  defp execute(executable, options, opts \\ []) do
+    System.find_executable(executable)
+    |> case do
+      nil -> 
+        executable
+        |> Path.basename()
+        |> System.find_executable()
+        |> case do
+          nil -> false
+          executable -> System.cmd(executable, options, opts)
+        end
+
+      executable -> System.cmd(executable, options, opts)
+    end
+  end
+end
+```
