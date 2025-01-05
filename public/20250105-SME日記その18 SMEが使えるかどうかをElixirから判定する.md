@@ -222,7 +222,15 @@ defmodule SME do
   defp execute(executable, options, opts \\ []) do
     System.find_executable(executable)
     |> case do
-      nil -> false
+      nil -> 
+        executable
+        |> Path.basename()
+        |> System.find_executable()
+        |> case do
+          nil -> false
+          executable -> System.cmd(executable, options, opts)
+        end
+
       executable -> System.cmd(executable, options, opts)
     end
   end
