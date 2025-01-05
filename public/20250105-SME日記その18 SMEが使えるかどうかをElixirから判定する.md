@@ -240,3 +240,7 @@ defmodule SME do
   end
 end
 ```
+
+P.S. このプログラムを踏まえて，Autoconfex を作成しました．
+
+https://github.com/zacky1972/autoconfex/tree/main
