@@ -208,3 +208,5 @@ LBB0_2:
         smstop  za
         smstop  sm
 ```
+
+ひとまず，`__arm_new("za")`をApple Clangで使うことができそうで，良かったです．
