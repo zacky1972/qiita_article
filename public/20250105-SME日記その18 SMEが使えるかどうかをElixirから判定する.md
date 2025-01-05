@@ -126,6 +126,8 @@ case System.find_executable("/usr/bin/clang") do
           executable, 
           [
             "-O2", 
+            "-Werror",
+            "-Wall",
             "-march=armv9-a+sme", 
             base,
             "-o",
@@ -202,6 +204,8 @@ defmodule SME do
         execute("/usr/bin/clang", 
           [
             "-O2", 
+            "-Werror",
+            "-Wall",
             "-march=armv9-a+sme", 
             base,
             "-o",
