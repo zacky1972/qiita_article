@@ -1,13 +1,13 @@
 ---
 title: SME日記その17 __arm_new("za")について調べる Part.2
 tags:
+  - clang
   - M4
   - AppleSilicon
   - SME
-  - Clang
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-05T12:57:02+09:00'
+id: ecf250b81e9e2afa8ab2
 organization_url_name: null
 slide: false
 ignorePublish: false
