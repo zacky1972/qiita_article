@@ -2,13 +2,13 @@
 title: SME日記その18 SMEが使えるかどうかをElixirから判定する
 tags:
   - clang
+  - Elixir
   - M4
   - AppleSilicon
   - SME
-  - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-05T15:39:27+09:00'
+id: ab2ebbb0a23d5709efe0
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
