@@ -7,7 +7,7 @@ tags:
   - DRP-AI
   - Kakip
 private: false
-updated_at: '2024-12-29T08:18:17+09:00'
+updated_at: '2025-01-07T07:27:06+09:00'
 id: 02be10d1acc013a499d2
 organization_url_name: fukuokaex
 slide: false
