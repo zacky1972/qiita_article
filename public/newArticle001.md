@@ -1,14 +1,14 @@
 ---
 title: SME日記その19 SMEでベクトルのスカラー倍を記述してみる
 tags:
-  - BLAS
   - Elixir
+  - BLAS
   - M4
   - AppleSilicon
   - SME
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-07T07:44:44+09:00'
+id: 95f6a4a4f47205299df6
 organization_url_name: null
 slide: false
 ignorePublish: false
