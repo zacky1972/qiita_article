@@ -31,6 +31,7 @@ SMEシリーズ
 - [SME日記その11 OpenBLASのSSCALでSMEが使われているかを検証してみる Part.1](https://qiita.com/zacky1972/items/15bca5a0dcd3073d4d60)
 - [SME日記その12 OpenBLASのSSCALでSMEが使われているかを検証してみる Part.2](https://qiita.com/zacky1972/items/2d69ed8b7ae5840012db)
 
+注意: 2025年1月7日にNxSgemmに対して行った破壊的更新のため，GitHubのmainブランチのコードでは動作しなくなっています．
 
 ```elixir
 % mix run -r benchmark.exs 

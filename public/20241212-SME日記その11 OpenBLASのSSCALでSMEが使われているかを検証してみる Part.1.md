@@ -35,6 +35,8 @@ https://github.com/zacky1972/nx_sgemm
 
 [ExTask](https://qiita.com/zacky1972/items/4fa132017f0e6d5e620b)を使っています．
 
+注意: 2025年1月7日にNxSgemmに対して行った破壊的更新のため，GitHubのmainブランチのコードでは動作しなくなっています．
+
 ```c:nif_src/libnif.c
 #include <erl_nif.h>
 #include <stdbool.h>

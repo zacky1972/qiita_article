@@ -32,6 +32,8 @@ SMEシリーズ
 
 ## ソースコード
 
+注意: 2025年1月7日にNxSgemmに対して行った破壊的更新のため，GitHubのmainブランチのコードでは動作しなくなっています．
+
 ```zsh
 mix new nx_sgemm_bench_openblas
 ```

@@ -24,6 +24,8 @@ DRP-AIシリーズ・Kakip
 
 ## OpenBLASを入れたNxの実行手順
 
+注意: 2025年1月7日にNxSgemmに対して行った破壊的更新のため，GitHubのmainブランチのコードでは動作しなくなっています．
+
 ```bash
 sudo apt update
 sudo apt install libopenblas-dev
