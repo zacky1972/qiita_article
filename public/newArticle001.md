@@ -1,14 +1,14 @@
 ---
 title: SME日記その19 SSCALをScalable Matrix Extensionで書いたけど，単純なforループの方が速かった件について
 tags:
-  - BLAS
   - C
+  - BLAS
   - M4
   - AppleSilicon
   - SME
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-01-09T10:12:11+09:00'
+id: 02829310e691d3380f5d
 organization_url_name: null
 slide: false
 ignorePublish: false
