@@ -15,7 +15,7 @@ ignorePublish: false
 ---
 Scalable Matrix Extension (SME)の研究の今後の展望について技術的ポエムを書いてみました．
 
-MEシリーズ
+SMEシリーズ
 
 - [Apple Silicon M4はM3シリーズからScalable Matrix Extension (SME)命令などが足されている](https://qiita.com/zacky1972/items/69fd802fd41ae4d7d469)
 - [SME日記その1: Apple Silicon M4に搭載されたScalable Matrix Extension(SME)のベクトル長(SVL)を取得する](https://qiita.com/zacky1972/items/231fd22a1fdef15d4108)
@@ -88,3 +88,10 @@ EMLXについては， @RyoWakabayashi さんが紹介記事を書いていま�
 
 https://qiita.com/RyoWakabayashi/items/150b35d97d0b1a70dccc
 
+## 追記: 20240109 SSCAL程度ではSME実行オーバーヘッドの元が取れない
+
+SME命令を実行するにあたって，行列を格納するZAレジスタの退避・復旧を含むオーバーヘッドがかかります．
+
+研究してみてわかったのが，このオーバーヘッドが思ったより大きく，SSCAL(ベクトルとスカラーの積)くらいの演算強度では元が取れないということです．([SME日記その19 SSCALをScalable Matrix Extensionで書いたけど，単純なforループの方が速かった件について](https://qiita.com/zacky1972/items/02829310e691d3380f5d))
+
+この点に留意して，今後も，さらなる研究に邁進します！
