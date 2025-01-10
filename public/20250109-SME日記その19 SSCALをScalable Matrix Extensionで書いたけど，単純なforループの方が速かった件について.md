@@ -1,5 +1,5 @@
 ---
-title: SME日記その19 SSCALをScalable Matrix Extensionで書いたけど，単純なforループの方が速かった件について
+title: SME日記その20 SSCALをScalable Matrix Extensionで書いたけど，単純なforループの方が速かった件について
 tags:
   - C
   - BLAS
