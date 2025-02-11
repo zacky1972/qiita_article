@@ -5,7 +5,7 @@ title: >-
 tags:
   - Elixir
 private: false
-updated_at: '2025-02-11T15:56:26+09:00'
+updated_at: '2025-02-11T15:59:10+09:00'
 id: 7498894c5c6c41efa312
 organization_url_name: fukuokaex
 slide: false
