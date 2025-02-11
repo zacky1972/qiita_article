@@ -1,6 +1,6 @@
 ---
 title: >-
-  credoに \"There should be no unused return values for Enum functions\"
+  credoに "There should be no unused return values for Enum functions"
   と警告される時は、関数の戻り値に使っていない値があるのが問題なので、空の代入で回避する
 tags:
   - Elixir
