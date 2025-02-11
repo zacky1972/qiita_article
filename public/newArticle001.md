@@ -1,10 +1,12 @@
 ---
-title: credoに \"There should be no unused return values for Enum functions\" と警告される時は、関数の戻り値に使っていない値があるのが問題なので、空の代入で回避する
+title: >-
+  credoに \"There should be no unused return values for Enum functions\"
+  と警告される時は、関数の戻り値に使っていない値があるのが問題なので、空の代入で回避する
 tags:
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-02-11T15:56:26+09:00'
+id: 7498894c5c6c41efa312
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
