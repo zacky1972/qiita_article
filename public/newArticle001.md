@@ -3,8 +3,8 @@ title: ElixirでリストをEnum.mapで処理する際に、直前の要素値�
 tags:
   - Elixir
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-02-12T11:22:29+09:00'
+id: 368f635cc3ffe1c95192
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
