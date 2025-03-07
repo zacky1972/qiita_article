@@ -1,12 +1,12 @@
 ---
 title: Ubuntu22.04にcolimaをインストールする
 tags:
-  - Docker
   - Ubuntu
+  - Docker
   - colima
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-03-07T16:50:57+09:00'
+id: 8888d36aa45ab3123bcb
 organization_url_name: null
 slide: false
 ignorePublish: false
