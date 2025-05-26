@@ -1,13 +1,13 @@
 ---
 title: AI駆動開発でElixirライブラリをリリース
 tags:
-  - Elixir
   - Erlang
-  - AI駆動開発
+  - Elixir
   - cursor
+  - AI駆動開発
 private: false
-updated_at: ''
-id: null
+updated_at: '2025-05-27T06:44:15+09:00'
+id: 9ad78ef5e5ddc984f67f
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
