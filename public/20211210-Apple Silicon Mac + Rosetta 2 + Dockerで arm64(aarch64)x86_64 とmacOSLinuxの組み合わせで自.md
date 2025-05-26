@@ -3,13 +3,13 @@ title: >-
   Apple Silicon Mac + Rosetta 2 + Dockerで arm64(aarch64)/x86_64
   とmacOS/Linuxの組み合わせで自動テストする方法(Elixirだけじゃなく汎用の方法も紹介するよ)
 tags:
+  - テスト
   - Elixir
-  - testing
   - Docker
   - M1
   - AppleSilicon
 private: false
-updated_at: '2021-12-26T04:27:33+09:00'
+updated_at: '2025-05-27T06:19:46+09:00'
 id: c8410e6cc3bb76b4b437
 organization_url_name: null
 slide: false
