@@ -19,13 +19,13 @@ ignorePublish: false
 
 $p = 2^k + c$の場合の$x\mod p$を、除算を用いずに計算するアルゴリズムです。
 
-初出はRichard E. Crandallが1991年9月17日に出願して1992年10月27日に特許取得した[US5159632A特許 "METHOD AND APPARATUS FOR PUBLIC KEY EXCHANGE IN A CRYPTOGRAPHIC SYSTEM"](https://patentimages.storage.googleapis.com/11/9b/b8/75aa2cab01785d/US5159632.pdf)(暗号システムにおける公開鍵交換の方法および装置)なのだそうです。米国特許は出願日から20年が標準的な有効期間なのだそうなので、本特許は期限切れになっている可能性が高いようです。
+初出はRichard E. Crandallが1991年9月17日に出願して1992年10月27日に特許取得した[US5159632A特許 "METHOD AND APPARATUS FOR PUBLIC KEY EXCHANGE IN A CRYPTOGRAPHIC SYSTEM"](https://patentimages.storage.googleapis.com/11/9b/b8/75aa2cab01785d/US5159632.pdf)(暗号システムにおける公開鍵交換の方法および装置)なのだそうです。米国特許は出願日から20年が標準的な有効期間(米国現行法では出願から20年、その改正の端境期に当たる特許については、1995.6.8時点で有効な特許は、出願から20年と、登録から17年の遅く満了する方が有効期間となります)なのだそうなので、本特許は有効期限切れになっています。
 
 ## Elixirでの実装
 
 https://github.com/zacky1972/crandall_reduction
 
-本質的には次のようなコードになります。ご覧の通り、ビット演算と加減乗算、条件分岐で構成されており、除算を用いていません。なお、この実装では、`a`, `mask`, `p`を先行して計算した上で関数を生成することで、`a`, `mask`, `p`の定数畳込みを行っています。
+本質的には次のようなコードになります。ご覧の通り、ビット演算と加減算、定数倍乗算、条件分岐で構成されており、除算を用いていません。なお、この実装では、`a`, `mask`, `p`を先行して計算した上で関数を生成することで、`a`, `mask`, `p`の定数畳込みを行っています。ここで登場する乗算は定数`c`倍なので、コード最適化を適用すると、論理・シフト演算に置換することができるはずです。
 
 ```elixir
 fn k, c ->
