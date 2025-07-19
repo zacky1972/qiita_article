@@ -108,10 +108,13 @@ defmodule BinaryExtendedGcd do
   def of(a, 0), do: {a, 1, 0}
 
   def of(a, b) do
-    {shift, a, b} = CommonTwos.of(a, b)
-
-    sub(a, b, a, b, 1, 0, 0, 1)
-    |> then(fn {v, cc, dd} -> {Bitwise.bsl(v, shift), cc, dd} end)
+    CommonTwos.of(a, b)
+    |> then(fn {shift, a, b} ->
+      {shift, sub(a, b, a, b, 1, 0, 0, 1)}
+    end)
+    |> then(fn {shift, {v, cc, dd}} ->
+      {Bitwise.bsl(v, shift), cc, dd}
+    end)
   end
 
   # Main recursive function for binary extended GCD
