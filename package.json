@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "npm": "^11.5.1"
+    "npm": "^11.5.2"
   },
   "devDependencies": {
     "@qiita/qiita-cli": "^1.6.2"
