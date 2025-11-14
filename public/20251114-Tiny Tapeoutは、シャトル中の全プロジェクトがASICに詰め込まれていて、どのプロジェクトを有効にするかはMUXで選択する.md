@@ -44,4 +44,4 @@ https://github.com/TinyTapeout/tt-multiplexer/blob/7481146140da8cc28dbd7679ee284
 
 > Tiny Tapeoutは、シャトル中の全プロジェクトがASICに詰め込まれていて、どのプロジェクトを有効にするかはMUXで選択する
 
-信号経路上にMUXが挟まるので、たとえば $F_{MAX}$ をあまり極端に上げることができない模様です。
+信号経路上にMUXが挟まるので、たとえば $F_{\textit{MAX}}$ をあまり極端に上げることができない模様です。
