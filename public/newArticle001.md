@@ -1,13 +1,13 @@
 ---
 title: Tiny Tapeoutは、シャトル中の全プロジェクトがASICに詰め込まれていて、どのプロジェクトを有効にするかはMUXで選択する
 tags:
+  - OSS
   - 半導体
   - オープンソース半導体
-  - OSS
 private: false
-updated_at: ''
-id: null
-organization_url_name: 
+updated_at: '2025-11-14T20:48:59+09:00'
+id: 053f2097b52b34401a1e
+organization_url_name: null
 slide: false
 ignorePublish: false
 ---
