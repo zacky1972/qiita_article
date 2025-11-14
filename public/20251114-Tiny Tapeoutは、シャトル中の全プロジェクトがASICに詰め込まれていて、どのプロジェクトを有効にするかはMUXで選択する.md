@@ -5,7 +5,7 @@ tags:
   - 半導体
   - オープンソース半導体
 private: false
-updated_at: '2025-11-15T08:43:17+09:00'
+updated_at: '2025-11-15T08:45:00+09:00'
 id: 053f2097b52b34401a1e
 organization_url_name: null
 slide: false
