@@ -3,16 +3,18 @@ title: >-
   ネットワークが繋がらない最小構成のままElixirをasdfではなくソースコードビルドしてインストールする〜Arch
   LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々その7
 tags:
-  - Mac
-  - Linux
-  - archLinux
   - Elixir
+  - Linux
+  - Mac
+  - archLinux
 private: false
-updated_at: '2024-01-05T05:37:45+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: ab537e53fd30ac0d15a6
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 この記事は，Ubuntuはよく使うが，Arch Linuxは初めてという私 @zacky1972 が，まずは手近なT2チップを備えていない古いIntel MacにArch Linuxをインストールして習得していく過程を記録する駄文の7回目です．前回まででMac Pro(Mid 2010)へArch Linuxをインストールしたもののネットワークも繋がらない最小構成でしたが，この状態でもElixirをインストールできることを立証しました．ただし，ErlangはソースコードビルドしたもののElixirはasdfのインストールであったため，Elixirを使用するにはrootでログインして使用する必要がありました．そこで，今回はElixirもソースコードビルドして，任意のユーザーがElixirを使用できるようにします．
 

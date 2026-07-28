@@ -1,16 +1,18 @@
 ---
 title: その1 Nerves化構想を思い立つ〜Arch Linuxを元にT2チップを備えない古いIntel MacをNerves化しようとする日々
 tags:
-  - Mac
-  - archLinux
   - Elixir
+  - Mac
   - Nerves
+  - archLinux
 private: false
-updated_at: '2024-01-06T12:24:01+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: d1da49dedfaafae57cbb
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 「Arch LinuxをT2チップを備えない古いIntel Macにインストールしようとする日々」シリーズに取り組んでいて，「Arch Linuxを元にT2チップを備えない古いIntel MacをNerves化しよう」という構想が沸々と湧いてまいりました．引き続き，駄文を連ねていこうと思います．
 

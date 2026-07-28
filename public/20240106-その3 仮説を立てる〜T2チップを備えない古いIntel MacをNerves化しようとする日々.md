@@ -1,17 +1,19 @@
 ---
 title: その3 仮説を立てる〜T2チップを備えない古いIntel MacをNerves化しようとする日々
 tags:
-  - Mac
-  - Linux
   - Elixir
-  - buildroot
+  - Linux
+  - Mac
   - Nerves
+  - buildroot
 private: false
-updated_at: '2024-01-06T22:55:40+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: 3d38a74c6e67b26efe6d
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 「T2チップを備えない古いIntel MacをNerves化しよう」という構想の実現に邁進する駄文シリーズの第3弾です．前回までで，素のx86_64のbuildrootを構築してSSDにインストールし，Mac Pro (Mid 2010)で実行してみたところ，起動画面は出たのですが，ブートが途中で止まってしまう結果になりました．今回は，その対策を考えてみるという回です．
 

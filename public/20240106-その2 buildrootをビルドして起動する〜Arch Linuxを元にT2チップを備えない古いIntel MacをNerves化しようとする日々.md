@@ -1,17 +1,19 @@
 ---
 title: その2 buildrootをビルドして起動する〜Arch Linuxを元にT2チップを備えない古いIntel MacをNerves化しようとする日々
 tags:
-  - Mac
-  - archLinux
   - Elixir
-  - buildroot
+  - Mac
   - Nerves
+  - archLinux
+  - buildroot
 private: false
-updated_at: '2024-01-06T16:25:01+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: 4ce0032514978a7d2f1f
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 「Arch Linuxを元にT2チップを備えない古いIntel MacをNerves化しよう」という構想の実現に邁進する駄文シリーズの第2弾です．今回は，素のx86_64 PC向けのbuildrootを古いIntel MacであるMac Pro (Mid 2010) に入れて起動を試みてみました．
 

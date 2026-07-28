@@ -1,17 +1,19 @@
 ---
 title: その4 新たに仮説を立ててbuildrootを作ってみる〜T2チップを備えない古いIntel MacをNerves化しようとする日々
 tags:
-  - Mac
-  - Linux
   - Elixir
-  - buildroot
+  - Linux
+  - Mac
   - Nerves
+  - buildroot
 private: false
-updated_at: '2024-01-07T10:20:31+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: 4e150e1f80e31ac69be7
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 「T2チップを備えない古いIntel MacをNerves化しよう」という構想の実現に邁進する駄文シリーズの第4弾です．前回，仮説を立てましたが，実際にbuildrootの中身を見てみると，到底，仮説通りにいかないことがわかりました．ただし，眺めているうちに分かったような気がしてきました．そこで，今回は新たな設定でbuildrootを作成して，Mac Pro (Mid 2010)で動かしてみようということになりました．
 

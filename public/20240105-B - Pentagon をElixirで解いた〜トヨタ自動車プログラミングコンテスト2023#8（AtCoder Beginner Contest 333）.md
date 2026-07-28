@@ -6,11 +6,13 @@ tags:
   - AtCoder
   - Elixir
 private: false
-updated_at: '2024-01-05T06:18:53+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: ba9046c4f9d171d4776d
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 トヨタ自動車プログラミングコンテスト2023#8（AtCoder Beginner Contest 333）のB - PentagonをElixirで解いたので報告します．
 

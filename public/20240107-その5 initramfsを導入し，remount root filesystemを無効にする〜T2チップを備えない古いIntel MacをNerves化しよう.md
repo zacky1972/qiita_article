@@ -3,17 +3,19 @@ title: >-
   その5 initramfsを導入し，remount root filesystemを無効にする〜T2チップを備えない古いIntel
   MacをNerves化しようとする日々
 tags:
-  - Mac
-  - Linux
   - Elixir
-  - buildroot
+  - Linux
+  - Mac
   - Nerves
+  - buildroot
 private: false
-updated_at: '2024-01-07T11:28:59+09:00'
+updated_at: '2026-07-28T10:15:35+09:00'
 id: 812fb744a62bc30661b3
 organization_url_name: fukuokaex
 slide: false
 ignorePublish: false
+posting_campaign_uuid: ac786747ac38f76996a0
+agreed_posting_campaign_term: true
 ---
 「T2チップを備えない古いIntel MacをNerves化しよう」という構想の実現に邁進する駄文シリーズの第5弾です．今回は，Frankさんの助言にしたがって，`initramfs`を導入します．また，`remount root filesystem read-write during boot`が悪さをしているような気がしたので，これも無効にしてみます．設定を変えていくうちに，`efi-part.vfat`が一杯になるというエラーが出るようになったので，これまたFrankさんの助言で，`board/pc/genimage-efi.cfg`を編集してみました．
 
