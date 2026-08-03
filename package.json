@@ -3,6 +3,6 @@
     "npm": "^11.16.0"
   },
   "devDependencies": {
-    "@qiita/qiita-cli": "^1.9.1"
+    "@qiita/qiita-cli": "^1.10.0"
   }
 }
